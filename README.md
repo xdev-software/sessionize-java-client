@@ -3,7 +3,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=xdev-software_sessionize-java-client&metric=alert_status)](https://sonarcloud.io/dashboard?id=xdev-software_sessionize-java-client)
 
 # sessionize-java-client
-
+A Java client for the [Sessionize API](https://sessionize.com/playbook/api)
 
 ## Installation
 [Installation guide for the latest release](https://github.com/xdev-software/sessionize-java-client/releases/latest#Installation)
