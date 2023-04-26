@@ -1,0 +1,359 @@
+openapi: 3.0.1
+info:
+  title: Sessionize JSON-REST API
+  description: Sessionize JSON-REST API documentation by XDEV Software
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: '2.0'
+externalDocs:
+  description: Sessionize's API documentation
+  url: https://sessionize.com/playbook/api
+servers:
+  - url: https://sessionize.com
+paths:
+  /api/v2/{endpointId}/view/All:
+    get:
+      parameters:
+        - name: endpointId
+          in: path
+          required: true
+          schema:
+            type: string
+          example: jl4ktls0
+      responses:
+        '200':
+          description: Returned if the request is successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sessions:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Session'
+                  speakers:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Speaker'
+                  questions:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Question'
+                  categories:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Category'
+                  rooms:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Room'
+                required:
+                  - categories
+                  - questions
+                  - rooms
+                  - sessions
+                  - speakers
+      deprecated: false
+  /api/v2/{endpointId}/view/Speakers:
+    get:
+      parameters:
+        - name: endpointId
+          in: path
+          required: true
+          schema:
+            type: string
+          example: jl4ktls0
+      responses:
+        '200':
+          description: Returned if the request is successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Speaker'
+      deprecated: false
+  /api/v2/{endpointId}/view/Sessions:
+    get:
+      parameters:
+        - name: endpointId
+          in: path
+          required: true
+          schema:
+            type: string
+          example: jl4ktls0
+      responses:
+        '200':
+          description: Returned if the request is successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SessionGroup'
+      deprecated: false
+components:
+  schemas:
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CategoryItem'
+        sort:
+          type: integer
+        type:
+          type: string
+      required:
+        - id
+        - items
+        - sort
+        - title
+        - type
+    CategoryItem:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        sort:
+          type: integer
+      required:
+        - id
+        - name
+        - sort
+    Link:
+      type: object
+      properties:
+        title:
+          type: string
+        url:
+          type: string
+          format: uri
+        linkType:
+          type: string
+      required:
+        - linkType
+        - title
+        - url
+    Question:
+      type: object
+      properties:
+        id:
+          type: integer
+        question:
+          type: string
+        questionType:
+          type: string
+        sort:
+          type: integer
+      required:
+        - id
+        - question
+        - questionType
+        - sort
+    QuestionAnswer:
+      type: object
+      properties:
+        questionId:
+          type: integer
+        answerValue:
+          type: string
+      required:
+        - answerValue
+        - questionId
+    QuestionAnswerFull:
+      type: object
+      properties:
+        id:
+          type: integer
+        question:
+          type: string
+        questionType:
+          type: string
+        answer:
+          type: string
+          nullable: true
+        sort:
+          type: integer
+        # answerExtra is always null; ignored
+      required:
+        - id
+        - question
+        - questionType
+        - answer
+        - sort
+    Room:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        sort:
+          type: integer
+      required:
+        - id
+        - name
+        - sort
+    Session:
+      type: object
+      properties:
+        id:
+          type: string
+          format: integer
+        title:
+          type: string
+        description:
+          type: string
+          nullable: true
+        startsAt:
+          type: string
+          format: date-time
+          nullable: true
+        endsAt:
+          type: string
+          format: date-time
+          nullable: true
+        isServiceSession:
+          type: boolean
+        isPlenumSession:
+          type: boolean
+        speakers:
+          type: array
+          items:
+            anyOf:
+              - type: string # All Endpoint
+                format: uuid
+              - $ref: '#/components/schemas/SpeakerMinimal' # Sessions Endpoint
+        categoryItems:
+          type: array
+          items:
+            type: integer
+        questionAnswers:
+          type: array
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/QuestionAnswer' # All Endpoint
+              - $ref: '#/components/schemas/QuestionAnswerFull' # Sessions Endpoint
+        roomId:
+          type: integer
+          nullable: true
+        liveUrl:
+          type: string
+          format: uri
+          nullable: true
+        recordingUrl:
+          type: string
+          format: uri
+          nullable: true
+        status:
+          $ref: '#/components/schemas/Status'
+          nullable: true
+      required:
+        - categoryItems
+        - endsAt
+        - id
+        - isPlenumSession
+        - isServiceSession
+        - questionAnswers
+        - roomId
+        - speakers
+        - startsAt
+        - status
+        - title
+    SessionGroup:
+      type: object
+      properties:
+        groupId:
+          type: integer
+        groupName:
+          type: string
+        sessions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Session'
+        isDefault:
+          type: boolean
+    SessionMinimal:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+        - id
+        - name
+    Speaker:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        firstName:
+          type: string
+        lastName:
+          type: string
+        bio:
+          type: string
+          nullable: true
+        tagLine:
+          type: string
+          nullable: true
+        profilePicture:
+          type: string
+          format: uri
+          nullable: true
+        isTopSpeaker:
+          type: boolean
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+        sessions:
+          type: array
+          items:
+            anyOf:
+              - type: integer # All Endpoint
+              - $ref: '#/components/schemas/SessionMinimal' # Speakers Endpoint
+        fullName:
+          type: string
+        # categoryItems - Always empty; ignored
+        # questionAnswers - Always empty; ignored 
+      required:
+        - firstName
+        - fullName
+        - id
+        - isTopSpeaker
+        - lastName
+        - links
+        - sessions
+        - tagLine
+    SpeakerMinimal:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+      required:
+        - id
+        - name
+    Status:
+      type: string
+      enum:
+        - Accepted
+        - Accepted_Queue
+        - Nominated
+        - Decline_Queue
+        - Declined
