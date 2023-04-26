@@ -27,34 +27,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  sessions:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Session'
-                  speakers:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Speaker'
-                  questions:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Question'
-                  categories:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Category'
-                  rooms:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Room'
-                required:
-                  - categories
-                  - questions
-                  - rooms
-                  - sessions
-                  - speakers
+                $ref: '#/components/schemas/AllResult'
       deprecated: false
   /api/v2/{endpointId}/view/Speakers:
     get:
@@ -96,8 +69,39 @@ paths:
       deprecated: false
 components:
   schemas:
+    AllResult:
+      type: object
+      readOnly: true
+      properties:
+        sessions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Session'
+        speakers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Speaker'
+        questions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Question'
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+        rooms:
+          type: array
+          items:
+            $ref: '#/components/schemas/Room'
+      required:
+        - categories
+        - questions
+        - rooms
+        - sessions
+        - speakers
     Category:
       type: object
+      readOnly: true
       properties:
         id:
           type: integer
@@ -119,6 +123,7 @@ components:
         - type
     CategoryItem:
       type: object
+      readOnly: true
       properties:
         id:
           type: integer
@@ -132,6 +137,7 @@ components:
         - sort
     Link:
       type: object
+      readOnly: true
       properties:
         title:
           type: string
@@ -146,6 +152,7 @@ components:
         - url
     Question:
       type: object
+      readOnly: true
       properties:
         id:
           type: integer
@@ -162,6 +169,7 @@ components:
         - sort
     QuestionAnswer:
       type: object
+      readOnly: true
       properties:
         questionId:
           type: integer
@@ -172,6 +180,7 @@ components:
         - questionId
     QuestionAnswerFull:
       type: object
+      readOnly: true
       properties:
         id:
           type: integer
@@ -193,6 +202,7 @@ components:
         - sort
     Room:
       type: object
+      readOnly: true
       properties:
         id:
           type: integer
@@ -206,6 +216,7 @@ components:
         - sort
     Session:
       type: object
+      readOnly: true
       properties:
         id:
           type: string
@@ -272,6 +283,7 @@ components:
         - title
     SessionGroup:
       type: object
+      readOnly: true
       properties:
         groupId:
           type: integer
@@ -285,6 +297,7 @@ components:
           type: boolean
     SessionMinimal:
       type: object
+      readOnly: true
       properties:
         id:
           type: integer
@@ -295,6 +308,7 @@ components:
         - name
     Speaker:
       type: object
+      readOnly: true
       properties:
         id:
           type: string
@@ -340,6 +354,7 @@ components:
         - tagLine
     SpeakerMinimal:
       type: object
+      readOnly: true
       properties:
         id:
           type: string
@@ -351,6 +366,7 @@ components:
         - name
     Status:
       type: string
+      readOnly: true
       enum:
         - Accepted
         - Accepted_Queue
