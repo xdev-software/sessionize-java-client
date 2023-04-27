@@ -11,9 +11,16 @@ externalDocs:
   url: https://sessionize.com/playbook/api
 servers:
   - url: https://sessionize.com
+tags:
+  - name: all
+  - name: speakers
+  - name: sessions
 paths:
   /api/v2/{endpointId}/view/All:
     get:
+      tags:
+        - "all"
+      operationId: getAll
       parameters:
         - name: endpointId
           in: path
@@ -31,6 +38,9 @@ paths:
       deprecated: false
   /api/v2/{endpointId}/view/Speakers:
     get:
+      tags:
+        - "speakers"
+      operationId: getAllSpeakers
       parameters:
         - name: endpointId
           in: path
@@ -50,6 +60,9 @@ paths:
       deprecated: false
   /api/v2/{endpointId}/view/Sessions:
     get:
+      tags:
+        - "sessions"
+      operationId: getAllSessions
       parameters:
         - name: endpointId
           in: path
@@ -76,11 +89,11 @@ components:
         sessions:
           type: array
           items:
-            $ref: '#/components/schemas/Session'
+            $ref: '#/components/schemas/SessionAll'
         speakers:
           type: array
           items:
-            $ref: '#/components/schemas/Speaker'
+            $ref: '#/components/schemas/SpeakerAll'
         questions:
           type: array
           items:
@@ -214,13 +227,10 @@ components:
         - id
         - name
         - sort
-    Session:
+    BaseSession:
       type: object
       readOnly: true
       properties:
-        id:
-          type: string
-          format: integer
         title:
           type: string
         description:
@@ -238,23 +248,10 @@ components:
           type: boolean
         isPlenumSession:
           type: boolean
-        speakers:
-          type: array
-          items:
-            anyOf:
-              - type: string # All Endpoint
-                format: uuid
-              - $ref: '#/components/schemas/SpeakerMinimal' # Sessions Endpoint
         categoryItems:
           type: array
           items:
             type: integer
-        questionAnswers:
-          type: array
-          items:
-            anyOf:
-              - $ref: '#/components/schemas/QuestionAnswer' # All Endpoint
-              - $ref: '#/components/schemas/QuestionAnswerFull' # Sessions Endpoint
         roomId:
           type: integer
           nullable: true
@@ -272,15 +269,53 @@ components:
       required:
         - categoryItems
         - endsAt
-        - id
         - isPlenumSession
         - isServiceSession
-        - questionAnswers
         - roomId
-        - speakers
         - startsAt
         - status
         - title
+    Session:
+      allOf:
+      - $ref: '#/components/schemas/BaseSession'
+      - type: object
+        readOnly: true
+        properties:
+          id:
+            type: string
+            format: integer # Sessions Endpoint contains only numeric IDs
+          speakers:
+            type: array
+            items:
+              $ref: '#/components/schemas/SpeakerMinimal' # Sessions Endpoint
+          questionAnswers:
+            type: array
+            items:
+              $ref: '#/components/schemas/QuestionAnswerFull' # Sessions Endpoint
+        required:
+          - id
+          - questionAnswers
+          - speakers
+    SessionAll:
+      allOf:
+      - $ref: '#/components/schemas/BaseSession'
+      - type: object
+        readOnly: true
+        properties:
+          id:
+            type: string # All Endpoint contains numeric IDs mixed with UUIDs
+          speakers:
+            type: array
+            items:
+              type: string # All Endpoint
+          questionAnswers:
+            type: array
+            items:
+              $ref: '#/components/schemas/QuestionAnswer' # All Endpoint
+        required:
+          - id
+          - questionAnswers
+          - speakers
     SessionGroup:
       type: object
       readOnly: true
@@ -306,7 +341,7 @@ components:
       required:
         - id
         - name
-    Speaker:
+    BaseSpeaker:
       type: object
       readOnly: true
       properties:
@@ -333,12 +368,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Link'
-        sessions:
-          type: array
-          items:
-            anyOf:
-              - type: integer # All Endpoint
-              - $ref: '#/components/schemas/SessionMinimal' # Speakers Endpoint
         fullName:
           type: string
         # categoryItems - Always empty; ignored
@@ -350,8 +379,31 @@ components:
         - isTopSpeaker
         - lastName
         - links
-        - sessions
         - tagLine
+    Speaker:
+      allOf:
+        - $ref: '#/components/schemas/BaseSpeaker'
+        - type: object
+          readOnly: true
+          properties:
+            sessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/SessionMinimal' # Speakers Endpoint
+          required:
+            - sessions
+    SpeakerAll:
+      allOf:
+        - $ref: '#/components/schemas/BaseSpeaker'
+        - type: object
+          readOnly: true
+          properties:
+            sessions:
+              type: array
+              items:
+                type: integer # All Endpoint
+          required:
+            - sessions
     SpeakerMinimal:
       type: object
       readOnly: true
