@@ -3,7 +3,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=xdev-software_sessionize-java-client&metric=alert_status)](https://sonarcloud.io/dashboard?id=xdev-software_sessionize-java-client)
 
 # <img src="https://sessionize.com/landing/images/brand/logo/sessionize-avatar.svg" height="22" /> [sessionize](https://sessionize.com/)-java-client
-A Java client for the [Sessionize API](https://sessionize.com/playbook/api)
+Java client for the [Sessionize API](https://sessionize.com/playbook/api)
 
 This client [is generated](./sessionize-java-client/pom.xml) from an [``openapi.yml``](./openapi/openapi.yml) using [OpenAPI Generator](https://openapi-generator.tech/).
 
