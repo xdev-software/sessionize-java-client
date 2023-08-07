@@ -320,6 +320,7 @@
 										</disallowAdditionalPropertiesIfNotPresent>
 										<!-- Use newer Jakarta EE instead of Javax -->
 										<useJakartaEe>true</useJakartaEe>
+										<hideGenerationTimestamp>true</hideGenerationTimestamp>
 										<!-- No tests and documentation because we don't use that -->
 										<generateModelTests>false</generateModelTests>
 										<generateApiTests>false</generateApiTests>

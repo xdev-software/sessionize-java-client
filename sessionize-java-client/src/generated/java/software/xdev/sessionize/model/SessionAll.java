@@ -55,7 +55,7 @@ import java.util.StringJoiner;
   SessionAll.JSON_PROPERTY_SPEAKERS,
   SessionAll.JSON_PROPERTY_QUESTION_ANSWERS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T17:30:53.867882+02:00[Europe/Berlin]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SessionAll {
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;

@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   SpeakerAllOf.JSON_PROPERTY_SESSIONS
 })
 @JsonTypeName("Speaker_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T17:30:53.867882+02:00[Europe/Berlin]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SpeakerAllOf {
   public static final String JSON_PROPERTY_SESSIONS = "sessions";
   private List<SessionMinimal> sessions = new ArrayList<>();

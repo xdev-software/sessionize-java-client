@@ -39,7 +39,7 @@ import java.util.StringJoiner;
   SessionAllOf.JSON_PROPERTY_QUESTION_ANSWERS
 })
 @JsonTypeName("Session_allOf")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T17:30:53.867882+02:00[Europe/Berlin]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SessionAllOf {
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;

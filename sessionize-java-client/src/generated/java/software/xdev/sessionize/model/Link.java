@@ -35,7 +35,7 @@ import java.util.StringJoiner;
   Link.JSON_PROPERTY_URL,
   Link.JSON_PROPERTY_LINK_TYPE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T17:30:53.867882+02:00[Europe/Berlin]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Link {
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;

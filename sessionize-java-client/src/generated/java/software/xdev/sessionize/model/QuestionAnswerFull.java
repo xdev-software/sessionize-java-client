@@ -36,7 +36,7 @@ import java.util.StringJoiner;
   QuestionAnswerFull.JSON_PROPERTY_ANSWER,
   QuestionAnswerFull.JSON_PROPERTY_SORT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T17:30:53.867882+02:00[Europe/Berlin]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class QuestionAnswerFull {
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;
