@@ -1,3 +1,6 @@
+# 1.0.1
+* Shrunk generated code a bit
+
 # 1.0.0 
 
 * Initial release
