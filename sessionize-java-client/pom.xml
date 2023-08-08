@@ -5,17 +5,17 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.xdev-software</groupId>
-	<artifactId>openapi-client-maven-template</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<artifactId>sessionize-java-client</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>openapi-client-maven-template</name>
-	<description>openapi-client-maven-template</description>
-	<url>https://github.com/xdev-software/openapi-client-maven-template</url>
+	<name>sessionize-java-client</name>
+	<description>sessionize-java-client</description>
+	<url>https://github.com/xdev-software/sessionize-java-client</url>
 
 	<scm>
-		<url>https://github.com/xdev-software/openapi-client-maven-template</url>
-		<connection>https://github.com/xdev-software/openapi-client-maven-template.git</connection>
+		<url>https://github.com/xdev-software/sessionize-java-client</url>
+		<connection>https://github.com/xdev-software/sessionize-java-client.git</connection>
 	</scm>
 
 	<inceptionYear>2023</inceptionYear>
@@ -287,8 +287,7 @@
 			<properties>
 				<basePackage>software.xdev.INSERT_NAME_HERE</basePackage>
 
-				<generatedDirRelative>src/generated/java</generatedDirRelative>
-				<generatedDir>${project.basedir}/${generatedDirRelative}</generatedDir>
+				<generatedDir>${project.basedir}/src/generated/java</generatedDir>
 				<openApiRelativeGeneratorDir>src/gen</openApiRelativeGeneratorDir>
 				<openApiGeneratorDir>
 					${project.basedir}/target/generated-sources/openapi/${openApiRelativeGeneratorDir}

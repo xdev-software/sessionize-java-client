@@ -5,13 +5,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.xdev-software</groupId>
-<<<<<<<< HEAD:sessionize-java-client-demo/pom.xml
 	<artifactId>sessionize-java-client-demo</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
-========
-	<artifactId>openapi-client-maven-template-demo</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
->>>>>>>> origin/update-from-template:openapi-client-maven-template-demo/pom.xml
 	<packaging>jar</packaging>
 
 	<inceptionYear>2022</inceptionYear>
@@ -36,11 +31,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.xdev-software</groupId>
-<<<<<<<< HEAD:sessionize-java-client-demo/pom.xml
 			<artifactId>sessionize-java-client</artifactId>
-========
-			<artifactId>openapi-client-maven-template</artifactId>
->>>>>>>> origin/update-from-template:openapi-client-maven-template-demo/pom.xml
 			<version>${project.version}</version>
 		</dependency>
 
