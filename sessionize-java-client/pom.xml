@@ -285,7 +285,7 @@
 		<profile>
 			<id>openapi-generator</id>
 			<properties>
-				<basePackage>software.xdev.INSERT_NAME_HERE</basePackage>
+				<basePackage>software.xdev.sessionize</basePackage>
 
 				<generatedDir>${project.basedir}/src/generated/java</generatedDir>
 				<openApiRelativeGeneratorDir>src/gen</openApiRelativeGeneratorDir>
