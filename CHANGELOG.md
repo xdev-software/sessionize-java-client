@@ -1,5 +1,6 @@
 # 1.0.1
 * Shrunk generated code a bit
+* Updated openapi generator
 
 # 1.0.0 
 
