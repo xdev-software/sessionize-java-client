@@ -17,7 +17,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import software.xdev.sessionize.client.ApiException;
 import software.xdev.sessionize.client.ApiClient;
 import software.xdev.sessionize.client.Configuration;
-import software.xdev.sessionize.model.*;
 import software.xdev.sessionize.client.Pair;
 
 import software.xdev.sessionize.model.SessionGroup;

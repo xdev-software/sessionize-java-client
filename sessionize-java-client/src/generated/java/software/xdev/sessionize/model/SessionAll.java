@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.net.URI;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import software.xdev.sessionize.model.QuestionAnswer;
