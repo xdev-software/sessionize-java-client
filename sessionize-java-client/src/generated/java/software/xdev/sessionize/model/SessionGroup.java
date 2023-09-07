@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import software.xdev.sessionize.model.Session;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -38,7 +39,7 @@ import java.util.StringJoiner;
   SessionGroup.JSON_PROPERTY_SESSIONS,
   SessionGroup.JSON_PROPERTY_IS_DEFAULT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T17:30:53.867882+02:00[Europe/Berlin]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SessionGroup {
   public static final String JSON_PROPERTY_GROUP_ID = "groupId";
   private Integer groupId;

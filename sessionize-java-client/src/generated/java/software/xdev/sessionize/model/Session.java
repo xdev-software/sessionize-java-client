@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.net.URI;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import software.xdev.sessionize.model.QuestionAnswerFull;
@@ -56,7 +57,7 @@ import java.util.StringJoiner;
   Session.JSON_PROPERTY_SPEAKERS,
   Session.JSON_PROPERTY_QUESTION_ANSWERS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T17:30:53.867882+02:00[Europe/Berlin]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Session {
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;

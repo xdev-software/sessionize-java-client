@@ -17,7 +17,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import software.xdev.sessionize.client.ApiException;
 import software.xdev.sessionize.client.ApiClient;
 import software.xdev.sessionize.client.Configuration;
-import software.xdev.sessionize.model.*;
 import software.xdev.sessionize.client.Pair;
 
 import software.xdev.sessionize.model.AllResult;
@@ -30,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T17:30:53.867882+02:00[Europe/Berlin]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AllApi {
 
 

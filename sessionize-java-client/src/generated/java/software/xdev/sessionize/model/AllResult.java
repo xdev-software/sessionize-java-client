@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import software.xdev.sessionize.model.Category;
 import software.xdev.sessionize.model.Question;
@@ -43,7 +44,7 @@ import java.util.StringJoiner;
   AllResult.JSON_PROPERTY_CATEGORIES,
   AllResult.JSON_PROPERTY_ROOMS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T17:30:53.867882+02:00[Europe/Berlin]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AllResult {
   public static final String JSON_PROPERTY_SESSIONS = "sessions";
   private List<SessionAll> sessions = new ArrayList<>();
