@@ -8,10 +8,18 @@ Java client for the [Sessionize API](https://sessionize.com/playbook/api)
 
 This client [is generated](./sessionize-java-client/pom.xml) from an [``openapi.yml``](./openapi/openapi.yml) using [OpenAPI Generator](https://openapi-generator.tech/).
 
-Currently this client supports the following endpoints of the Sessionize API ``v2``:
-* ``/view/All``
-* ``/view/Speakers``
-* ``/view/Sessions``
+#### API Support Status
+
+<details><summary>Supported endpoints</summary>
+
+Sessionize API ``v2``:
+* ``view``
+  * All ✔️
+  * Speakers ✔️
+  * SpeakerEmails ✔️ (undocumented endpoint)
+  * Sessions ✔️
+
+</details>
 
 ## Installation
 [Installation guide for the latest release](https://github.com/xdev-software/sessionize-java-client/releases/latest#Installation)
