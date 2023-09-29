@@ -63,7 +63,7 @@ paths:
       tags:
         - "speakers"
       operationId: getAllSpeakersEmails
-      description: 'Undocumented endpoint for retrieving the speaker-emails'
+      description: 'Undocumented endpoint for retrieving the speakers with emails'
       parameters:
         - name: endpointId
           in: path

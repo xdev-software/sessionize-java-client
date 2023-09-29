@@ -129,7 +129,7 @@ public class SpeakersApi {
 
   /**
    * 
-   * Undocumented endpoint for retrieving the speaker-emails
+   * Undocumented endpoint for retrieving the speakers with emails
    * @param endpointId  (required)
    * @param s Special key that is only available/retrievable for unlocked admins (Contacting Sessionize-Support is required) (required)
    * @return List&lt;SpeakerWithEmail&gt;
@@ -142,7 +142,7 @@ public class SpeakersApi {
 
   /**
    * 
-   * Undocumented endpoint for retrieving the speaker-emails
+   * Undocumented endpoint for retrieving the speakers with emails
    * @param endpointId  (required)
    * @param s Special key that is only available/retrievable for unlocked admins (Contacting Sessionize-Support is required) (required)
    * @param additionalHeaders additionalHeaders for this call
