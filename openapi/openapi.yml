@@ -58,6 +58,35 @@ paths:
                 items:
                   $ref: '#/components/schemas/Speaker'
       deprecated: false
+  /api/v2/{endpointId}/view/SpeakersEmails:
+    get:
+      tags:
+        - "speakers"
+      operationId: getAllSpeakersEmails
+      description: 'Undocumented endpoint for retrieving the speakers with emails'
+      parameters:
+        - name: endpointId
+          in: path
+          required: true
+          schema:
+            type: string
+          example: jl4ktls0
+        - name: s
+          in: query
+          required: true
+          schema:
+            type: string
+          description: 'Special key that is only available/retrievable for unlocked admins (Contacting Sessionize-Support is required)'
+      responses:
+        '200':
+          description: Returned if the request is successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SpeakerWithEmail'
+      deprecated: false
   /api/v2/{endpointId}/view/Sessions:
     get:
       tags:
@@ -341,7 +370,7 @@ components:
       required:
         - id
         - name
-    BaseSpeaker:
+    BaseSpeakerEssential:
       type: object
       readOnly: true
       properties:
@@ -352,34 +381,41 @@ components:
           type: string
         lastName:
           type: string
-        bio:
-          type: string
-          nullable: true
-        tagLine:
-          type: string
-          nullable: true
-        profilePicture:
-          type: string
-          format: uri
-          nullable: true
-        isTopSpeaker:
-          type: boolean
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/Link'
-        fullName:
-          type: string
-        # categoryItems - Always empty; ignored
-        # questionAnswers - Always empty; ignored 
       required:
         - firstName
-        - fullName
         - id
-        - isTopSpeaker
         - lastName
-        - links
-        - tagLine
+    BaseSpeaker:
+      allOf:
+        - $ref: '#/components/schemas/BaseSpeakerEssential'
+        - type: object
+          readOnly: true
+          properties:
+            bio:
+              type: string
+              nullable: true
+            tagLine:
+              type: string
+              nullable: true
+            profilePicture:
+              type: string
+              format: uri
+              nullable: true
+            isTopSpeaker:
+              type: boolean
+            links:
+              type: array
+              items:
+                $ref: '#/components/schemas/Link'
+            fullName:
+              type: string
+            # categoryItems - Always empty; ignored
+            # questionAnswers - Always empty; ignored 
+          required:
+            - fullName
+            - isTopSpeaker
+            - links
+            - tagLine
     Speaker:
       allOf:
         - $ref: '#/components/schemas/BaseSpeaker'
@@ -404,6 +440,17 @@ components:
                 type: integer # All Endpoint
           required:
             - sessions
+    SpeakerWithEmail:
+      allOf:
+        - $ref: '#/components/schemas/BaseSpeakerEssential'
+        - type: object
+          readOnly: true
+          properties:
+            email:
+              type: string
+              format: email
+          required:
+            - email
     SpeakerMinimal:
       type: object
       readOnly: true
