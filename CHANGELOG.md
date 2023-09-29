@@ -1,3 +1,7 @@
+# 1.1.0
+* Added new endpoint:
+  * ``/view/SpeakerEmails`` (undocumented)
+
 # 1.0.1
 * Shrunk generated code a bit
 * Updated openapi generator
