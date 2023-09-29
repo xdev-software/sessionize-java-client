@@ -20,6 +20,7 @@ import software.xdev.sessionize.client.Configuration;
 import software.xdev.sessionize.client.Pair;
 
 import software.xdev.sessionize.model.Speaker;
+import software.xdev.sessionize.model.SpeakerWithEmail;
 
 
 import java.util.ArrayList;
@@ -109,6 +110,89 @@ public class SpeakersApi {
     String[] localVarAuthNames = new String[] {  };
 
     TypeReference<List<Speaker>> localVarReturnType = new TypeReference<List<Speaker>>() {};
+    return apiClient.invokeAPI(
+        localVarPath,
+        "GET",
+        localVarQueryParams,
+        localVarCollectionQueryParams,
+        localVarQueryStringJoiner.toString(),
+        localVarPostBody,
+        localVarHeaderParams,
+        localVarCookieParams,
+        localVarFormParams,
+        localVarAccept,
+        localVarContentType,
+        localVarAuthNames,
+        localVarReturnType
+    );
+  }
+
+  /**
+   * 
+   * Undocumented endpoint for retrieving the speaker-emails
+   * @param endpointId  (required)
+   * @param s Special key that is only available/retrievable for unlocked admins (Contacting Sessionize-Support is required) (required)
+   * @return List&lt;SpeakerWithEmail&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<SpeakerWithEmail> getAllSpeakersEmails(String endpointId, String s) throws ApiException {
+    return this.getAllSpeakersEmails(endpointId, s, Collections.emptyMap());
+  }
+
+
+  /**
+   * 
+   * Undocumented endpoint for retrieving the speaker-emails
+   * @param endpointId  (required)
+   * @param s Special key that is only available/retrievable for unlocked admins (Contacting Sessionize-Support is required) (required)
+   * @param additionalHeaders additionalHeaders for this call
+   * @return List&lt;SpeakerWithEmail&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<SpeakerWithEmail> getAllSpeakersEmails(String endpointId, String s, Map<String, String> additionalHeaders) throws ApiException {
+    Object localVarPostBody = null;
+    
+    // verify the required parameter 'endpointId' is set
+    if (endpointId == null) {
+      throw new ApiException(400, "Missing the required parameter 'endpointId' when calling getAllSpeakersEmails");
+    }
+    
+    // verify the required parameter 's' is set
+    if (s == null) {
+      throw new ApiException(400, "Missing the required parameter 's' when calling getAllSpeakersEmails");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/api/v2/{endpointId}/view/SpeakersEmails"
+      .replaceAll("\\{" + "endpointId" + "\\}", apiClient.escapeString(endpointId.toString()));
+
+    StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
+    String localVarQueryParameterBaseName;
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, String> localVarCookieParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPair("s", s));
+    
+    localVarHeaderParams.putAll(additionalHeaders);
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    TypeReference<List<SpeakerWithEmail>> localVarReturnType = new TypeReference<List<SpeakerWithEmail>>() {};
     return apiClient.invokeAPI(
         localVarPath,
         "GET",
