@@ -1,3 +1,6 @@
+# 1.1.3
+* Updated dependencies
+
 # 1.1.2
 * Removed unused dependency ``com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider``
 
