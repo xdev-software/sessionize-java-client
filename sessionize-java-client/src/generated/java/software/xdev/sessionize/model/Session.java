@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
+import software.xdev.sessionize.model.CategorySession;
 import software.xdev.sessionize.model.QuestionAnswerFull;
 import software.xdev.sessionize.model.SpeakerMinimal;
 import software.xdev.sessionize.model.Status;
@@ -56,7 +57,8 @@ import java.util.StringJoiner;
   Session.JSON_PROPERTY_ID,
   Session.JSON_PROPERTY_ROOM,
   Session.JSON_PROPERTY_SPEAKERS,
-  Session.JSON_PROPERTY_QUESTION_ANSWERS
+  Session.JSON_PROPERTY_QUESTION_ANSWERS,
+  Session.JSON_PROPERTY_CATEGORIES
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Session {
@@ -104,6 +106,9 @@ public class Session {
 
   public static final String JSON_PROPERTY_QUESTION_ANSWERS = "questionAnswers";
   private List<QuestionAnswerFull> questionAnswers = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_CATEGORIES = "categories";
+  private List<CategorySession> categories = new ArrayList<>();
 
   public Session() {
   }
@@ -545,6 +550,40 @@ public class Session {
     this.questionAnswers = questionAnswers;
   }
 
+
+  public Session categories(List<CategorySession> categories) {
+    
+    this.categories = categories;
+    return this;
+  }
+
+  public Session addCategoriesItem(CategorySession categoriesItem) {
+    if (this.categories == null) {
+      this.categories = new ArrayList<>();
+    }
+    this.categories.add(categoriesItem);
+    return this;
+  }
+
+   /**
+   * Get categories
+   * @return categories
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CATEGORIES)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public List<CategorySession> getCategories() {
+    return categories;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CATEGORIES)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCategories(List<CategorySession> categories) {
+    this.categories = categories;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -568,7 +607,8 @@ public class Session {
         Objects.equals(this.id, session.id) &&
         Objects.equals(this.room, session.room) &&
         Objects.equals(this.speakers, session.speakers) &&
-        Objects.equals(this.questionAnswers, session.questionAnswers);
+        Objects.equals(this.questionAnswers, session.questionAnswers) &&
+        Objects.equals(this.categories, session.categories);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -577,7 +617,7 @@ public class Session {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, hashCodeNullable(description), startsAt, endsAt, isServiceSession, isPlenumSession, categoryItems, roomId, hashCodeNullable(liveUrl), hashCodeNullable(recordingUrl), status, id, room, speakers, questionAnswers);
+    return Objects.hash(title, hashCodeNullable(description), startsAt, endsAt, isServiceSession, isPlenumSession, categoryItems, roomId, hashCodeNullable(liveUrl), hashCodeNullable(recordingUrl), status, id, room, speakers, questionAnswers, categories);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -606,6 +646,7 @@ public class Session {
     sb.append("    room: ").append(toIndentedString(room)).append("\n");
     sb.append("    speakers: ").append(toIndentedString(speakers)).append("\n");
     sb.append("    questionAnswers: ").append(toIndentedString(questionAnswers)).append("\n");
+    sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -802,6 +843,16 @@ public class Session {
       for (int i = 0; i < getQuestionAnswers().size(); i++) {
         if (getQuestionAnswers().get(i) != null) {
           joiner.add(getQuestionAnswers().get(i).toUrlQueryString(String.format("%squestionAnswers%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `categories` to the URL query string
+    if (getCategories() != null) {
+      for (int i = 0; i < getCategories().size(); i++) {
+        if (getCategories().get(i) != null) {
+          joiner.add(getCategories().get(i).toUrlQueryString(String.format("%scategories%s%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }

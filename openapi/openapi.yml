@@ -130,7 +130,7 @@ components:
         categories:
           type: array
           items:
-            $ref: '#/components/schemas/Category'
+            $ref: '#/components/schemas/CategoryAll'
         rooms:
           type: array
           items:
@@ -141,28 +141,50 @@ components:
         - rooms
         - sessions
         - speakers
-    Category:
+    BaseCategory:
       type: object
       readOnly: true
       properties:
         id:
           type: integer
-        title:
-          type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/CategoryItem'
         sort:
           type: integer
-        type:
-          type: string
       required:
         - id
-        - items
         - sort
-        - title
-        - type
+    CategorySession:
+      allOf:
+      - $ref: '#/components/schemas/BaseCategory'
+      - type: object
+        readOnly: true
+        properties:
+          name:
+            type: string
+          categoryItems:
+            type: array
+            items:
+              $ref: '#/components/schemas/CategoryItem'
+        required:
+          - name
+          - categoryItems
+    CategoryAll:
+      allOf:
+      - $ref: '#/components/schemas/BaseCategory'
+      - type: object
+        readOnly: true
+        properties:
+          title:
+            type: string
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/CategoryItemAll'
+          type:
+            type: string
+        required:
+          - title
+          - items
+          - type
     CategoryItem:
       type: object
       readOnly: true
@@ -171,12 +193,19 @@ components:
           type: integer
         name:
           type: string
-        sort:
-          type: integer
       required:
         - id
         - name
-        - sort
+    CategoryItemAll:
+      allOf:
+      - $ref: '#/components/schemas/CategoryItem'
+      - type: object
+        readOnly: true
+        properties:
+          sort:
+            type: integer
+        required:
+          - sort
     Link:
       type: object
       readOnly: true
@@ -304,7 +333,7 @@ components:
         - startsAt
         - status
         - title
-    Session: # only for Sessions Endpoint
+    Session:
       allOf:
       - $ref: '#/components/schemas/BaseSession'
       - type: object
@@ -324,11 +353,16 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/QuestionAnswerFull'
+          categories:
+            type: array
+            items:
+              $ref: '#/components/schemas/CategorySession'
         required:
           - id
           - room
           - questionAnswers
           - speakers
+          - categories
     SessionAll:
       allOf:
       - $ref: '#/components/schemas/BaseSession'

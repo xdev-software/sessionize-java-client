@@ -20,6 +20,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import software.xdev.sessionize.model.CategoryItem;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.io.UnsupportedEncodingException;
@@ -27,24 +31,32 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * CategoryItem
+ * CategorySession
  */
 @JsonPropertyOrder({
-  CategoryItem.JSON_PROPERTY_ID,
-  CategoryItem.JSON_PROPERTY_NAME
+  CategorySession.JSON_PROPERTY_ID,
+  CategorySession.JSON_PROPERTY_SORT,
+  CategorySession.JSON_PROPERTY_NAME,
+  CategorySession.JSON_PROPERTY_CATEGORY_ITEMS
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class CategoryItem {
+public class CategorySession {
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;
+
+  public static final String JSON_PROPERTY_SORT = "sort";
+  private Integer sort;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
-  public CategoryItem() {
+  public static final String JSON_PROPERTY_CATEGORY_ITEMS = "categoryItems";
+  private List<CategoryItem> categoryItems = new ArrayList<>();
+
+  public CategorySession() {
   }
 
-  public CategoryItem id(Integer id) {
+  public CategorySession id(Integer id) {
     
     this.id = id;
     return this;
@@ -70,7 +82,33 @@ public class CategoryItem {
   }
 
 
-  public CategoryItem name(String name) {
+  public CategorySession sort(Integer sort) {
+    
+    this.sort = sort;
+    return this;
+  }
+
+   /**
+   * Get sort
+   * @return sort
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_SORT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Integer getSort() {
+    return sort;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SORT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setSort(Integer sort) {
+    this.sort = sort;
+  }
+
+
+  public CategorySession name(String name) {
     
     this.name = name;
     return this;
@@ -95,6 +133,40 @@ public class CategoryItem {
     this.name = name;
   }
 
+
+  public CategorySession categoryItems(List<CategoryItem> categoryItems) {
+    
+    this.categoryItems = categoryItems;
+    return this;
+  }
+
+  public CategorySession addCategoryItemsItem(CategoryItem categoryItemsItem) {
+    if (this.categoryItems == null) {
+      this.categoryItems = new ArrayList<>();
+    }
+    this.categoryItems.add(categoryItemsItem);
+    return this;
+  }
+
+   /**
+   * Get categoryItems
+   * @return categoryItems
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CATEGORY_ITEMS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public List<CategoryItem> getCategoryItems() {
+    return categoryItems;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CATEGORY_ITEMS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCategoryItems(List<CategoryItem> categoryItems) {
+    this.categoryItems = categoryItems;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -103,22 +175,26 @@ public class CategoryItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CategoryItem categoryItem = (CategoryItem) o;
-    return Objects.equals(this.id, categoryItem.id) &&
-        Objects.equals(this.name, categoryItem.name);
+    CategorySession categorySession = (CategorySession) o;
+    return Objects.equals(this.id, categorySession.id) &&
+        Objects.equals(this.sort, categorySession.sort) &&
+        Objects.equals(this.name, categorySession.name) &&
+        Objects.equals(this.categoryItems, categorySession.categoryItems);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name);
+    return Objects.hash(id, sort, name, categoryItems);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CategoryItem {\n");
+    sb.append("class CategorySession {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    categoryItems: ").append(toIndentedString(categoryItems)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -176,6 +252,16 @@ public class CategoryItem {
       }
     }
 
+    // add `sort` to the URL query string
+    if (getSort() != null) {
+      try {
+        joiner.add(String.format("%ssort%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSort()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
     // add `name` to the URL query string
     if (getName() != null) {
       try {
@@ -183,6 +269,16 @@ public class CategoryItem {
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
+      }
+    }
+
+    // add `categoryItems` to the URL query string
+    if (getCategoryItems() != null) {
+      for (int i = 0; i < getCategoryItems().size(); i++) {
+        if (getCategoryItems().get(i) != null) {
+          joiner.add(getCategoryItems().get(i).toUrlQueryString(String.format("%scategoryItems%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
       }
     }
 
