@@ -462,7 +462,7 @@ public class Session {
    * Get room
    * @return room
   **/
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ROOM)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 

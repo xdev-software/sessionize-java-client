@@ -304,7 +304,7 @@ components:
         - startsAt
         - status
         - title
-    Session:
+    Session: # only for Sessions Endpoint
       allOf:
       - $ref: '#/components/schemas/BaseSession'
       - type: object
@@ -314,15 +314,16 @@ components:
             type: string
             format: integer # Sessions Endpoint contains only numeric IDs
           room:
-            type: string # Sessions Endpoint
+            type: string
+            nullable: true
           speakers:
             type: array
             items:
-              $ref: '#/components/schemas/SpeakerMinimal' # Sessions Endpoint
+              $ref: '#/components/schemas/SpeakerMinimal'
           questionAnswers:
             type: array
             items:
-              $ref: '#/components/schemas/QuestionAnswerFull' # Sessions Endpoint
+              $ref: '#/components/schemas/QuestionAnswerFull'
         required:
           - id
           - room
