@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import software.xdev.sessionize.model.Link;
+import software.xdev.sessionize.model.QuestionAnswerFull;
 import software.xdev.sessionize.model.SessionMinimal;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -50,7 +51,8 @@ import java.util.StringJoiner;
   Speaker.JSON_PROPERTY_IS_TOP_SPEAKER,
   Speaker.JSON_PROPERTY_LINKS,
   Speaker.JSON_PROPERTY_FULL_NAME,
-  Speaker.JSON_PROPERTY_SESSIONS
+  Speaker.JSON_PROPERTY_SESSIONS,
+  Speaker.JSON_PROPERTY_QUESTION_ANSWERS
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Speaker {
@@ -83,6 +85,9 @@ public class Speaker {
 
   public static final String JSON_PROPERTY_SESSIONS = "sessions";
   private List<SessionMinimal> sessions = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_QUESTION_ANSWERS = "questionAnswers";
+  private List<QuestionAnswerFull> questionAnswers = new ArrayList<>();
 
   public Speaker() {
   }
@@ -378,6 +383,40 @@ public class Speaker {
     this.sessions = sessions;
   }
 
+
+  public Speaker questionAnswers(List<QuestionAnswerFull> questionAnswers) {
+    
+    this.questionAnswers = questionAnswers;
+    return this;
+  }
+
+  public Speaker addQuestionAnswersItem(QuestionAnswerFull questionAnswersItem) {
+    if (this.questionAnswers == null) {
+      this.questionAnswers = new ArrayList<>();
+    }
+    this.questionAnswers.add(questionAnswersItem);
+    return this;
+  }
+
+   /**
+   * Get questionAnswers
+   * @return questionAnswers
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_QUESTION_ANSWERS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public List<QuestionAnswerFull> getQuestionAnswers() {
+    return questionAnswers;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_QUESTION_ANSWERS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setQuestionAnswers(List<QuestionAnswerFull> questionAnswers) {
+    this.questionAnswers = questionAnswers;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -396,7 +435,8 @@ public class Speaker {
         Objects.equals(this.isTopSpeaker, speaker.isTopSpeaker) &&
         Objects.equals(this.links, speaker.links) &&
         Objects.equals(this.fullName, speaker.fullName) &&
-        Objects.equals(this.sessions, speaker.sessions);
+        Objects.equals(this.sessions, speaker.sessions) &&
+        Objects.equals(this.questionAnswers, speaker.questionAnswers);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -405,7 +445,7 @@ public class Speaker {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, lastName, hashCodeNullable(bio), tagLine, hashCodeNullable(profilePicture), isTopSpeaker, links, fullName, sessions);
+    return Objects.hash(id, firstName, lastName, hashCodeNullable(bio), tagLine, hashCodeNullable(profilePicture), isTopSpeaker, links, fullName, sessions, questionAnswers);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -429,6 +469,7 @@ public class Speaker {
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
     sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
+    sb.append("    questionAnswers: ").append(toIndentedString(questionAnswers)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -571,6 +612,16 @@ public class Speaker {
       for (int i = 0; i < getSessions().size(); i++) {
         if (getSessions().get(i) != null) {
           joiner.add(getSessions().get(i).toUrlQueryString(String.format("%ssessions%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `questionAnswers` to the URL query string
+    if (getQuestionAnswers() != null) {
+      for (int i = 0; i < getQuestionAnswers().size(); i++) {
+        if (getQuestionAnswers().get(i) != null) {
+          joiner.add(getQuestionAnswers().get(i).toUrlQueryString(String.format("%squestionAnswers%s%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
