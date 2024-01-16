@@ -1,3 +1,14 @@
+# 1.2.0
+* Added/Corrected attributes of
+  * ``/view/All``
+    * ``session.categories``
+    * ``speaker.questionAnswers``
+  * ``/view/Speakers``
+    * ``questionAnswers``
+  * ``/view/Sessions``
+    * ``room``
+    * ``categories``
+
 # 1.1.3
 * Updated dependencies
 

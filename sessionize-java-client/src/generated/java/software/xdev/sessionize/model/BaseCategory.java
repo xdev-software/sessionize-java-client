@@ -27,24 +27,24 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * CategoryItem
+ * BaseCategory
  */
 @JsonPropertyOrder({
-  CategoryItem.JSON_PROPERTY_ID,
-  CategoryItem.JSON_PROPERTY_NAME
+  BaseCategory.JSON_PROPERTY_ID,
+  BaseCategory.JSON_PROPERTY_SORT
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class CategoryItem {
+public class BaseCategory {
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;
 
-  public static final String JSON_PROPERTY_NAME = "name";
-  private String name;
+  public static final String JSON_PROPERTY_SORT = "sort";
+  private Integer sort;
 
-  public CategoryItem() {
+  public BaseCategory() {
   }
 
-  public CategoryItem id(Integer id) {
+  public BaseCategory id(Integer id) {
     
     this.id = id;
     return this;
@@ -70,29 +70,29 @@ public class CategoryItem {
   }
 
 
-  public CategoryItem name(String name) {
+  public BaseCategory sort(Integer sort) {
     
-    this.name = name;
+    this.sort = sort;
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get sort
+   * @return sort
   **/
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getName() {
-    return name;
+  public Integer getSort() {
+    return sort;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
-    this.name = name;
+  public void setSort(Integer sort) {
+    this.sort = sort;
   }
 
   @Override
@@ -103,22 +103,22 @@ public class CategoryItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CategoryItem categoryItem = (CategoryItem) o;
-    return Objects.equals(this.id, categoryItem.id) &&
-        Objects.equals(this.name, categoryItem.name);
+    BaseCategory baseCategory = (BaseCategory) o;
+    return Objects.equals(this.id, baseCategory.id) &&
+        Objects.equals(this.sort, baseCategory.sort);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name);
+    return Objects.hash(id, sort);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CategoryItem {\n");
+    sb.append("class BaseCategory {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -176,10 +176,10 @@ public class CategoryItem {
       }
     }
 
-    // add `name` to the URL query string
-    if (getName() != null) {
+    // add `sort` to the URL query string
+    if (getSort() != null) {
       try {
-        joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format("%ssort%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSort()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

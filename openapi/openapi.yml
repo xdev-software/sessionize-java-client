@@ -130,7 +130,7 @@ components:
         categories:
           type: array
           items:
-            $ref: '#/components/schemas/Category'
+            $ref: '#/components/schemas/CategoryAll'
         rooms:
           type: array
           items:
@@ -141,28 +141,50 @@ components:
         - rooms
         - sessions
         - speakers
-    Category:
+    BaseCategory:
       type: object
       readOnly: true
       properties:
         id:
           type: integer
-        title:
-          type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/CategoryItem'
         sort:
           type: integer
-        type:
-          type: string
       required:
         - id
-        - items
         - sort
-        - title
-        - type
+    CategorySession:
+      allOf:
+        - $ref: '#/components/schemas/BaseCategory'
+        - type: object
+          readOnly: true
+          properties:
+            name:
+              type: string
+            categoryItems:
+              type: array
+              items:
+                $ref: '#/components/schemas/CategoryItem'
+          required:
+            - name
+            - categoryItems
+    CategoryAll:
+      allOf:
+        - $ref: '#/components/schemas/BaseCategory'
+        - type: object
+          readOnly: true
+          properties:
+            title:
+              type: string
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/CategoryItemAll'
+            type:
+              type: string
+          required:
+            - items
+            - title
+            - type
     CategoryItem:
       type: object
       readOnly: true
@@ -171,12 +193,19 @@ components:
           type: integer
         name:
           type: string
-        sort:
-          type: integer
       required:
         - id
         - name
-        - sort
+    CategoryItemAll:
+      allOf:
+        - $ref: '#/components/schemas/CategoryItem'
+        - type: object
+          readOnly: true
+          properties:
+            sort:
+              type: integer
+          required:
+            - sort
     Link:
       type: object
       readOnly: true
@@ -306,45 +335,53 @@ components:
         - title
     Session:
       allOf:
-      - $ref: '#/components/schemas/BaseSession'
-      - type: object
-        readOnly: true
-        properties:
-          id:
-            type: string
-            format: integer # Sessions Endpoint contains only numeric IDs
-          speakers:
-            type: array
-            items:
-              $ref: '#/components/schemas/SpeakerMinimal' # Sessions Endpoint
-          questionAnswers:
-            type: array
-            items:
-              $ref: '#/components/schemas/QuestionAnswerFull' # Sessions Endpoint
-        required:
-          - id
-          - questionAnswers
-          - speakers
+        - $ref: '#/components/schemas/BaseSession'
+        - type: object
+          readOnly: true
+          properties:
+            id:
+              type: string
+              format: integer # Sessions Endpoint contains only numeric IDs
+            room:
+              type: string
+              nullable: true
+            speakers:
+              type: array
+              items:
+                $ref: '#/components/schemas/SpeakerMinimal'
+            questionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionAnswerFull'
+            categories:
+              type: array
+              items:
+                $ref: '#/components/schemas/CategorySession'
+          required:
+            - id
+            - questionAnswers
+            - speakers
+            - categories
     SessionAll:
       allOf:
-      - $ref: '#/components/schemas/BaseSession'
-      - type: object
-        readOnly: true
-        properties:
-          id:
-            type: string # All Endpoint contains numeric IDs mixed with UUIDs
-          speakers:
-            type: array
-            items:
-              type: string # All Endpoint
-          questionAnswers:
-            type: array
-            items:
-              $ref: '#/components/schemas/QuestionAnswer' # All Endpoint
-        required:
-          - id
-          - questionAnswers
-          - speakers
+        - $ref: '#/components/schemas/BaseSession'
+        - type: object
+          readOnly: true
+          properties:
+            id:
+              type: string # All Endpoint contains numeric IDs mixed with UUIDs
+            speakers:
+              type: array
+              items:
+                type: string # All Endpoint
+            questionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionAnswer' # All Endpoint
+          required:
+            - id
+            - questionAnswers
+            - speakers
     SessionGroup:
       type: object
       readOnly: true
@@ -410,7 +447,6 @@ components:
             fullName:
               type: string
             # categoryItems - Always empty; ignored
-            # questionAnswers - Always empty; ignored 
           required:
             - fullName
             - isTopSpeaker
@@ -425,9 +461,14 @@ components:
             sessions:
               type: array
               items:
-                $ref: '#/components/schemas/SessionMinimal' # Speakers Endpoint
+                $ref: '#/components/schemas/SessionMinimal'
+            questionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionAnswerFull'
           required:
             - sessions
+            - questionAnswers
     SpeakerAll:
       allOf:
         - $ref: '#/components/schemas/BaseSpeaker'
@@ -438,8 +479,13 @@ components:
               type: array
               items:
                 type: integer # All Endpoint
+            questionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionAnswer'
           required:
             - sessions
+            - questionAnswers
     SpeakerWithEmail:
       allOf:
         - $ref: '#/components/schemas/BaseSpeakerEssential'

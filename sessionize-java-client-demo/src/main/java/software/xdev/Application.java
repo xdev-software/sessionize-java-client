@@ -33,10 +33,15 @@ public final class Application
 	
 	public static class CustomApiClient extends ApiClient
 	{
+		@SuppressWarnings("checkstyle:MagicNumber") // timeout
 		public CustomApiClient()
 		{
 			this.setConnectTimeout(30_000);
 			this.setUserAgent("Sessionize-Java-Client-Demo");
 		}
+	}
+	
+	private Application()
+	{
 	}
 }

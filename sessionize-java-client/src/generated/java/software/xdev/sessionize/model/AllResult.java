@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import software.xdev.sessionize.model.Category;
+import software.xdev.sessionize.model.CategoryAll;
 import software.xdev.sessionize.model.Question;
 import software.xdev.sessionize.model.Room;
 import software.xdev.sessionize.model.SessionAll;
@@ -56,7 +56,7 @@ public class AllResult {
   private List<Question> questions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CATEGORIES = "categories";
-  private List<Category> categories = new ArrayList<>();
+  private List<CategoryAll> categories = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ROOMS = "rooms";
   private List<Room> rooms = new ArrayList<>();
@@ -166,13 +166,13 @@ public class AllResult {
   }
 
 
-  public AllResult categories(List<Category> categories) {
+  public AllResult categories(List<CategoryAll> categories) {
     
     this.categories = categories;
     return this;
   }
 
-  public AllResult addCategoriesItem(Category categoriesItem) {
+  public AllResult addCategoriesItem(CategoryAll categoriesItem) {
     if (this.categories == null) {
       this.categories = new ArrayList<>();
     }
@@ -188,14 +188,14 @@ public class AllResult {
   @JsonProperty(JSON_PROPERTY_CATEGORIES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<Category> getCategories() {
+  public List<CategoryAll> getCategories() {
     return categories;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CATEGORIES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCategories(List<Category> categories) {
+  public void setCategories(List<CategoryAll> categories) {
     this.categories = categories;
   }
 
