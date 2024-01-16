@@ -154,37 +154,37 @@ components:
         - sort
     CategorySession:
       allOf:
-      - $ref: '#/components/schemas/BaseCategory'
-      - type: object
-        readOnly: true
-        properties:
-          name:
-            type: string
-          categoryItems:
-            type: array
-            items:
-              $ref: '#/components/schemas/CategoryItem'
-        required:
-          - name
-          - categoryItems
+        - $ref: '#/components/schemas/BaseCategory'
+        - type: object
+          readOnly: true
+          properties:
+            name:
+              type: string
+            categoryItems:
+              type: array
+              items:
+                $ref: '#/components/schemas/CategoryItem'
+          required:
+            - name
+            - categoryItems
     CategoryAll:
       allOf:
-      - $ref: '#/components/schemas/BaseCategory'
-      - type: object
-        readOnly: true
-        properties:
-          title:
-            type: string
-          items:
-            type: array
+        - $ref: '#/components/schemas/BaseCategory'
+        - type: object
+          readOnly: true
+          properties:
+            title:
+              type: string
             items:
-              $ref: '#/components/schemas/CategoryItemAll'
-          type:
-            type: string
-        required:
-          - title
-          - items
-          - type
+              type: array
+              items:
+                $ref: '#/components/schemas/CategoryItemAll'
+            type:
+              type: string
+          required:
+            - items
+            - title
+            - type
     CategoryItem:
       type: object
       readOnly: true
@@ -198,14 +198,14 @@ components:
         - name
     CategoryItemAll:
       allOf:
-      - $ref: '#/components/schemas/CategoryItem'
-      - type: object
-        readOnly: true
-        properties:
-          sort:
-            type: integer
-        required:
-          - sort
+        - $ref: '#/components/schemas/CategoryItem'
+        - type: object
+          readOnly: true
+          properties:
+            sort:
+              type: integer
+          required:
+            - sort
     Link:
       type: object
       readOnly: true
@@ -335,54 +335,53 @@ components:
         - title
     Session:
       allOf:
-      - $ref: '#/components/schemas/BaseSession'
-      - type: object
-        readOnly: true
-        properties:
-          id:
-            type: string
-            format: integer # Sessions Endpoint contains only numeric IDs
-          room:
-            type: string
-            nullable: true
-          speakers:
-            type: array
-            items:
-              $ref: '#/components/schemas/SpeakerMinimal'
-          questionAnswers:
-            type: array
-            items:
-              $ref: '#/components/schemas/QuestionAnswerFull'
-          categories:
-            type: array
-            items:
-              $ref: '#/components/schemas/CategorySession'
-        required:
-          - id
-          - room
-          - questionAnswers
-          - speakers
-          - categories
+        - $ref: '#/components/schemas/BaseSession'
+        - type: object
+          readOnly: true
+          properties:
+            id:
+              type: string
+              format: integer # Sessions Endpoint contains only numeric IDs
+            room:
+              type: string
+              nullable: true
+            speakers:
+              type: array
+              items:
+                $ref: '#/components/schemas/SpeakerMinimal'
+            questionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionAnswerFull'
+            categories:
+              type: array
+              items:
+                $ref: '#/components/schemas/CategorySession'
+          required:
+            - id
+            - questionAnswers
+            - speakers
+            - categories
     SessionAll:
       allOf:
-      - $ref: '#/components/schemas/BaseSession'
-      - type: object
-        readOnly: true
-        properties:
-          id:
-            type: string # All Endpoint contains numeric IDs mixed with UUIDs
-          speakers:
-            type: array
-            items:
-              type: string # All Endpoint
-          questionAnswers:
-            type: array
-            items:
-              $ref: '#/components/schemas/QuestionAnswer' # All Endpoint
-        required:
-          - id
-          - questionAnswers
-          - speakers
+        - $ref: '#/components/schemas/BaseSession'
+        - type: object
+          readOnly: true
+          properties:
+            id:
+              type: string # All Endpoint contains numeric IDs mixed with UUIDs
+            speakers:
+              type: array
+              items:
+                type: string # All Endpoint
+            questionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionAnswer' # All Endpoint
+          required:
+            - id
+            - questionAnswers
+            - speakers
     SessionGroup:
       type: object
       readOnly: true

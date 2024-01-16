@@ -99,7 +99,7 @@ public class Session {
   private Integer id;
 
   public static final String JSON_PROPERTY_ROOM = "room";
-  private String room;
+  private JsonNullable<String> room = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_SPEAKERS = "speakers";
   private List<SpeakerMinimal> speakers = new ArrayList<>();
@@ -458,8 +458,8 @@ public class Session {
 
 
   public Session room(String room) {
+    this.room = JsonNullable.<String>of(room);
     
-    this.room = room;
     return this;
   }
 
@@ -468,18 +468,26 @@ public class Session {
    * @return room
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ROOM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonIgnore
 
   public String getRoom() {
-    return room;
+        return room.orElse(null);
   }
 
-
   @JsonProperty(JSON_PROPERTY_ROOM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRoom(String room) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public JsonNullable<String> getRoom_JsonNullable() {
+    return room;
+  }
+  
+  @JsonProperty(JSON_PROPERTY_ROOM)
+  public void setRoom_JsonNullable(JsonNullable<String> room) {
     this.room = room;
+  }
+
+  public void setRoom(String room) {
+    this.room = JsonNullable.<String>of(room);
   }
 
 
@@ -605,7 +613,7 @@ public class Session {
         equalsNullable(this.recordingUrl, session.recordingUrl) &&
         Objects.equals(this.status, session.status) &&
         Objects.equals(this.id, session.id) &&
-        Objects.equals(this.room, session.room) &&
+        equalsNullable(this.room, session.room) &&
         Objects.equals(this.speakers, session.speakers) &&
         Objects.equals(this.questionAnswers, session.questionAnswers) &&
         Objects.equals(this.categories, session.categories);
@@ -617,7 +625,7 @@ public class Session {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, hashCodeNullable(description), startsAt, endsAt, isServiceSession, isPlenumSession, categoryItems, roomId, hashCodeNullable(liveUrl), hashCodeNullable(recordingUrl), status, id, room, speakers, questionAnswers, categories);
+    return Objects.hash(title, hashCodeNullable(description), startsAt, endsAt, isServiceSession, isPlenumSession, categoryItems, roomId, hashCodeNullable(liveUrl), hashCodeNullable(recordingUrl), status, id, hashCodeNullable(room), speakers, questionAnswers, categories);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
