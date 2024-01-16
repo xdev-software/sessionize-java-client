@@ -54,6 +54,7 @@ import java.util.StringJoiner;
   Session.JSON_PROPERTY_RECORDING_URL,
   Session.JSON_PROPERTY_STATUS,
   Session.JSON_PROPERTY_ID,
+  Session.JSON_PROPERTY_ROOM,
   Session.JSON_PROPERTY_SPEAKERS,
   Session.JSON_PROPERTY_QUESTION_ANSWERS
 })
@@ -94,6 +95,9 @@ public class Session {
 
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;
+
+  public static final String JSON_PROPERTY_ROOM = "room";
+  private String room;
 
   public static final String JSON_PROPERTY_SPEAKERS = "speakers";
   private List<SpeakerMinimal> speakers = new ArrayList<>();
@@ -448,6 +452,32 @@ public class Session {
   }
 
 
+  public Session room(String room) {
+    
+    this.room = room;
+    return this;
+  }
+
+   /**
+   * Get room
+   * @return room
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ROOM)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getRoom() {
+    return room;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ROOM)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setRoom(String room) {
+    this.room = room;
+  }
+
+
   public Session speakers(List<SpeakerMinimal> speakers) {
     
     this.speakers = speakers;
@@ -536,6 +566,7 @@ public class Session {
         equalsNullable(this.recordingUrl, session.recordingUrl) &&
         Objects.equals(this.status, session.status) &&
         Objects.equals(this.id, session.id) &&
+        Objects.equals(this.room, session.room) &&
         Objects.equals(this.speakers, session.speakers) &&
         Objects.equals(this.questionAnswers, session.questionAnswers);
   }
@@ -546,7 +577,7 @@ public class Session {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, hashCodeNullable(description), startsAt, endsAt, isServiceSession, isPlenumSession, categoryItems, roomId, hashCodeNullable(liveUrl), hashCodeNullable(recordingUrl), status, id, speakers, questionAnswers);
+    return Objects.hash(title, hashCodeNullable(description), startsAt, endsAt, isServiceSession, isPlenumSession, categoryItems, roomId, hashCodeNullable(liveUrl), hashCodeNullable(recordingUrl), status, id, room, speakers, questionAnswers);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -572,6 +603,7 @@ public class Session {
     sb.append("    recordingUrl: ").append(toIndentedString(recordingUrl)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    room: ").append(toIndentedString(room)).append("\n");
     sb.append("    speakers: ").append(toIndentedString(speakers)).append("\n");
     sb.append("    questionAnswers: ").append(toIndentedString(questionAnswers)).append("\n");
     sb.append("}");
@@ -739,6 +771,16 @@ public class Session {
     if (getId() != null) {
       try {
         joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
+
+    // add `room` to the URL query string
+    if (getRoom() != null) {
+      try {
+        joiner.add(String.format("%sroom%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRoom()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

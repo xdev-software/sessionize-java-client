@@ -313,6 +313,8 @@ components:
           id:
             type: string
             format: integer # Sessions Endpoint contains only numeric IDs
+          room:
+            type: string # Sessions Endpoint
           speakers:
             type: array
             items:
@@ -323,6 +325,7 @@ components:
               $ref: '#/components/schemas/QuestionAnswerFull' # Sessions Endpoint
         required:
           - id
+          - room
           - questionAnswers
           - speakers
     SessionAll:
