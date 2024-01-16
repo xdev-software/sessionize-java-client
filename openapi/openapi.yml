@@ -447,7 +447,6 @@ components:
             fullName:
               type: string
             # categoryItems - Always empty; ignored
-            # questionAnswers - Always empty; ignored 
           required:
             - fullName
             - isTopSpeaker
@@ -462,9 +461,14 @@ components:
             sessions:
               type: array
               items:
-                $ref: '#/components/schemas/SessionMinimal' # Speakers Endpoint
+                $ref: '#/components/schemas/SessionMinimal'
+            questionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionAnswerFull'
           required:
             - sessions
+            - questionAnswers
     SpeakerAll:
       allOf:
         - $ref: '#/components/schemas/BaseSpeaker'
@@ -475,8 +479,13 @@ components:
               type: array
               items:
                 type: integer # All Endpoint
+            questionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionAnswer'
           required:
             - sessions
+            - questionAnswers
     SpeakerWithEmail:
       allOf:
         - $ref: '#/components/schemas/BaseSpeakerEssential'
