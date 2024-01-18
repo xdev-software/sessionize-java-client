@@ -1,3 +1,7 @@
+# 1.2.1
+* ⚠️ GroupId changed from ``com.xdev-software`` to ``software.xdev``
+* Updated dependencies
+
 # 1.2.0
 * Added/Corrected attributes of
   * ``/view/All``
