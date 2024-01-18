@@ -1,4 +1,4 @@
-[![Latest version](https://img.shields.io/maven-central/v/com.xdev-software/sessionize-java-client?logo=apache%20maven)](https://mvnrepository.com/artifact/com.xdev-software/sessionize-java-client)
+[![Latest version](https://img.shields.io/maven-central/v/software.xdev/sessionize-java-client?logo=apache%20maven)](https://mvnrepository.com/artifact/software.xdev/sessionize-java-client)
 [![Build](https://img.shields.io/github/actions/workflow/status/xdev-software/sessionize-java-client/checkBuild.yml?branch=develop)](https://github.com/xdev-software/sessionize-java-client/actions/workflows/checkBuild.yml?query=branch%3Adevelop)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=xdev-software_sessionize-java-client&metric=alert_status)](https://sonarcloud.io/dashboard?id=xdev-software_sessionize-java-client)
 [![API Specification Editor](https://img.shields.io/badge/API--Spec-Editor-85ea2d?logo=swagger)](https://editor.swagger.io/?url=https://raw.githubusercontent.com/xdev-software/sessionize-java-client/develop/openapi/openapi.yml)
