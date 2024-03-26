@@ -1,3 +1,7 @@
+# 1.2.2
+* Updated dependencies
+  * Updated to OpenAPI Generator 7.4
+
 # 1.2.1
 * ⚠️ GroupId changed from ``com.xdev-software`` to ``software.xdev``
 * Updated dependencies
