@@ -54,7 +54,6 @@ import java.util.StringJoiner;
   Speaker.JSON_PROPERTY_SESSIONS,
   Speaker.JSON_PROPERTY_QUESTION_ANSWERS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Speaker {
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;

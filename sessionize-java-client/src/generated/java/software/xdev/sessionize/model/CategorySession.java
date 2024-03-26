@@ -39,7 +39,6 @@ import java.util.StringJoiner;
   CategorySession.JSON_PROPERTY_NAME,
   CategorySession.JSON_PROPERTY_CATEGORY_ITEMS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CategorySession {
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;

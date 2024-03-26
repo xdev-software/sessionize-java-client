@@ -33,7 +33,6 @@ import java.util.StringJoiner;
   QuestionAnswer.JSON_PROPERTY_QUESTION_ID,
   QuestionAnswer.JSON_PROPERTY_ANSWER_VALUE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class QuestionAnswer {
   public static final String JSON_PROPERTY_QUESTION_ID = "questionId";
   private Integer questionId;

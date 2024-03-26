@@ -33,7 +33,6 @@ import java.util.StringJoiner;
   SessionMinimal.JSON_PROPERTY_ID,
   SessionMinimal.JSON_PROPERTY_NAME
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SessionMinimal {
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;

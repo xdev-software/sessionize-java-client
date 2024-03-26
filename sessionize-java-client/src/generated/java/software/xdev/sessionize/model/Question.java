@@ -35,7 +35,6 @@ import java.util.StringJoiner;
   Question.JSON_PROPERTY_QUESTION_TYPE,
   Question.JSON_PROPERTY_SORT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Question {
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;

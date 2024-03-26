@@ -34,7 +34,6 @@ import java.util.StringJoiner;
   SpeakerMinimal.JSON_PROPERTY_ID,
   SpeakerMinimal.JSON_PROPERTY_NAME
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SpeakerMinimal {
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;

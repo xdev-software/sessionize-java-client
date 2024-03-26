@@ -40,7 +40,6 @@ import java.util.StringJoiner;
   CategoryAll.JSON_PROPERTY_ITEMS,
   CategoryAll.JSON_PROPERTY_TYPE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CategoryAll {
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;

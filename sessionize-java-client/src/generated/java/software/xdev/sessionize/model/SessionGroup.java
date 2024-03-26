@@ -39,7 +39,6 @@ import java.util.StringJoiner;
   SessionGroup.JSON_PROPERTY_SESSIONS,
   SessionGroup.JSON_PROPERTY_IS_DEFAULT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SessionGroup {
   public static final String JSON_PROPERTY_GROUP_ID = "groupId";
   private Integer groupId;
