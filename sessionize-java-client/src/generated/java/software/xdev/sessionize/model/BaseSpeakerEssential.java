@@ -35,7 +35,6 @@ import java.util.StringJoiner;
   BaseSpeakerEssential.JSON_PROPERTY_FIRST_NAME,
   BaseSpeakerEssential.JSON_PROPERTY_LAST_NAME
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BaseSpeakerEssential {
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;

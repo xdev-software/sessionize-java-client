@@ -34,7 +34,6 @@ import java.util.StringJoiner;
   Room.JSON_PROPERTY_NAME,
   Room.JSON_PROPERTY_SORT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Room {
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;

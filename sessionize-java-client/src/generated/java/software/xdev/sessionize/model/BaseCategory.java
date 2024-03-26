@@ -33,7 +33,6 @@ import java.util.StringJoiner;
   BaseCategory.JSON_PROPERTY_ID,
   BaseCategory.JSON_PROPERTY_SORT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BaseCategory {
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;

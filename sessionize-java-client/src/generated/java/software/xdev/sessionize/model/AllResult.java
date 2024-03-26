@@ -44,7 +44,6 @@ import java.util.StringJoiner;
   AllResult.JSON_PROPERTY_CATEGORIES,
   AllResult.JSON_PROPERTY_ROOMS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AllResult {
   public static final String JSON_PROPERTY_SESSIONS = "sessions";
   private List<SessionAll> sessions = new ArrayList<>();

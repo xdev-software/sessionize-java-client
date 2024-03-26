@@ -33,7 +33,6 @@ import java.util.StringJoiner;
   CategoryItem.JSON_PROPERTY_ID,
   CategoryItem.JSON_PROPERTY_NAME
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CategoryItem {
   public static final String JSON_PROPERTY_ID = "id";
   private Integer id;

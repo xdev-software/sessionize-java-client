@@ -36,7 +36,6 @@ import java.util.StringJoiner;
   SpeakerWithEmail.JSON_PROPERTY_LAST_NAME,
   SpeakerWithEmail.JSON_PROPERTY_EMAIL
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SpeakerWithEmail {
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;

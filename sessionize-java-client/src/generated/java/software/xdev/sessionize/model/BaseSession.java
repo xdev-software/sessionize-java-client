@@ -52,7 +52,6 @@ import java.util.StringJoiner;
   BaseSession.JSON_PROPERTY_RECORDING_URL,
   BaseSession.JSON_PROPERTY_STATUS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class BaseSession {
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;
