@@ -47,7 +47,7 @@ public class SessionGroup {
   private String groupName;
 
   public static final String JSON_PROPERTY_SESSIONS = "sessions";
-  private List<Session> sessions;
+  private List<Session> sessions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_IS_DEFAULT = "isDefault";
   private Boolean isDefault;
