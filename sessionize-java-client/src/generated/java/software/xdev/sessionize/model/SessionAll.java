@@ -41,6 +41,7 @@ import java.util.StringJoiner;
  * SessionAll
  */
 @JsonPropertyOrder({
+  SessionAll.JSON_PROPERTY_ID,
   SessionAll.JSON_PROPERTY_TITLE,
   SessionAll.JSON_PROPERTY_DESCRIPTION,
   SessionAll.JSON_PROPERTY_STARTS_AT,
@@ -52,11 +53,13 @@ import java.util.StringJoiner;
   SessionAll.JSON_PROPERTY_LIVE_URL,
   SessionAll.JSON_PROPERTY_RECORDING_URL,
   SessionAll.JSON_PROPERTY_STATUS,
-  SessionAll.JSON_PROPERTY_ID,
   SessionAll.JSON_PROPERTY_SPEAKERS,
   SessionAll.JSON_PROPERTY_QUESTION_ANSWERS
 })
 public class SessionAll {
+  public static final String JSON_PROPERTY_ID = "id";
+  private String id;
+
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;
 
@@ -90,9 +93,6 @@ public class SessionAll {
   public static final String JSON_PROPERTY_STATUS = "status";
   private Status status;
 
-  public static final String JSON_PROPERTY_ID = "id";
-  private String id;
-
   public static final String JSON_PROPERTY_SPEAKERS = "speakers";
   private List<String> speakers = new ArrayList<>();
 
@@ -101,6 +101,32 @@ public class SessionAll {
 
   public SessionAll() {
   }
+
+  public SessionAll id(String id) {
+    
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getId() {
+    return id;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setId(String id) {
+    this.id = id;
+  }
+
 
   public SessionAll title(String title) {
     
@@ -420,32 +446,6 @@ public class SessionAll {
   }
 
 
-  public SessionAll id(String id) {
-    
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Get id
-   * @return id
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getId() {
-    return id;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
-    this.id = id;
-  }
-
-
   public SessionAll speakers(List<String> speakers) {
     
     this.speakers = speakers;
@@ -522,7 +522,8 @@ public class SessionAll {
       return false;
     }
     SessionAll sessionAll = (SessionAll) o;
-    return Objects.equals(this.title, sessionAll.title) &&
+    return Objects.equals(this.id, sessionAll.id) &&
+        Objects.equals(this.title, sessionAll.title) &&
         equalsNullable(this.description, sessionAll.description) &&
         Objects.equals(this.startsAt, sessionAll.startsAt) &&
         Objects.equals(this.endsAt, sessionAll.endsAt) &&
@@ -533,7 +534,6 @@ public class SessionAll {
         equalsNullable(this.liveUrl, sessionAll.liveUrl) &&
         equalsNullable(this.recordingUrl, sessionAll.recordingUrl) &&
         Objects.equals(this.status, sessionAll.status) &&
-        Objects.equals(this.id, sessionAll.id) &&
         Objects.equals(this.speakers, sessionAll.speakers) &&
         Objects.equals(this.questionAnswers, sessionAll.questionAnswers);
   }
@@ -544,7 +544,7 @@ public class SessionAll {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, hashCodeNullable(description), startsAt, endsAt, isServiceSession, isPlenumSession, categoryItems, roomId, hashCodeNullable(liveUrl), hashCodeNullable(recordingUrl), status, id, speakers, questionAnswers);
+    return Objects.hash(id, title, hashCodeNullable(description), startsAt, endsAt, isServiceSession, isPlenumSession, categoryItems, roomId, hashCodeNullable(liveUrl), hashCodeNullable(recordingUrl), status, speakers, questionAnswers);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -558,6 +558,7 @@ public class SessionAll {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SessionAll {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    startsAt: ").append(toIndentedString(startsAt)).append("\n");
@@ -569,7 +570,6 @@ public class SessionAll {
     sb.append("    liveUrl: ").append(toIndentedString(liveUrl)).append("\n");
     sb.append("    recordingUrl: ").append(toIndentedString(recordingUrl)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    speakers: ").append(toIndentedString(speakers)).append("\n");
     sb.append("    questionAnswers: ").append(toIndentedString(questionAnswers)).append("\n");
     sb.append("}");
@@ -618,6 +618,16 @@ public class SessionAll {
     }
 
     StringJoiner joiner = new StringJoiner("&");
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      try {
+        joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
 
     // add `title` to the URL query string
     if (getTitle() != null) {
@@ -727,16 +737,6 @@ public class SessionAll {
     if (getStatus() != null) {
       try {
         joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStatus()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `id` to the URL query string
-    if (getId() != null) {
-      try {
-        joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
