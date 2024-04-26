@@ -1,3 +1,7 @@
+# 1.2.3
+* ``Session#id`` is now a String #100
+* Updated dependencies
+
 # 1.2.2
 * Updated dependencies
   * Updated to OpenAPI Generator 7.4

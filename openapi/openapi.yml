@@ -289,6 +289,8 @@ components:
       type: object
       readOnly: true
       properties:
+        id:
+          type: string
         title:
           type: string
         description:
@@ -325,6 +327,7 @@ components:
           $ref: '#/components/schemas/Status'
           nullable: true
       required:
+        - id
         - categoryItems
         - endsAt
         - isPlenumSession
@@ -339,9 +342,6 @@ components:
         - type: object
           readOnly: true
           properties:
-            id:
-              type: string
-              format: integer # Sessions Endpoint contains only numeric IDs
             room:
               type: string
               nullable: true
@@ -358,7 +358,6 @@ components:
               items:
                 $ref: '#/components/schemas/CategorySession'
           required:
-            - id
             - questionAnswers
             - speakers
             - categories
@@ -368,8 +367,6 @@ components:
         - type: object
           readOnly: true
           properties:
-            id:
-              type: string # All Endpoint contains numeric IDs mixed with UUIDs
             speakers:
               type: array
               items:
@@ -379,9 +376,19 @@ components:
               items:
                 $ref: '#/components/schemas/QuestionAnswer' # All Endpoint
           required:
-            - id
             - questionAnswers
             - speakers
+    SessionMinimal:
+      type: object
+      readOnly: true
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+        - id
+        - name
     SessionGroup:
       type: object
       readOnly: true
@@ -396,17 +403,6 @@ components:
             $ref: '#/components/schemas/Session'
         isDefault:
           type: boolean
-    SessionMinimal:
-      type: object
-      readOnly: true
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-      required:
-        - id
-        - name
     BaseSpeakerEssential:
       type: object
       readOnly: true

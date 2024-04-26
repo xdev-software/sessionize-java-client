@@ -40,6 +40,7 @@ import java.util.StringJoiner;
  * BaseSession
  */
 @JsonPropertyOrder({
+  BaseSession.JSON_PROPERTY_ID,
   BaseSession.JSON_PROPERTY_TITLE,
   BaseSession.JSON_PROPERTY_DESCRIPTION,
   BaseSession.JSON_PROPERTY_STARTS_AT,
@@ -53,6 +54,9 @@ import java.util.StringJoiner;
   BaseSession.JSON_PROPERTY_STATUS
 })
 public class BaseSession {
+  public static final String JSON_PROPERTY_ID = "id";
+  private String id;
+
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;
 
@@ -88,6 +92,32 @@ public class BaseSession {
 
   public BaseSession() {
   }
+
+  public BaseSession id(String id) {
+    
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getId() {
+    return id;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setId(String id) {
+    this.id = id;
+  }
+
 
   public BaseSession title(String title) {
     
@@ -415,7 +445,8 @@ public class BaseSession {
       return false;
     }
     BaseSession baseSession = (BaseSession) o;
-    return Objects.equals(this.title, baseSession.title) &&
+    return Objects.equals(this.id, baseSession.id) &&
+        Objects.equals(this.title, baseSession.title) &&
         equalsNullable(this.description, baseSession.description) &&
         Objects.equals(this.startsAt, baseSession.startsAt) &&
         Objects.equals(this.endsAt, baseSession.endsAt) &&
@@ -434,7 +465,7 @@ public class BaseSession {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, hashCodeNullable(description), startsAt, endsAt, isServiceSession, isPlenumSession, categoryItems, roomId, hashCodeNullable(liveUrl), hashCodeNullable(recordingUrl), status);
+    return Objects.hash(id, title, hashCodeNullable(description), startsAt, endsAt, isServiceSession, isPlenumSession, categoryItems, roomId, hashCodeNullable(liveUrl), hashCodeNullable(recordingUrl), status);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -448,6 +479,7 @@ public class BaseSession {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class BaseSession {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    startsAt: ").append(toIndentedString(startsAt)).append("\n");
@@ -505,6 +537,16 @@ public class BaseSession {
     }
 
     StringJoiner joiner = new StringJoiner("&");
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      try {
+        joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
 
     // add `title` to the URL query string
     if (getTitle() != null) {

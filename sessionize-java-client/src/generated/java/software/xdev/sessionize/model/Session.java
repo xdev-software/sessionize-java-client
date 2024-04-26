@@ -43,6 +43,7 @@ import java.util.StringJoiner;
  * Session
  */
 @JsonPropertyOrder({
+  Session.JSON_PROPERTY_ID,
   Session.JSON_PROPERTY_TITLE,
   Session.JSON_PROPERTY_DESCRIPTION,
   Session.JSON_PROPERTY_STARTS_AT,
@@ -54,13 +55,15 @@ import java.util.StringJoiner;
   Session.JSON_PROPERTY_LIVE_URL,
   Session.JSON_PROPERTY_RECORDING_URL,
   Session.JSON_PROPERTY_STATUS,
-  Session.JSON_PROPERTY_ID,
   Session.JSON_PROPERTY_ROOM,
   Session.JSON_PROPERTY_SPEAKERS,
   Session.JSON_PROPERTY_QUESTION_ANSWERS,
   Session.JSON_PROPERTY_CATEGORIES
 })
 public class Session {
+  public static final String JSON_PROPERTY_ID = "id";
+  private String id;
+
   public static final String JSON_PROPERTY_TITLE = "title";
   private String title;
 
@@ -94,9 +97,6 @@ public class Session {
   public static final String JSON_PROPERTY_STATUS = "status";
   private Status status;
 
-  public static final String JSON_PROPERTY_ID = "id";
-  private Integer id;
-
   public static final String JSON_PROPERTY_ROOM = "room";
   private JsonNullable<String> room = JsonNullable.<String>undefined();
 
@@ -111,6 +111,32 @@ public class Session {
 
   public Session() {
   }
+
+  public Session id(String id) {
+    
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getId() {
+    return id;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setId(String id) {
+    this.id = id;
+  }
+
 
   public Session title(String title) {
     
@@ -430,32 +456,6 @@ public class Session {
   }
 
 
-  public Session id(Integer id) {
-    
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Get id
-   * @return id
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Integer getId() {
-    return id;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-
   public Session room(String room) {
     this.room = JsonNullable.<String>of(room);
     
@@ -600,7 +600,8 @@ public class Session {
       return false;
     }
     Session session = (Session) o;
-    return Objects.equals(this.title, session.title) &&
+    return Objects.equals(this.id, session.id) &&
+        Objects.equals(this.title, session.title) &&
         equalsNullable(this.description, session.description) &&
         Objects.equals(this.startsAt, session.startsAt) &&
         Objects.equals(this.endsAt, session.endsAt) &&
@@ -611,7 +612,6 @@ public class Session {
         equalsNullable(this.liveUrl, session.liveUrl) &&
         equalsNullable(this.recordingUrl, session.recordingUrl) &&
         Objects.equals(this.status, session.status) &&
-        Objects.equals(this.id, session.id) &&
         equalsNullable(this.room, session.room) &&
         Objects.equals(this.speakers, session.speakers) &&
         Objects.equals(this.questionAnswers, session.questionAnswers) &&
@@ -624,7 +624,7 @@ public class Session {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, hashCodeNullable(description), startsAt, endsAt, isServiceSession, isPlenumSession, categoryItems, roomId, hashCodeNullable(liveUrl), hashCodeNullable(recordingUrl), status, id, hashCodeNullable(room), speakers, questionAnswers, categories);
+    return Objects.hash(id, title, hashCodeNullable(description), startsAt, endsAt, isServiceSession, isPlenumSession, categoryItems, roomId, hashCodeNullable(liveUrl), hashCodeNullable(recordingUrl), status, hashCodeNullable(room), speakers, questionAnswers, categories);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -638,6 +638,7 @@ public class Session {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Session {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    startsAt: ").append(toIndentedString(startsAt)).append("\n");
@@ -649,7 +650,6 @@ public class Session {
     sb.append("    liveUrl: ").append(toIndentedString(liveUrl)).append("\n");
     sb.append("    recordingUrl: ").append(toIndentedString(recordingUrl)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    room: ").append(toIndentedString(room)).append("\n");
     sb.append("    speakers: ").append(toIndentedString(speakers)).append("\n");
     sb.append("    questionAnswers: ").append(toIndentedString(questionAnswers)).append("\n");
@@ -700,6 +700,16 @@ public class Session {
     }
 
     StringJoiner joiner = new StringJoiner("&");
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      try {
+        joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
+      } catch (UnsupportedEncodingException e) {
+        // Should never happen, UTF-8 is always supported
+        throw new RuntimeException(e);
+      }
+    }
 
     // add `title` to the URL query string
     if (getTitle() != null) {
@@ -809,16 +819,6 @@ public class Session {
     if (getStatus() != null) {
       try {
         joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStatus()), "UTF-8").replaceAll("\\+", "%20")));
-      } catch (UnsupportedEncodingException e) {
-        // Should never happen, UTF-8 is always supported
-        throw new RuntimeException(e);
-      }
-    }
-
-    // add `id` to the URL query string
-    if (getId() != null) {
-      try {
-        joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
