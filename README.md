@@ -21,6 +21,9 @@ Sessionize API ``v2``:
 
 </details>
 
+> [!NOTE]
+> Make sure to enable "Use UTC timezone for schedule" in the API endpoint on Sessionize
+
 ## Installation
 [Installation guide for the latest release](https://github.com/xdev-software/sessionize-java-client/releases/latest#Installation)
 
