@@ -106,7 +106,6 @@ public class BaseSpeaker {
     this.id = id;
   }
 
-
   public BaseSpeaker firstName(String firstName) {
     
     this.firstName = firstName;
@@ -132,7 +131,6 @@ public class BaseSpeaker {
     this.firstName = firstName;
   }
 
-
   public BaseSpeaker lastName(String lastName) {
     
     this.lastName = lastName;
@@ -157,7 +155,6 @@ public class BaseSpeaker {
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
-
 
   public BaseSpeaker bio(String bio) {
     this.bio = JsonNullable.<String>of(bio);
@@ -192,7 +189,6 @@ public class BaseSpeaker {
     this.bio = JsonNullable.<String>of(bio);
   }
 
-
   public BaseSpeaker tagLine(String tagLine) {
     
     this.tagLine = tagLine;
@@ -217,7 +213,6 @@ public class BaseSpeaker {
   public void setTagLine(String tagLine) {
     this.tagLine = tagLine;
   }
-
 
   public BaseSpeaker profilePicture(URI profilePicture) {
     this.profilePicture = JsonNullable.<URI>of(profilePicture);
@@ -252,7 +247,6 @@ public class BaseSpeaker {
     this.profilePicture = JsonNullable.<URI>of(profilePicture);
   }
 
-
   public BaseSpeaker isTopSpeaker(Boolean isTopSpeaker) {
     
     this.isTopSpeaker = isTopSpeaker;
@@ -277,7 +271,6 @@ public class BaseSpeaker {
   public void setIsTopSpeaker(Boolean isTopSpeaker) {
     this.isTopSpeaker = isTopSpeaker;
   }
-
 
   public BaseSpeaker links(List<Link> links) {
     
@@ -311,7 +304,6 @@ public class BaseSpeaker {
   public void setLinks(List<Link> links) {
     this.links = links;
   }
-
 
   public BaseSpeaker fullName(String fullName) {
     

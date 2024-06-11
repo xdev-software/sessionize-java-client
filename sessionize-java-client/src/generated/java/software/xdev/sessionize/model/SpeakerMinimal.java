@@ -69,7 +69,6 @@ public class SpeakerMinimal {
     this.id = id;
   }
 
-
   public SpeakerMinimal name(String name) {
     
     this.name = name;

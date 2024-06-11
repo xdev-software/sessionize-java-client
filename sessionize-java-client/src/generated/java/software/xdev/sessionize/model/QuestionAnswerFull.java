@@ -80,7 +80,6 @@ public class QuestionAnswerFull {
     this.id = id;
   }
 
-
   public QuestionAnswerFull question(String question) {
     
     this.question = question;
@@ -105,7 +104,6 @@ public class QuestionAnswerFull {
   public void setQuestion(String question) {
     this.question = question;
   }
-
 
   public QuestionAnswerFull questionType(String questionType) {
     
@@ -132,7 +130,6 @@ public class QuestionAnswerFull {
     this.questionType = questionType;
   }
 
-
   public QuestionAnswerFull answer(String answer) {
     
     this.answer = answer;
@@ -157,7 +154,6 @@ public class QuestionAnswerFull {
   public void setAnswer(String answer) {
     this.answer = answer;
   }
-
 
   public QuestionAnswerFull sort(Integer sort) {
     

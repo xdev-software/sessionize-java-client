@@ -80,7 +80,6 @@ public class CategorySession {
     this.id = id;
   }
 
-
   public CategorySession sort(Integer sort) {
     
     this.sort = sort;
@@ -106,7 +105,6 @@ public class CategorySession {
     this.sort = sort;
   }
 
-
   public CategorySession name(String name) {
     
     this.name = name;
@@ -131,7 +129,6 @@ public class CategorySession {
   public void setName(String name) {
     this.name = name;
   }
-
 
   public CategorySession categoryItems(List<CategoryItem> categoryItems) {
     

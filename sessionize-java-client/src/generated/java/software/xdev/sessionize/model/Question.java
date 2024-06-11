@@ -76,7 +76,6 @@ public class Question {
     this.id = id;
   }
 
-
   public Question question(String question) {
     
     this.question = question;
@@ -102,7 +101,6 @@ public class Question {
     this.question = question;
   }
 
-
   public Question questionType(String questionType) {
     
     this.questionType = questionType;
@@ -127,7 +125,6 @@ public class Question {
   public void setQuestionType(String questionType) {
     this.questionType = questionType;
   }
-
 
   public Question sort(Integer sort) {
     

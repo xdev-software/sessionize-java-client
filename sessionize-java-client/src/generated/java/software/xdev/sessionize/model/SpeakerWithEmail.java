@@ -77,7 +77,6 @@ public class SpeakerWithEmail {
     this.id = id;
   }
 
-
   public SpeakerWithEmail firstName(String firstName) {
     
     this.firstName = firstName;
@@ -103,7 +102,6 @@ public class SpeakerWithEmail {
     this.firstName = firstName;
   }
 
-
   public SpeakerWithEmail lastName(String lastName) {
     
     this.lastName = lastName;
@@ -128,7 +126,6 @@ public class SpeakerWithEmail {
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
-
 
   public SpeakerWithEmail email(String email) {
     

@@ -118,7 +118,6 @@ public class BaseSession {
     this.id = id;
   }
 
-
   public BaseSession title(String title) {
     
     this.title = title;
@@ -143,7 +142,6 @@ public class BaseSession {
   public void setTitle(String title) {
     this.title = title;
   }
-
 
   public BaseSession description(String description) {
     this.description = JsonNullable.<String>of(description);
@@ -178,7 +176,6 @@ public class BaseSession {
     this.description = JsonNullable.<String>of(description);
   }
 
-
   public BaseSession startsAt(OffsetDateTime startsAt) {
     
     this.startsAt = startsAt;
@@ -203,7 +200,6 @@ public class BaseSession {
   public void setStartsAt(OffsetDateTime startsAt) {
     this.startsAt = startsAt;
   }
-
 
   public BaseSession endsAt(OffsetDateTime endsAt) {
     
@@ -230,7 +226,6 @@ public class BaseSession {
     this.endsAt = endsAt;
   }
 
-
   public BaseSession isServiceSession(Boolean isServiceSession) {
     
     this.isServiceSession = isServiceSession;
@@ -256,7 +251,6 @@ public class BaseSession {
     this.isServiceSession = isServiceSession;
   }
 
-
   public BaseSession isPlenumSession(Boolean isPlenumSession) {
     
     this.isPlenumSession = isPlenumSession;
@@ -281,7 +275,6 @@ public class BaseSession {
   public void setIsPlenumSession(Boolean isPlenumSession) {
     this.isPlenumSession = isPlenumSession;
   }
-
 
   public BaseSession categoryItems(List<Integer> categoryItems) {
     
@@ -316,7 +309,6 @@ public class BaseSession {
     this.categoryItems = categoryItems;
   }
 
-
   public BaseSession roomId(Integer roomId) {
     
     this.roomId = roomId;
@@ -341,7 +333,6 @@ public class BaseSession {
   public void setRoomId(Integer roomId) {
     this.roomId = roomId;
   }
-
 
   public BaseSession liveUrl(URI liveUrl) {
     this.liveUrl = JsonNullable.<URI>of(liveUrl);
@@ -376,7 +367,6 @@ public class BaseSession {
     this.liveUrl = JsonNullable.<URI>of(liveUrl);
   }
 
-
   public BaseSession recordingUrl(URI recordingUrl) {
     this.recordingUrl = JsonNullable.<URI>of(recordingUrl);
     
@@ -409,7 +399,6 @@ public class BaseSession {
   public void setRecordingUrl(URI recordingUrl) {
     this.recordingUrl = JsonNullable.<URI>of(recordingUrl);
   }
-
 
   public BaseSession status(Status status) {
     

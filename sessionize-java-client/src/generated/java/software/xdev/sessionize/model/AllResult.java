@@ -96,7 +96,6 @@ public class AllResult {
     this.sessions = sessions;
   }
 
-
   public AllResult speakers(List<SpeakerAll> speakers) {
     
     this.speakers = speakers;
@@ -129,7 +128,6 @@ public class AllResult {
   public void setSpeakers(List<SpeakerAll> speakers) {
     this.speakers = speakers;
   }
-
 
   public AllResult questions(List<Question> questions) {
     
@@ -164,7 +162,6 @@ public class AllResult {
     this.questions = questions;
   }
 
-
   public AllResult categories(List<CategoryAll> categories) {
     
     this.categories = categories;
@@ -197,7 +194,6 @@ public class AllResult {
   public void setCategories(List<CategoryAll> categories) {
     this.categories = categories;
   }
-
 
   public AllResult rooms(List<Room> rooms) {
     

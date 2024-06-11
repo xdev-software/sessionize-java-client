@@ -73,7 +73,6 @@ public class BaseSpeakerEssential {
     this.id = id;
   }
 
-
   public BaseSpeakerEssential firstName(String firstName) {
     
     this.firstName = firstName;
@@ -98,7 +97,6 @@ public class BaseSpeakerEssential {
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
-
 
   public BaseSpeakerEssential lastName(String lastName) {
     

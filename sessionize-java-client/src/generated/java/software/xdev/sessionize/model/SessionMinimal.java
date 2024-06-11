@@ -68,7 +68,6 @@ public class SessionMinimal {
     this.id = id;
   }
 
-
   public SessionMinimal name(String name) {
     
     this.name = name;

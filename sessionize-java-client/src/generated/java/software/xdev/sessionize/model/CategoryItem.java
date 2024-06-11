@@ -68,7 +68,6 @@ public class CategoryItem {
     this.id = id;
   }
 
-
   public CategoryItem name(String name) {
     
     this.name = name;

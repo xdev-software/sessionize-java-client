@@ -80,7 +80,6 @@ public class SessionGroup {
     this.groupId = groupId;
   }
 
-
   public SessionGroup groupName(String groupName) {
     
     this.groupName = groupName;
@@ -105,7 +104,6 @@ public class SessionGroup {
   public void setGroupName(String groupName) {
     this.groupName = groupName;
   }
-
 
   public SessionGroup sessions(List<Session> sessions) {
     
@@ -139,7 +137,6 @@ public class SessionGroup {
   public void setSessions(List<Session> sessions) {
     this.sessions = sessions;
   }
-
 
   public SessionGroup isDefault(Boolean isDefault) {
     

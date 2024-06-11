@@ -68,7 +68,6 @@ public class BaseCategory {
     this.id = id;
   }
 
-
   public BaseCategory sort(Integer sort) {
     
     this.sort = sort;

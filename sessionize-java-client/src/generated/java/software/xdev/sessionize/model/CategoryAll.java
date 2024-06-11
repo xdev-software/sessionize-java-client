@@ -84,7 +84,6 @@ public class CategoryAll {
     this.id = id;
   }
 
-
   public CategoryAll sort(Integer sort) {
     
     this.sort = sort;
@@ -110,7 +109,6 @@ public class CategoryAll {
     this.sort = sort;
   }
 
-
   public CategoryAll title(String title) {
     
     this.title = title;
@@ -135,7 +133,6 @@ public class CategoryAll {
   public void setTitle(String title) {
     this.title = title;
   }
-
 
   public CategoryAll items(List<CategoryItemAll> items) {
     
@@ -169,7 +166,6 @@ public class CategoryAll {
   public void setItems(List<CategoryItemAll> items) {
     this.items = items;
   }
-
 
   public CategoryAll type(String type) {
     

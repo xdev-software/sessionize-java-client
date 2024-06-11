@@ -73,7 +73,6 @@ public class Link {
     this.title = title;
   }
 
-
   public Link url(URI url) {
     
     this.url = url;
@@ -98,7 +97,6 @@ public class Link {
   public void setUrl(URI url) {
     this.url = url;
   }
-
 
   public Link linkType(String linkType) {
     

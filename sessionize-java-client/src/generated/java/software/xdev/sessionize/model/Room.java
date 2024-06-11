@@ -72,7 +72,6 @@ public class Room {
     this.id = id;
   }
 
-
   public Room name(String name) {
     
     this.name = name;
@@ -97,7 +96,6 @@ public class Room {
   public void setName(String name) {
     this.name = name;
   }
-
 
   public Room sort(Integer sort) {
     

@@ -72,7 +72,6 @@ public class CategoryItemAll {
     this.id = id;
   }
 
-
   public CategoryItemAll name(String name) {
     
     this.name = name;
@@ -97,7 +96,6 @@ public class CategoryItemAll {
   public void setName(String name) {
     this.name = name;
   }
-
 
   public CategoryItemAll sort(Integer sort) {
     

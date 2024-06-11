@@ -68,7 +68,6 @@ public class QuestionAnswer {
     this.questionId = questionId;
   }
 
-
   public QuestionAnswer answerValue(String answerValue) {
     
     this.answerValue = answerValue;

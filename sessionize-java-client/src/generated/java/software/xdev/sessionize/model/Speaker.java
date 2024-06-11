@@ -116,7 +116,6 @@ public class Speaker {
     this.id = id;
   }
 
-
   public Speaker firstName(String firstName) {
     
     this.firstName = firstName;
@@ -142,7 +141,6 @@ public class Speaker {
     this.firstName = firstName;
   }
 
-
   public Speaker lastName(String lastName) {
     
     this.lastName = lastName;
@@ -167,7 +165,6 @@ public class Speaker {
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
-
 
   public Speaker bio(String bio) {
     this.bio = JsonNullable.<String>of(bio);
@@ -202,7 +199,6 @@ public class Speaker {
     this.bio = JsonNullable.<String>of(bio);
   }
 
-
   public Speaker tagLine(String tagLine) {
     
     this.tagLine = tagLine;
@@ -227,7 +223,6 @@ public class Speaker {
   public void setTagLine(String tagLine) {
     this.tagLine = tagLine;
   }
-
 
   public Speaker profilePicture(URI profilePicture) {
     this.profilePicture = JsonNullable.<URI>of(profilePicture);
@@ -262,7 +257,6 @@ public class Speaker {
     this.profilePicture = JsonNullable.<URI>of(profilePicture);
   }
 
-
   public Speaker isTopSpeaker(Boolean isTopSpeaker) {
     
     this.isTopSpeaker = isTopSpeaker;
@@ -287,7 +281,6 @@ public class Speaker {
   public void setIsTopSpeaker(Boolean isTopSpeaker) {
     this.isTopSpeaker = isTopSpeaker;
   }
-
 
   public Speaker links(List<Link> links) {
     
@@ -322,7 +315,6 @@ public class Speaker {
     this.links = links;
   }
 
-
   public Speaker fullName(String fullName) {
     
     this.fullName = fullName;
@@ -347,7 +339,6 @@ public class Speaker {
   public void setFullName(String fullName) {
     this.fullName = fullName;
   }
-
 
   public Speaker sessions(List<SessionMinimal> sessions) {
     
@@ -381,7 +372,6 @@ public class Speaker {
   public void setSessions(List<SessionMinimal> sessions) {
     this.sessions = sessions;
   }
-
 
   public Speaker questionAnswers(List<QuestionAnswerFull> questionAnswers) {
     

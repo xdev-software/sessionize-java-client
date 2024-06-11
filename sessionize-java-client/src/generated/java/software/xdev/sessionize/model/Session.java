@@ -137,7 +137,6 @@ public class Session {
     this.id = id;
   }
 
-
   public Session title(String title) {
     
     this.title = title;
@@ -162,7 +161,6 @@ public class Session {
   public void setTitle(String title) {
     this.title = title;
   }
-
 
   public Session description(String description) {
     this.description = JsonNullable.<String>of(description);
@@ -197,7 +195,6 @@ public class Session {
     this.description = JsonNullable.<String>of(description);
   }
 
-
   public Session startsAt(OffsetDateTime startsAt) {
     
     this.startsAt = startsAt;
@@ -222,7 +219,6 @@ public class Session {
   public void setStartsAt(OffsetDateTime startsAt) {
     this.startsAt = startsAt;
   }
-
 
   public Session endsAt(OffsetDateTime endsAt) {
     
@@ -249,7 +245,6 @@ public class Session {
     this.endsAt = endsAt;
   }
 
-
   public Session isServiceSession(Boolean isServiceSession) {
     
     this.isServiceSession = isServiceSession;
@@ -275,7 +270,6 @@ public class Session {
     this.isServiceSession = isServiceSession;
   }
 
-
   public Session isPlenumSession(Boolean isPlenumSession) {
     
     this.isPlenumSession = isPlenumSession;
@@ -300,7 +294,6 @@ public class Session {
   public void setIsPlenumSession(Boolean isPlenumSession) {
     this.isPlenumSession = isPlenumSession;
   }
-
 
   public Session categoryItems(List<Integer> categoryItems) {
     
@@ -335,7 +328,6 @@ public class Session {
     this.categoryItems = categoryItems;
   }
 
-
   public Session roomId(Integer roomId) {
     
     this.roomId = roomId;
@@ -360,7 +352,6 @@ public class Session {
   public void setRoomId(Integer roomId) {
     this.roomId = roomId;
   }
-
 
   public Session liveUrl(URI liveUrl) {
     this.liveUrl = JsonNullable.<URI>of(liveUrl);
@@ -395,7 +386,6 @@ public class Session {
     this.liveUrl = JsonNullable.<URI>of(liveUrl);
   }
 
-
   public Session recordingUrl(URI recordingUrl) {
     this.recordingUrl = JsonNullable.<URI>of(recordingUrl);
     
@@ -429,7 +419,6 @@ public class Session {
     this.recordingUrl = JsonNullable.<URI>of(recordingUrl);
   }
 
-
   public Session status(Status status) {
     
     this.status = status;
@@ -454,7 +443,6 @@ public class Session {
   public void setStatus(Status status) {
     this.status = status;
   }
-
 
   public Session room(String room) {
     this.room = JsonNullable.<String>of(room);
@@ -489,7 +477,6 @@ public class Session {
     this.room = JsonNullable.<String>of(room);
   }
 
-
   public Session speakers(List<SpeakerMinimal> speakers) {
     
     this.speakers = speakers;
@@ -523,7 +510,6 @@ public class Session {
     this.speakers = speakers;
   }
 
-
   public Session questionAnswers(List<QuestionAnswerFull> questionAnswers) {
     
     this.questionAnswers = questionAnswers;
@@ -556,7 +542,6 @@ public class Session {
   public void setQuestionAnswers(List<QuestionAnswerFull> questionAnswers) {
     this.questionAnswers = questionAnswers;
   }
-
 
   public Session categories(List<CategorySession> categories) {
     
