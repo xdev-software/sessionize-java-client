@@ -70,7 +70,7 @@ public class AllApi extends BaseApi {
     
     // create path and map variables
     String localVarPath = "/api/v2/{endpointId}/view/All"
-      .replaceAll("\\{" + "endpointId" + "\\}", apiClient.escapeString(endpointId.toString()));
+      .replaceAll("\\{" + "endpointId" + "\\}", apiClient.escapeString(apiClient.parameterToString(endpointId)));
 
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
     String localVarQueryParameterBaseName;

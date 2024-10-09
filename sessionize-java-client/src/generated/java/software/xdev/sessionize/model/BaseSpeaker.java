@@ -87,10 +87,10 @@ public class BaseSpeaker {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -112,10 +112,10 @@ public class BaseSpeaker {
     return this;
   }
 
-   /**
+  /**
    * Get firstName
    * @return firstName
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -137,10 +137,10 @@ public class BaseSpeaker {
     return this;
   }
 
-   /**
+  /**
    * Get lastName
    * @return lastName
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -162,10 +162,10 @@ public class BaseSpeaker {
     return this;
   }
 
-   /**
+  /**
    * Get bio
    * @return bio
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonIgnore
 
@@ -195,10 +195,10 @@ public class BaseSpeaker {
     return this;
   }
 
-   /**
+  /**
    * Get tagLine
    * @return tagLine
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAG_LINE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -220,10 +220,10 @@ public class BaseSpeaker {
     return this;
   }
 
-   /**
+  /**
    * Get profilePicture
    * @return profilePicture
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonIgnore
 
@@ -253,10 +253,10 @@ public class BaseSpeaker {
     return this;
   }
 
-   /**
+  /**
    * Get isTopSpeaker
    * @return isTopSpeaker
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_IS_TOP_SPEAKER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -286,10 +286,10 @@ public class BaseSpeaker {
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LINKS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -311,10 +311,10 @@ public class BaseSpeaker {
     return this;
   }
 
-   /**
+  /**
    * Get fullName
    * @return fullName
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_FULL_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

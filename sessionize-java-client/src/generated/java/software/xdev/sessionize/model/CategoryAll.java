@@ -65,10 +65,10 @@ public class CategoryAll {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -90,10 +90,10 @@ public class CategoryAll {
     return this;
   }
 
-   /**
+  /**
    * Get sort
    * @return sort
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -115,10 +115,10 @@ public class CategoryAll {
     return this;
   }
 
-   /**
+  /**
    * Get title
    * @return title
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -148,10 +148,10 @@ public class CategoryAll {
     return this;
   }
 
-   /**
+  /**
    * Get items
    * @return items
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -173,10 +173,10 @@ public class CategoryAll {
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

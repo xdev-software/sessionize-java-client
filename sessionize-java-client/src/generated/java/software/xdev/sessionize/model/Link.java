@@ -54,10 +54,10 @@ public class Link {
     return this;
   }
 
-   /**
+  /**
    * Get title
    * @return title
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -79,10 +79,10 @@ public class Link {
     return this;
   }
 
-   /**
+  /**
    * Get url
    * @return url
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -104,10 +104,10 @@ public class Link {
     return this;
   }
 
-   /**
+  /**
    * Get linkType
    * @return linkType
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LINK_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

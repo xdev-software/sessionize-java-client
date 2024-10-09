@@ -49,10 +49,10 @@ public class QuestionAnswer {
     return this;
   }
 
-   /**
+  /**
    * Get questionId
    * @return questionId
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_QUESTION_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -74,10 +74,10 @@ public class QuestionAnswer {
     return this;
   }
 
-   /**
+  /**
    * Get answerValue
    * @return answerValue
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ANSWER_VALUE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

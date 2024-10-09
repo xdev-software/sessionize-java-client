@@ -57,10 +57,10 @@ public class Question {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -82,10 +82,10 @@ public class Question {
     return this;
   }
 
-   /**
+  /**
    * Get question
    * @return question
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_QUESTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -107,10 +107,10 @@ public class Question {
     return this;
   }
 
-   /**
+  /**
    * Get questionType
    * @return questionType
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_QUESTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -132,10 +132,10 @@ public class Question {
     return this;
   }
 
-   /**
+  /**
    * Get sort
    * @return sort
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

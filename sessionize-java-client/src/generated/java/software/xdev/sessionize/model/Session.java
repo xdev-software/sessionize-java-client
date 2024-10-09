@@ -118,10 +118,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -143,10 +143,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get title
    * @return title
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -168,10 +168,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonIgnore
 
@@ -201,10 +201,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get startsAt
    * @return startsAt
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_STARTS_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -226,10 +226,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get endsAt
    * @return endsAt
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ENDS_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -251,10 +251,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get isServiceSession
    * @return isServiceSession
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_IS_SERVICE_SESSION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -276,10 +276,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get isPlenumSession
    * @return isPlenumSession
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_IS_PLENUM_SESSION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -309,10 +309,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get categoryItems
    * @return categoryItems
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CATEGORY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -334,10 +334,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get roomId
    * @return roomId
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ROOM_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -359,10 +359,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get liveUrl
    * @return liveUrl
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonIgnore
 
@@ -392,10 +392,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get recordingUrl
    * @return recordingUrl
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonIgnore
 
@@ -425,10 +425,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -450,10 +450,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get room
    * @return room
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonIgnore
 
@@ -491,10 +491,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get speakers
    * @return speakers
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SPEAKERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -524,10 +524,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get questionAnswers
    * @return questionAnswers
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_QUESTION_ANSWERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -557,10 +557,10 @@ public class Session {
     return this;
   }
 
-   /**
+  /**
    * Get categories
    * @return categories
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CATEGORIES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

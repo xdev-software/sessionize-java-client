@@ -71,7 +71,7 @@ public class SpeakersApi extends BaseApi {
     
     // create path and map variables
     String localVarPath = "/api/v2/{endpointId}/view/Speakers"
-      .replaceAll("\\{" + "endpointId" + "\\}", apiClient.escapeString(endpointId.toString()));
+      .replaceAll("\\{" + "endpointId" + "\\}", apiClient.escapeString(apiClient.parameterToString(endpointId)));
 
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
     String localVarQueryParameterBaseName;
@@ -153,7 +153,7 @@ public class SpeakersApi extends BaseApi {
     
     // create path and map variables
     String localVarPath = "/api/v2/{endpointId}/view/SpeakersEmails"
-      .replaceAll("\\{" + "endpointId" + "\\}", apiClient.escapeString(endpointId.toString()));
+      .replaceAll("\\{" + "endpointId" + "\\}", apiClient.escapeString(apiClient.parameterToString(endpointId)));
 
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
     String localVarQueryParameterBaseName;

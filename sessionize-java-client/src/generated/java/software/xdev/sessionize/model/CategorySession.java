@@ -61,10 +61,10 @@ public class CategorySession {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -86,10 +86,10 @@ public class CategorySession {
     return this;
   }
 
-   /**
+  /**
    * Get sort
    * @return sort
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -111,10 +111,10 @@ public class CategorySession {
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -144,10 +144,10 @@ public class CategorySession {
     return this;
   }
 
-   /**
+  /**
    * Get categoryItems
    * @return categoryItems
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CATEGORY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
