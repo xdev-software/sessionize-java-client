@@ -61,10 +61,10 @@ public class SessionGroup {
     return this;
   }
 
-   /**
+  /**
    * Get groupId
    * @return groupId
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_GROUP_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -80,17 +80,16 @@ public class SessionGroup {
     this.groupId = groupId;
   }
 
-
   public SessionGroup groupName(String groupName) {
     
     this.groupName = groupName;
     return this;
   }
 
-   /**
+  /**
    * Get groupName
    * @return groupName
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_GROUP_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -106,7 +105,6 @@ public class SessionGroup {
     this.groupName = groupName;
   }
 
-
   public SessionGroup sessions(List<Session> sessions) {
     
     this.sessions = sessions;
@@ -121,10 +119,10 @@ public class SessionGroup {
     return this;
   }
 
-   /**
+  /**
    * Get sessions
    * @return sessions
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_SESSIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -140,17 +138,16 @@ public class SessionGroup {
     this.sessions = sessions;
   }
 
-
   public SessionGroup isDefault(Boolean isDefault) {
     
     this.isDefault = isDefault;
     return this;
   }
 
-   /**
+  /**
    * Get isDefault
    * @return isDefault
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_IS_DEFAULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)

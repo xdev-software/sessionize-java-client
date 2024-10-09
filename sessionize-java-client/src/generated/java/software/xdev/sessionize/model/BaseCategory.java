@@ -49,10 +49,10 @@ public class BaseCategory {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -68,17 +68,16 @@ public class BaseCategory {
     this.id = id;
   }
 
-
   public BaseCategory sort(Integer sort) {
     
     this.sort = sort;
     return this;
   }
 
-   /**
+  /**
    * Get sort
    * @return sort
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

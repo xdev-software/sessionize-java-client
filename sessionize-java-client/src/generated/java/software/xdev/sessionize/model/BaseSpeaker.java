@@ -87,10 +87,10 @@ public class BaseSpeaker {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -106,17 +106,16 @@ public class BaseSpeaker {
     this.id = id;
   }
 
-
   public BaseSpeaker firstName(String firstName) {
     
     this.firstName = firstName;
     return this;
   }
 
-   /**
+  /**
    * Get firstName
    * @return firstName
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -132,17 +131,16 @@ public class BaseSpeaker {
     this.firstName = firstName;
   }
 
-
   public BaseSpeaker lastName(String lastName) {
     
     this.lastName = lastName;
     return this;
   }
 
-   /**
+  /**
    * Get lastName
    * @return lastName
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -158,17 +156,16 @@ public class BaseSpeaker {
     this.lastName = lastName;
   }
 
-
   public BaseSpeaker bio(String bio) {
     this.bio = JsonNullable.<String>of(bio);
     
     return this;
   }
 
-   /**
+  /**
    * Get bio
    * @return bio
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonIgnore
 
@@ -192,17 +189,16 @@ public class BaseSpeaker {
     this.bio = JsonNullable.<String>of(bio);
   }
 
-
   public BaseSpeaker tagLine(String tagLine) {
     
     this.tagLine = tagLine;
     return this;
   }
 
-   /**
+  /**
    * Get tagLine
    * @return tagLine
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAG_LINE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -218,17 +214,16 @@ public class BaseSpeaker {
     this.tagLine = tagLine;
   }
 
-
   public BaseSpeaker profilePicture(URI profilePicture) {
     this.profilePicture = JsonNullable.<URI>of(profilePicture);
     
     return this;
   }
 
-   /**
+  /**
    * Get profilePicture
    * @return profilePicture
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonIgnore
 
@@ -252,17 +247,16 @@ public class BaseSpeaker {
     this.profilePicture = JsonNullable.<URI>of(profilePicture);
   }
 
-
   public BaseSpeaker isTopSpeaker(Boolean isTopSpeaker) {
     
     this.isTopSpeaker = isTopSpeaker;
     return this;
   }
 
-   /**
+  /**
    * Get isTopSpeaker
    * @return isTopSpeaker
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_IS_TOP_SPEAKER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -278,7 +272,6 @@ public class BaseSpeaker {
     this.isTopSpeaker = isTopSpeaker;
   }
 
-
   public BaseSpeaker links(List<Link> links) {
     
     this.links = links;
@@ -293,10 +286,10 @@ public class BaseSpeaker {
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LINKS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -312,17 +305,16 @@ public class BaseSpeaker {
     this.links = links;
   }
 
-
   public BaseSpeaker fullName(String fullName) {
     
     this.fullName = fullName;
     return this;
   }
 
-   /**
+  /**
    * Get fullName
    * @return fullName
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_FULL_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

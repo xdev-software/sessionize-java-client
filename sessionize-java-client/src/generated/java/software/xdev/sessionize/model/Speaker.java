@@ -97,10 +97,10 @@ public class Speaker {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -116,17 +116,16 @@ public class Speaker {
     this.id = id;
   }
 
-
   public Speaker firstName(String firstName) {
     
     this.firstName = firstName;
     return this;
   }
 
-   /**
+  /**
    * Get firstName
    * @return firstName
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -142,17 +141,16 @@ public class Speaker {
     this.firstName = firstName;
   }
 
-
   public Speaker lastName(String lastName) {
     
     this.lastName = lastName;
     return this;
   }
 
-   /**
+  /**
    * Get lastName
    * @return lastName
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -168,17 +166,16 @@ public class Speaker {
     this.lastName = lastName;
   }
 
-
   public Speaker bio(String bio) {
     this.bio = JsonNullable.<String>of(bio);
     
     return this;
   }
 
-   /**
+  /**
    * Get bio
    * @return bio
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonIgnore
 
@@ -202,17 +199,16 @@ public class Speaker {
     this.bio = JsonNullable.<String>of(bio);
   }
 
-
   public Speaker tagLine(String tagLine) {
     
     this.tagLine = tagLine;
     return this;
   }
 
-   /**
+  /**
    * Get tagLine
    * @return tagLine
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_TAG_LINE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -228,17 +224,16 @@ public class Speaker {
     this.tagLine = tagLine;
   }
 
-
   public Speaker profilePicture(URI profilePicture) {
     this.profilePicture = JsonNullable.<URI>of(profilePicture);
     
     return this;
   }
 
-   /**
+  /**
    * Get profilePicture
    * @return profilePicture
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonIgnore
 
@@ -262,17 +257,16 @@ public class Speaker {
     this.profilePicture = JsonNullable.<URI>of(profilePicture);
   }
 
-
   public Speaker isTopSpeaker(Boolean isTopSpeaker) {
     
     this.isTopSpeaker = isTopSpeaker;
     return this;
   }
 
-   /**
+  /**
    * Get isTopSpeaker
    * @return isTopSpeaker
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_IS_TOP_SPEAKER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -288,7 +282,6 @@ public class Speaker {
     this.isTopSpeaker = isTopSpeaker;
   }
 
-
   public Speaker links(List<Link> links) {
     
     this.links = links;
@@ -303,10 +296,10 @@ public class Speaker {
     return this;
   }
 
-   /**
+  /**
    * Get links
    * @return links
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LINKS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -322,17 +315,16 @@ public class Speaker {
     this.links = links;
   }
 
-
   public Speaker fullName(String fullName) {
     
     this.fullName = fullName;
     return this;
   }
 
-   /**
+  /**
    * Get fullName
    * @return fullName
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_FULL_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -348,7 +340,6 @@ public class Speaker {
     this.fullName = fullName;
   }
 
-
   public Speaker sessions(List<SessionMinimal> sessions) {
     
     this.sessions = sessions;
@@ -363,10 +354,10 @@ public class Speaker {
     return this;
   }
 
-   /**
+  /**
    * Get sessions
    * @return sessions
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SESSIONS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -382,7 +373,6 @@ public class Speaker {
     this.sessions = sessions;
   }
 
-
   public Speaker questionAnswers(List<QuestionAnswerFull> questionAnswers) {
     
     this.questionAnswers = questionAnswers;
@@ -397,10 +387,10 @@ public class Speaker {
     return this;
   }
 
-   /**
+  /**
    * Get questionAnswers
    * @return questionAnswers
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_QUESTION_ANSWERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

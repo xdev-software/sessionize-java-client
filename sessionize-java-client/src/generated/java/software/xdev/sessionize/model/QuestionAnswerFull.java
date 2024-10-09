@@ -61,10 +61,10 @@ public class QuestionAnswerFull {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -80,17 +80,16 @@ public class QuestionAnswerFull {
     this.id = id;
   }
 
-
   public QuestionAnswerFull question(String question) {
     
     this.question = question;
     return this;
   }
 
-   /**
+  /**
    * Get question
    * @return question
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_QUESTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -106,17 +105,16 @@ public class QuestionAnswerFull {
     this.question = question;
   }
 
-
   public QuestionAnswerFull questionType(String questionType) {
     
     this.questionType = questionType;
     return this;
   }
 
-   /**
+  /**
    * Get questionType
    * @return questionType
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_QUESTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -132,17 +130,16 @@ public class QuestionAnswerFull {
     this.questionType = questionType;
   }
 
-
   public QuestionAnswerFull answer(String answer) {
     
     this.answer = answer;
     return this;
   }
 
-   /**
+  /**
    * Get answer
    * @return answer
-  **/
+   */
   @jakarta.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_ANSWER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -158,17 +155,16 @@ public class QuestionAnswerFull {
     this.answer = answer;
   }
 
-
   public QuestionAnswerFull sort(Integer sort) {
     
     this.sort = sort;
     return this;
   }
 
-   /**
+  /**
    * Get sort
    * @return sort
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

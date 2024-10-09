@@ -58,10 +58,10 @@ public class SpeakerWithEmail {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -77,17 +77,16 @@ public class SpeakerWithEmail {
     this.id = id;
   }
 
-
   public SpeakerWithEmail firstName(String firstName) {
     
     this.firstName = firstName;
     return this;
   }
 
-   /**
+  /**
    * Get firstName
    * @return firstName
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -103,17 +102,16 @@ public class SpeakerWithEmail {
     this.firstName = firstName;
   }
 
-
   public SpeakerWithEmail lastName(String lastName) {
     
     this.lastName = lastName;
     return this;
   }
 
-   /**
+  /**
    * Get lastName
    * @return lastName
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -129,17 +127,16 @@ public class SpeakerWithEmail {
     this.lastName = lastName;
   }
 
-
   public SpeakerWithEmail email(String email) {
     
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Get email
    * @return email
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

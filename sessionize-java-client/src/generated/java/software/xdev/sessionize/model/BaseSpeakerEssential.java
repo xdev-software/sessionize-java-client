@@ -54,10 +54,10 @@ public class BaseSpeakerEssential {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -73,17 +73,16 @@ public class BaseSpeakerEssential {
     this.id = id;
   }
 
-
   public BaseSpeakerEssential firstName(String firstName) {
     
     this.firstName = firstName;
     return this;
   }
 
-   /**
+  /**
    * Get firstName
    * @return firstName
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -99,17 +98,16 @@ public class BaseSpeakerEssential {
     this.firstName = firstName;
   }
 
-
   public BaseSpeakerEssential lastName(String lastName) {
     
     this.lastName = lastName;
     return this;
   }
 
-   /**
+  /**
    * Get lastName
    * @return lastName
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

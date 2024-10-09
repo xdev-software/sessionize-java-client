@@ -65,10 +65,10 @@ public class CategoryAll {
     return this;
   }
 
-   /**
+  /**
    * Get id
    * @return id
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -84,17 +84,16 @@ public class CategoryAll {
     this.id = id;
   }
 
-
   public CategoryAll sort(Integer sort) {
     
     this.sort = sort;
     return this;
   }
 
-   /**
+  /**
    * Get sort
    * @return sort
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -110,17 +109,16 @@ public class CategoryAll {
     this.sort = sort;
   }
 
-
   public CategoryAll title(String title) {
     
     this.title = title;
     return this;
   }
 
-   /**
+  /**
    * Get title
    * @return title
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -136,7 +134,6 @@ public class CategoryAll {
     this.title = title;
   }
 
-
   public CategoryAll items(List<CategoryItemAll> items) {
     
     this.items = items;
@@ -151,10 +148,10 @@ public class CategoryAll {
     return this;
   }
 
-   /**
+  /**
    * Get items
    * @return items
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -170,17 +167,16 @@ public class CategoryAll {
     this.items = items;
   }
 
-
   public CategoryAll type(String type) {
     
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)

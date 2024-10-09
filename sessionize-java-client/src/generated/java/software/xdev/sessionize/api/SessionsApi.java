@@ -70,7 +70,7 @@ public class SessionsApi extends BaseApi {
     
     // create path and map variables
     String localVarPath = "/api/v2/{endpointId}/view/Sessions"
-      .replaceAll("\\{" + "endpointId" + "\\}", apiClient.escapeString(endpointId.toString()));
+      .replaceAll("\\{" + "endpointId" + "\\}", apiClient.escapeString(apiClient.parameterToString(endpointId)));
 
     StringJoiner localVarQueryStringJoiner = new StringJoiner("&");
     String localVarQueryParameterBaseName;

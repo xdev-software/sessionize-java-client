@@ -77,10 +77,10 @@ public class AllResult {
     return this;
   }
 
-   /**
+  /**
    * Get sessions
    * @return sessions
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SESSIONS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -96,7 +96,6 @@ public class AllResult {
     this.sessions = sessions;
   }
 
-
   public AllResult speakers(List<SpeakerAll> speakers) {
     
     this.speakers = speakers;
@@ -111,10 +110,10 @@ public class AllResult {
     return this;
   }
 
-   /**
+  /**
    * Get speakers
    * @return speakers
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_SPEAKERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -130,7 +129,6 @@ public class AllResult {
     this.speakers = speakers;
   }
 
-
   public AllResult questions(List<Question> questions) {
     
     this.questions = questions;
@@ -145,10 +143,10 @@ public class AllResult {
     return this;
   }
 
-   /**
+  /**
    * Get questions
    * @return questions
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_QUESTIONS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -164,7 +162,6 @@ public class AllResult {
     this.questions = questions;
   }
 
-
   public AllResult categories(List<CategoryAll> categories) {
     
     this.categories = categories;
@@ -179,10 +176,10 @@ public class AllResult {
     return this;
   }
 
-   /**
+  /**
    * Get categories
    * @return categories
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CATEGORIES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
@@ -198,7 +195,6 @@ public class AllResult {
     this.categories = categories;
   }
 
-
   public AllResult rooms(List<Room> rooms) {
     
     this.rooms = rooms;
@@ -213,10 +209,10 @@ public class AllResult {
     return this;
   }
 
-   /**
+  /**
    * Get rooms
    * @return rooms
-  **/
+   */
   @jakarta.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_ROOMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
