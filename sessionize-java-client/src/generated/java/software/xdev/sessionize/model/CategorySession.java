@@ -41,21 +41,25 @@ import java.util.StringJoiner;
 })
 public class CategorySession {
   public static final String JSON_PROPERTY_ID = "id";
+  @jakarta.annotation.Nonnull
   private Integer id;
 
   public static final String JSON_PROPERTY_SORT = "sort";
+  @jakarta.annotation.Nonnull
   private Integer sort;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String JSON_PROPERTY_CATEGORY_ITEMS = "categoryItems";
+  @jakarta.annotation.Nonnull
   private List<CategoryItem> categoryItems = new ArrayList<>();
 
   public CategorySession() {
   }
 
-  public CategorySession id(Integer id) {
+  public CategorySession id(@jakarta.annotation.Nonnull Integer id) {
     
     this.id = id;
     return this;
@@ -76,11 +80,11 @@ public class CategorySession {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(Integer id) {
+  public void setId(@jakarta.annotation.Nonnull Integer id) {
     this.id = id;
   }
 
-  public CategorySession sort(Integer sort) {
+  public CategorySession sort(@jakarta.annotation.Nonnull Integer sort) {
     
     this.sort = sort;
     return this;
@@ -101,11 +105,11 @@ public class CategorySession {
 
   @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSort(Integer sort) {
+  public void setSort(@jakarta.annotation.Nonnull Integer sort) {
     this.sort = sort;
   }
 
-  public CategorySession name(String name) {
+  public CategorySession name(@jakarta.annotation.Nonnull String name) {
     
     this.name = name;
     return this;
@@ -126,11 +130,11 @@ public class CategorySession {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
-  public CategorySession categoryItems(List<CategoryItem> categoryItems) {
+  public CategorySession categoryItems(@jakarta.annotation.Nonnull List<CategoryItem> categoryItems) {
     
     this.categoryItems = categoryItems;
     return this;
@@ -159,7 +163,7 @@ public class CategorySession {
 
   @JsonProperty(JSON_PROPERTY_CATEGORY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCategoryItems(List<CategoryItem> categoryItems) {
+  public void setCategoryItems(@jakarta.annotation.Nonnull List<CategoryItem> categoryItems) {
     this.categoryItems = categoryItems;
   }
 

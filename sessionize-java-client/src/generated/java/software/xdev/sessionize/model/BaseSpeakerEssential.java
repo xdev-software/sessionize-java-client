@@ -37,18 +37,21 @@ import java.util.StringJoiner;
 })
 public class BaseSpeakerEssential {
   public static final String JSON_PROPERTY_ID = "id";
+  @jakarta.annotation.Nonnull
   private UUID id;
 
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
+  @jakarta.annotation.Nonnull
   private String firstName;
 
   public static final String JSON_PROPERTY_LAST_NAME = "lastName";
+  @jakarta.annotation.Nonnull
   private String lastName;
 
   public BaseSpeakerEssential() {
   }
 
-  public BaseSpeakerEssential id(UUID id) {
+  public BaseSpeakerEssential id(@jakarta.annotation.Nonnull UUID id) {
     
     this.id = id;
     return this;
@@ -69,11 +72,11 @@ public class BaseSpeakerEssential {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(UUID id) {
+  public void setId(@jakarta.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
-  public BaseSpeakerEssential firstName(String firstName) {
+  public BaseSpeakerEssential firstName(@jakarta.annotation.Nonnull String firstName) {
     
     this.firstName = firstName;
     return this;
@@ -94,11 +97,11 @@ public class BaseSpeakerEssential {
 
   @JsonProperty(JSON_PROPERTY_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(String firstName) {
+  public void setFirstName(@jakarta.annotation.Nonnull String firstName) {
     this.firstName = firstName;
   }
 
-  public BaseSpeakerEssential lastName(String lastName) {
+  public BaseSpeakerEssential lastName(@jakarta.annotation.Nonnull String lastName) {
     
     this.lastName = lastName;
     return this;
@@ -119,7 +122,7 @@ public class BaseSpeakerEssential {
 
   @JsonProperty(JSON_PROPERTY_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLastName(String lastName) {
+  public void setLastName(@jakarta.annotation.Nonnull String lastName) {
     this.lastName = lastName;
   }
 

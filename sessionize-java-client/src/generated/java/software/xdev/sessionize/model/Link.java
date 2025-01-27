@@ -37,18 +37,21 @@ import java.util.StringJoiner;
 })
 public class Link {
   public static final String JSON_PROPERTY_TITLE = "title";
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String JSON_PROPERTY_URL = "url";
+  @jakarta.annotation.Nonnull
   private URI url;
 
   public static final String JSON_PROPERTY_LINK_TYPE = "linkType";
+  @jakarta.annotation.Nonnull
   private String linkType;
 
   public Link() {
   }
 
-  public Link title(String title) {
+  public Link title(@jakarta.annotation.Nonnull String title) {
     
     this.title = title;
     return this;
@@ -69,11 +72,11 @@ public class Link {
 
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTitle(String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
-  public Link url(URI url) {
+  public Link url(@jakarta.annotation.Nonnull URI url) {
     
     this.url = url;
     return this;
@@ -94,11 +97,11 @@ public class Link {
 
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setUrl(URI url) {
+  public void setUrl(@jakarta.annotation.Nonnull URI url) {
     this.url = url;
   }
 
-  public Link linkType(String linkType) {
+  public Link linkType(@jakarta.annotation.Nonnull String linkType) {
     
     this.linkType = linkType;
     return this;
@@ -119,7 +122,7 @@ public class Link {
 
   @JsonProperty(JSON_PROPERTY_LINK_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLinkType(String linkType) {
+  public void setLinkType(@jakarta.annotation.Nonnull String linkType) {
     this.linkType = linkType;
   }
 

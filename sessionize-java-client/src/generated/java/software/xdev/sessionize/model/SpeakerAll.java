@@ -55,42 +55,53 @@ import java.util.StringJoiner;
 })
 public class SpeakerAll {
   public static final String JSON_PROPERTY_ID = "id";
+  @jakarta.annotation.Nonnull
   private UUID id;
 
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
+  @jakarta.annotation.Nonnull
   private String firstName;
 
   public static final String JSON_PROPERTY_LAST_NAME = "lastName";
+  @jakarta.annotation.Nonnull
   private String lastName;
 
   public static final String JSON_PROPERTY_BIO = "bio";
+  @jakarta.annotation.Nullable
   private JsonNullable<String> bio = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_TAG_LINE = "tagLine";
+  @jakarta.annotation.Nullable
   private String tagLine;
 
   public static final String JSON_PROPERTY_PROFILE_PICTURE = "profilePicture";
+  @jakarta.annotation.Nullable
   private JsonNullable<URI> profilePicture = JsonNullable.<URI>undefined();
 
   public static final String JSON_PROPERTY_IS_TOP_SPEAKER = "isTopSpeaker";
+  @jakarta.annotation.Nonnull
   private Boolean isTopSpeaker;
 
   public static final String JSON_PROPERTY_LINKS = "links";
+  @jakarta.annotation.Nonnull
   private List<Link> links = new ArrayList<>();
 
   public static final String JSON_PROPERTY_FULL_NAME = "fullName";
+  @jakarta.annotation.Nonnull
   private String fullName;
 
   public static final String JSON_PROPERTY_SESSIONS = "sessions";
+  @jakarta.annotation.Nonnull
   private List<Integer> sessions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_QUESTION_ANSWERS = "questionAnswers";
+  @jakarta.annotation.Nonnull
   private List<QuestionAnswer> questionAnswers = new ArrayList<>();
 
   public SpeakerAll() {
   }
 
-  public SpeakerAll id(UUID id) {
+  public SpeakerAll id(@jakarta.annotation.Nonnull UUID id) {
     
     this.id = id;
     return this;
@@ -111,11 +122,11 @@ public class SpeakerAll {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(UUID id) {
+  public void setId(@jakarta.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
-  public SpeakerAll firstName(String firstName) {
+  public SpeakerAll firstName(@jakarta.annotation.Nonnull String firstName) {
     
     this.firstName = firstName;
     return this;
@@ -136,11 +147,11 @@ public class SpeakerAll {
 
   @JsonProperty(JSON_PROPERTY_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(String firstName) {
+  public void setFirstName(@jakarta.annotation.Nonnull String firstName) {
     this.firstName = firstName;
   }
 
-  public SpeakerAll lastName(String lastName) {
+  public SpeakerAll lastName(@jakarta.annotation.Nonnull String lastName) {
     
     this.lastName = lastName;
     return this;
@@ -161,11 +172,11 @@ public class SpeakerAll {
 
   @JsonProperty(JSON_PROPERTY_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLastName(String lastName) {
+  public void setLastName(@jakarta.annotation.Nonnull String lastName) {
     this.lastName = lastName;
   }
 
-  public SpeakerAll bio(String bio) {
+  public SpeakerAll bio(@jakarta.annotation.Nullable String bio) {
     this.bio = JsonNullable.<String>of(bio);
     
     return this;
@@ -194,11 +205,11 @@ public class SpeakerAll {
     this.bio = bio;
   }
 
-  public void setBio(String bio) {
+  public void setBio(@jakarta.annotation.Nullable String bio) {
     this.bio = JsonNullable.<String>of(bio);
   }
 
-  public SpeakerAll tagLine(String tagLine) {
+  public SpeakerAll tagLine(@jakarta.annotation.Nullable String tagLine) {
     
     this.tagLine = tagLine;
     return this;
@@ -219,11 +230,11 @@ public class SpeakerAll {
 
   @JsonProperty(JSON_PROPERTY_TAG_LINE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTagLine(String tagLine) {
+  public void setTagLine(@jakarta.annotation.Nullable String tagLine) {
     this.tagLine = tagLine;
   }
 
-  public SpeakerAll profilePicture(URI profilePicture) {
+  public SpeakerAll profilePicture(@jakarta.annotation.Nullable URI profilePicture) {
     this.profilePicture = JsonNullable.<URI>of(profilePicture);
     
     return this;
@@ -252,11 +263,11 @@ public class SpeakerAll {
     this.profilePicture = profilePicture;
   }
 
-  public void setProfilePicture(URI profilePicture) {
+  public void setProfilePicture(@jakarta.annotation.Nullable URI profilePicture) {
     this.profilePicture = JsonNullable.<URI>of(profilePicture);
   }
 
-  public SpeakerAll isTopSpeaker(Boolean isTopSpeaker) {
+  public SpeakerAll isTopSpeaker(@jakarta.annotation.Nonnull Boolean isTopSpeaker) {
     
     this.isTopSpeaker = isTopSpeaker;
     return this;
@@ -277,11 +288,11 @@ public class SpeakerAll {
 
   @JsonProperty(JSON_PROPERTY_IS_TOP_SPEAKER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIsTopSpeaker(Boolean isTopSpeaker) {
+  public void setIsTopSpeaker(@jakarta.annotation.Nonnull Boolean isTopSpeaker) {
     this.isTopSpeaker = isTopSpeaker;
   }
 
-  public SpeakerAll links(List<Link> links) {
+  public SpeakerAll links(@jakarta.annotation.Nonnull List<Link> links) {
     
     this.links = links;
     return this;
@@ -310,11 +321,11 @@ public class SpeakerAll {
 
   @JsonProperty(JSON_PROPERTY_LINKS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLinks(List<Link> links) {
+  public void setLinks(@jakarta.annotation.Nonnull List<Link> links) {
     this.links = links;
   }
 
-  public SpeakerAll fullName(String fullName) {
+  public SpeakerAll fullName(@jakarta.annotation.Nonnull String fullName) {
     
     this.fullName = fullName;
     return this;
@@ -335,11 +346,11 @@ public class SpeakerAll {
 
   @JsonProperty(JSON_PROPERTY_FULL_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullName(String fullName) {
+  public void setFullName(@jakarta.annotation.Nonnull String fullName) {
     this.fullName = fullName;
   }
 
-  public SpeakerAll sessions(List<Integer> sessions) {
+  public SpeakerAll sessions(@jakarta.annotation.Nonnull List<Integer> sessions) {
     
     this.sessions = sessions;
     return this;
@@ -368,11 +379,11 @@ public class SpeakerAll {
 
   @JsonProperty(JSON_PROPERTY_SESSIONS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSessions(List<Integer> sessions) {
+  public void setSessions(@jakarta.annotation.Nonnull List<Integer> sessions) {
     this.sessions = sessions;
   }
 
-  public SpeakerAll questionAnswers(List<QuestionAnswer> questionAnswers) {
+  public SpeakerAll questionAnswers(@jakarta.annotation.Nonnull List<QuestionAnswer> questionAnswers) {
     
     this.questionAnswers = questionAnswers;
     return this;
@@ -401,7 +412,7 @@ public class SpeakerAll {
 
   @JsonProperty(JSON_PROPERTY_QUESTION_ANSWERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setQuestionAnswers(List<QuestionAnswer> questionAnswers) {
+  public void setQuestionAnswers(@jakarta.annotation.Nonnull List<QuestionAnswer> questionAnswers) {
     this.questionAnswers = questionAnswers;
   }
 

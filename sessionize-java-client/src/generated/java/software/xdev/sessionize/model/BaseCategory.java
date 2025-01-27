@@ -35,15 +35,17 @@ import java.util.StringJoiner;
 })
 public class BaseCategory {
   public static final String JSON_PROPERTY_ID = "id";
+  @jakarta.annotation.Nonnull
   private Integer id;
 
   public static final String JSON_PROPERTY_SORT = "sort";
+  @jakarta.annotation.Nonnull
   private Integer sort;
 
   public BaseCategory() {
   }
 
-  public BaseCategory id(Integer id) {
+  public BaseCategory id(@jakarta.annotation.Nonnull Integer id) {
     
     this.id = id;
     return this;
@@ -64,11 +66,11 @@ public class BaseCategory {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(Integer id) {
+  public void setId(@jakarta.annotation.Nonnull Integer id) {
     this.id = id;
   }
 
-  public BaseCategory sort(Integer sort) {
+  public BaseCategory sort(@jakarta.annotation.Nonnull Integer sort) {
     
     this.sort = sort;
     return this;
@@ -89,7 +91,7 @@ public class BaseCategory {
 
   @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSort(Integer sort) {
+  public void setSort(@jakarta.annotation.Nonnull Integer sort) {
     this.sort = sort;
   }
 

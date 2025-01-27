@@ -38,24 +38,29 @@ import java.util.StringJoiner;
 })
 public class QuestionAnswerFull {
   public static final String JSON_PROPERTY_ID = "id";
+  @jakarta.annotation.Nonnull
   private Integer id;
 
   public static final String JSON_PROPERTY_QUESTION = "question";
+  @jakarta.annotation.Nonnull
   private String question;
 
   public static final String JSON_PROPERTY_QUESTION_TYPE = "questionType";
+  @jakarta.annotation.Nonnull
   private String questionType;
 
   public static final String JSON_PROPERTY_ANSWER = "answer";
+  @jakarta.annotation.Nullable
   private String answer;
 
   public static final String JSON_PROPERTY_SORT = "sort";
+  @jakarta.annotation.Nonnull
   private Integer sort;
 
   public QuestionAnswerFull() {
   }
 
-  public QuestionAnswerFull id(Integer id) {
+  public QuestionAnswerFull id(@jakarta.annotation.Nonnull Integer id) {
     
     this.id = id;
     return this;
@@ -76,11 +81,11 @@ public class QuestionAnswerFull {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(Integer id) {
+  public void setId(@jakarta.annotation.Nonnull Integer id) {
     this.id = id;
   }
 
-  public QuestionAnswerFull question(String question) {
+  public QuestionAnswerFull question(@jakarta.annotation.Nonnull String question) {
     
     this.question = question;
     return this;
@@ -101,11 +106,11 @@ public class QuestionAnswerFull {
 
   @JsonProperty(JSON_PROPERTY_QUESTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setQuestion(String question) {
+  public void setQuestion(@jakarta.annotation.Nonnull String question) {
     this.question = question;
   }
 
-  public QuestionAnswerFull questionType(String questionType) {
+  public QuestionAnswerFull questionType(@jakarta.annotation.Nonnull String questionType) {
     
     this.questionType = questionType;
     return this;
@@ -126,11 +131,11 @@ public class QuestionAnswerFull {
 
   @JsonProperty(JSON_PROPERTY_QUESTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setQuestionType(String questionType) {
+  public void setQuestionType(@jakarta.annotation.Nonnull String questionType) {
     this.questionType = questionType;
   }
 
-  public QuestionAnswerFull answer(String answer) {
+  public QuestionAnswerFull answer(@jakarta.annotation.Nullable String answer) {
     
     this.answer = answer;
     return this;
@@ -151,11 +156,11 @@ public class QuestionAnswerFull {
 
   @JsonProperty(JSON_PROPERTY_ANSWER)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAnswer(String answer) {
+  public void setAnswer(@jakarta.annotation.Nullable String answer) {
     this.answer = answer;
   }
 
-  public QuestionAnswerFull sort(Integer sort) {
+  public QuestionAnswerFull sort(@jakarta.annotation.Nonnull Integer sort) {
     
     this.sort = sort;
     return this;
@@ -176,7 +181,7 @@ public class QuestionAnswerFull {
 
   @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSort(Integer sort) {
+  public void setSort(@jakarta.annotation.Nonnull Integer sort) {
     this.sort = sort;
   }
 

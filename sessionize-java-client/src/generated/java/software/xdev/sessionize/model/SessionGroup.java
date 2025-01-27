@@ -41,21 +41,25 @@ import java.util.StringJoiner;
 })
 public class SessionGroup {
   public static final String JSON_PROPERTY_GROUP_ID = "groupId";
+  @jakarta.annotation.Nullable
   private Integer groupId;
 
   public static final String JSON_PROPERTY_GROUP_NAME = "groupName";
+  @jakarta.annotation.Nullable
   private String groupName;
 
   public static final String JSON_PROPERTY_SESSIONS = "sessions";
+  @jakarta.annotation.Nullable
   private List<Session> sessions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_IS_DEFAULT = "isDefault";
+  @jakarta.annotation.Nullable
   private Boolean isDefault;
 
   public SessionGroup() {
   }
 
-  public SessionGroup groupId(Integer groupId) {
+  public SessionGroup groupId(@jakarta.annotation.Nullable Integer groupId) {
     
     this.groupId = groupId;
     return this;
@@ -76,11 +80,11 @@ public class SessionGroup {
 
   @JsonProperty(JSON_PROPERTY_GROUP_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGroupId(Integer groupId) {
+  public void setGroupId(@jakarta.annotation.Nullable Integer groupId) {
     this.groupId = groupId;
   }
 
-  public SessionGroup groupName(String groupName) {
+  public SessionGroup groupName(@jakarta.annotation.Nullable String groupName) {
     
     this.groupName = groupName;
     return this;
@@ -101,11 +105,11 @@ public class SessionGroup {
 
   @JsonProperty(JSON_PROPERTY_GROUP_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGroupName(String groupName) {
+  public void setGroupName(@jakarta.annotation.Nullable String groupName) {
     this.groupName = groupName;
   }
 
-  public SessionGroup sessions(List<Session> sessions) {
+  public SessionGroup sessions(@jakarta.annotation.Nullable List<Session> sessions) {
     
     this.sessions = sessions;
     return this;
@@ -134,11 +138,11 @@ public class SessionGroup {
 
   @JsonProperty(JSON_PROPERTY_SESSIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSessions(List<Session> sessions) {
+  public void setSessions(@jakarta.annotation.Nullable List<Session> sessions) {
     this.sessions = sessions;
   }
 
-  public SessionGroup isDefault(Boolean isDefault) {
+  public SessionGroup isDefault(@jakarta.annotation.Nullable Boolean isDefault) {
     
     this.isDefault = isDefault;
     return this;
@@ -159,7 +163,7 @@ public class SessionGroup {
 
   @JsonProperty(JSON_PROPERTY_IS_DEFAULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIsDefault(Boolean isDefault) {
+  public void setIsDefault(@jakarta.annotation.Nullable Boolean isDefault) {
     this.isDefault = isDefault;
   }
 

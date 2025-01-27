@@ -38,21 +38,25 @@ import java.util.StringJoiner;
 })
 public class SpeakerWithEmail {
   public static final String JSON_PROPERTY_ID = "id";
+  @jakarta.annotation.Nonnull
   private UUID id;
 
   public static final String JSON_PROPERTY_FIRST_NAME = "firstName";
+  @jakarta.annotation.Nonnull
   private String firstName;
 
   public static final String JSON_PROPERTY_LAST_NAME = "lastName";
+  @jakarta.annotation.Nonnull
   private String lastName;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
+  @jakarta.annotation.Nonnull
   private String email;
 
   public SpeakerWithEmail() {
   }
 
-  public SpeakerWithEmail id(UUID id) {
+  public SpeakerWithEmail id(@jakarta.annotation.Nonnull UUID id) {
     
     this.id = id;
     return this;
@@ -73,11 +77,11 @@ public class SpeakerWithEmail {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(UUID id) {
+  public void setId(@jakarta.annotation.Nonnull UUID id) {
     this.id = id;
   }
 
-  public SpeakerWithEmail firstName(String firstName) {
+  public SpeakerWithEmail firstName(@jakarta.annotation.Nonnull String firstName) {
     
     this.firstName = firstName;
     return this;
@@ -98,11 +102,11 @@ public class SpeakerWithEmail {
 
   @JsonProperty(JSON_PROPERTY_FIRST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFirstName(String firstName) {
+  public void setFirstName(@jakarta.annotation.Nonnull String firstName) {
     this.firstName = firstName;
   }
 
-  public SpeakerWithEmail lastName(String lastName) {
+  public SpeakerWithEmail lastName(@jakarta.annotation.Nonnull String lastName) {
     
     this.lastName = lastName;
     return this;
@@ -123,11 +127,11 @@ public class SpeakerWithEmail {
 
   @JsonProperty(JSON_PROPERTY_LAST_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLastName(String lastName) {
+  public void setLastName(@jakarta.annotation.Nonnull String lastName) {
     this.lastName = lastName;
   }
 
-  public SpeakerWithEmail email(String email) {
+  public SpeakerWithEmail email(@jakarta.annotation.Nonnull String email) {
     
     this.email = email;
     return this;
@@ -148,7 +152,7 @@ public class SpeakerWithEmail {
 
   @JsonProperty(JSON_PROPERTY_EMAIL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setEmail(String email) {
+  public void setEmail(@jakarta.annotation.Nonnull String email) {
     this.email = email;
   }
 
