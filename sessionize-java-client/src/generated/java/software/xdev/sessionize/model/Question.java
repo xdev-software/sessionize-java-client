@@ -37,21 +37,25 @@ import java.util.StringJoiner;
 })
 public class Question {
   public static final String JSON_PROPERTY_ID = "id";
+  @jakarta.annotation.Nonnull
   private Integer id;
 
   public static final String JSON_PROPERTY_QUESTION = "question";
+  @jakarta.annotation.Nonnull
   private String question;
 
   public static final String JSON_PROPERTY_QUESTION_TYPE = "questionType";
+  @jakarta.annotation.Nonnull
   private String questionType;
 
   public static final String JSON_PROPERTY_SORT = "sort";
+  @jakarta.annotation.Nonnull
   private Integer sort;
 
   public Question() {
   }
 
-  public Question id(Integer id) {
+  public Question id(@jakarta.annotation.Nonnull Integer id) {
     
     this.id = id;
     return this;
@@ -72,11 +76,11 @@ public class Question {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(Integer id) {
+  public void setId(@jakarta.annotation.Nonnull Integer id) {
     this.id = id;
   }
 
-  public Question question(String question) {
+  public Question question(@jakarta.annotation.Nonnull String question) {
     
     this.question = question;
     return this;
@@ -97,11 +101,11 @@ public class Question {
 
   @JsonProperty(JSON_PROPERTY_QUESTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setQuestion(String question) {
+  public void setQuestion(@jakarta.annotation.Nonnull String question) {
     this.question = question;
   }
 
-  public Question questionType(String questionType) {
+  public Question questionType(@jakarta.annotation.Nonnull String questionType) {
     
     this.questionType = questionType;
     return this;
@@ -122,11 +126,11 @@ public class Question {
 
   @JsonProperty(JSON_PROPERTY_QUESTION_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setQuestionType(String questionType) {
+  public void setQuestionType(@jakarta.annotation.Nonnull String questionType) {
     this.questionType = questionType;
   }
 
-  public Question sort(Integer sort) {
+  public Question sort(@jakarta.annotation.Nonnull Integer sort) {
     
     this.sort = sort;
     return this;
@@ -147,7 +151,7 @@ public class Question {
 
   @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSort(Integer sort) {
+  public void setSort(@jakarta.annotation.Nonnull Integer sort) {
     this.sort = sort;
   }
 

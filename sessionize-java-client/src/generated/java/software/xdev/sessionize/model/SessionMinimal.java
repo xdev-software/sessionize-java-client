@@ -35,15 +35,17 @@ import java.util.StringJoiner;
 })
 public class SessionMinimal {
   public static final String JSON_PROPERTY_ID = "id";
+  @jakarta.annotation.Nonnull
   private Integer id;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @jakarta.annotation.Nonnull
   private String name;
 
   public SessionMinimal() {
   }
 
-  public SessionMinimal id(Integer id) {
+  public SessionMinimal id(@jakarta.annotation.Nonnull Integer id) {
     
     this.id = id;
     return this;
@@ -64,11 +66,11 @@ public class SessionMinimal {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(Integer id) {
+  public void setId(@jakarta.annotation.Nonnull Integer id) {
     this.id = id;
   }
 
-  public SessionMinimal name(String name) {
+  public SessionMinimal name(@jakarta.annotation.Nonnull String name) {
     
     this.name = name;
     return this;
@@ -89,7 +91,7 @@ public class SessionMinimal {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 

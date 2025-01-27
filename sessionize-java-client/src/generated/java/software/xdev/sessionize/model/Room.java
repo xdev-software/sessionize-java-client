@@ -36,18 +36,21 @@ import java.util.StringJoiner;
 })
 public class Room {
   public static final String JSON_PROPERTY_ID = "id";
+  @jakarta.annotation.Nonnull
   private Integer id;
 
   public static final String JSON_PROPERTY_NAME = "name";
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String JSON_PROPERTY_SORT = "sort";
+  @jakarta.annotation.Nonnull
   private Integer sort;
 
   public Room() {
   }
 
-  public Room id(Integer id) {
+  public Room id(@jakarta.annotation.Nonnull Integer id) {
     
     this.id = id;
     return this;
@@ -68,11 +71,11 @@ public class Room {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(Integer id) {
+  public void setId(@jakarta.annotation.Nonnull Integer id) {
     this.id = id;
   }
 
-  public Room name(String name) {
+  public Room name(@jakarta.annotation.Nonnull String name) {
     
     this.name = name;
     return this;
@@ -93,11 +96,11 @@ public class Room {
 
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setName(String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
-  public Room sort(Integer sort) {
+  public Room sort(@jakarta.annotation.Nonnull Integer sort) {
     
     this.sort = sort;
     return this;
@@ -118,7 +121,7 @@ public class Room {
 
   @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSort(Integer sort) {
+  public void setSort(@jakarta.annotation.Nonnull Integer sort) {
     this.sort = sort;
   }
 

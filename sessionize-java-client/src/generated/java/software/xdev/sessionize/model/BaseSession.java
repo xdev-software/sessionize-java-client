@@ -55,45 +55,57 @@ import java.util.StringJoiner;
 })
 public class BaseSession {
   public static final String JSON_PROPERTY_ID = "id";
+  @jakarta.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_TITLE = "title";
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @jakarta.annotation.Nullable
   private JsonNullable<String> description = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_STARTS_AT = "startsAt";
+  @jakarta.annotation.Nullable
   private OffsetDateTime startsAt;
 
   public static final String JSON_PROPERTY_ENDS_AT = "endsAt";
+  @jakarta.annotation.Nullable
   private OffsetDateTime endsAt;
 
   public static final String JSON_PROPERTY_IS_SERVICE_SESSION = "isServiceSession";
+  @jakarta.annotation.Nonnull
   private Boolean isServiceSession;
 
   public static final String JSON_PROPERTY_IS_PLENUM_SESSION = "isPlenumSession";
+  @jakarta.annotation.Nonnull
   private Boolean isPlenumSession;
 
   public static final String JSON_PROPERTY_CATEGORY_ITEMS = "categoryItems";
+  @jakarta.annotation.Nonnull
   private List<Integer> categoryItems = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ROOM_ID = "roomId";
+  @jakarta.annotation.Nullable
   private Integer roomId;
 
   public static final String JSON_PROPERTY_LIVE_URL = "liveUrl";
+  @jakarta.annotation.Nullable
   private JsonNullable<URI> liveUrl = JsonNullable.<URI>undefined();
 
   public static final String JSON_PROPERTY_RECORDING_URL = "recordingUrl";
+  @jakarta.annotation.Nullable
   private JsonNullable<URI> recordingUrl = JsonNullable.<URI>undefined();
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @jakarta.annotation.Nonnull
   private Status status;
 
   public BaseSession() {
   }
 
-  public BaseSession id(String id) {
+  public BaseSession id(@jakarta.annotation.Nonnull String id) {
     
     this.id = id;
     return this;
@@ -114,11 +126,11 @@ public class BaseSession {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
-  public BaseSession title(String title) {
+  public BaseSession title(@jakarta.annotation.Nonnull String title) {
     
     this.title = title;
     return this;
@@ -139,11 +151,11 @@ public class BaseSession {
 
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTitle(String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
-  public BaseSession description(String description) {
+  public BaseSession description(@jakarta.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -172,11 +184,11 @@ public class BaseSession {
     this.description = description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
   }
 
-  public BaseSession startsAt(OffsetDateTime startsAt) {
+  public BaseSession startsAt(@jakarta.annotation.Nullable OffsetDateTime startsAt) {
     
     this.startsAt = startsAt;
     return this;
@@ -197,11 +209,11 @@ public class BaseSession {
 
   @JsonProperty(JSON_PROPERTY_STARTS_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setStartsAt(OffsetDateTime startsAt) {
+  public void setStartsAt(@jakarta.annotation.Nullable OffsetDateTime startsAt) {
     this.startsAt = startsAt;
   }
 
-  public BaseSession endsAt(OffsetDateTime endsAt) {
+  public BaseSession endsAt(@jakarta.annotation.Nullable OffsetDateTime endsAt) {
     
     this.endsAt = endsAt;
     return this;
@@ -222,11 +234,11 @@ public class BaseSession {
 
   @JsonProperty(JSON_PROPERTY_ENDS_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setEndsAt(OffsetDateTime endsAt) {
+  public void setEndsAt(@jakarta.annotation.Nullable OffsetDateTime endsAt) {
     this.endsAt = endsAt;
   }
 
-  public BaseSession isServiceSession(Boolean isServiceSession) {
+  public BaseSession isServiceSession(@jakarta.annotation.Nonnull Boolean isServiceSession) {
     
     this.isServiceSession = isServiceSession;
     return this;
@@ -247,11 +259,11 @@ public class BaseSession {
 
   @JsonProperty(JSON_PROPERTY_IS_SERVICE_SESSION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIsServiceSession(Boolean isServiceSession) {
+  public void setIsServiceSession(@jakarta.annotation.Nonnull Boolean isServiceSession) {
     this.isServiceSession = isServiceSession;
   }
 
-  public BaseSession isPlenumSession(Boolean isPlenumSession) {
+  public BaseSession isPlenumSession(@jakarta.annotation.Nonnull Boolean isPlenumSession) {
     
     this.isPlenumSession = isPlenumSession;
     return this;
@@ -272,11 +284,11 @@ public class BaseSession {
 
   @JsonProperty(JSON_PROPERTY_IS_PLENUM_SESSION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIsPlenumSession(Boolean isPlenumSession) {
+  public void setIsPlenumSession(@jakarta.annotation.Nonnull Boolean isPlenumSession) {
     this.isPlenumSession = isPlenumSession;
   }
 
-  public BaseSession categoryItems(List<Integer> categoryItems) {
+  public BaseSession categoryItems(@jakarta.annotation.Nonnull List<Integer> categoryItems) {
     
     this.categoryItems = categoryItems;
     return this;
@@ -305,11 +317,11 @@ public class BaseSession {
 
   @JsonProperty(JSON_PROPERTY_CATEGORY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCategoryItems(List<Integer> categoryItems) {
+  public void setCategoryItems(@jakarta.annotation.Nonnull List<Integer> categoryItems) {
     this.categoryItems = categoryItems;
   }
 
-  public BaseSession roomId(Integer roomId) {
+  public BaseSession roomId(@jakarta.annotation.Nullable Integer roomId) {
     
     this.roomId = roomId;
     return this;
@@ -330,11 +342,11 @@ public class BaseSession {
 
   @JsonProperty(JSON_PROPERTY_ROOM_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRoomId(Integer roomId) {
+  public void setRoomId(@jakarta.annotation.Nullable Integer roomId) {
     this.roomId = roomId;
   }
 
-  public BaseSession liveUrl(URI liveUrl) {
+  public BaseSession liveUrl(@jakarta.annotation.Nullable URI liveUrl) {
     this.liveUrl = JsonNullable.<URI>of(liveUrl);
     
     return this;
@@ -363,11 +375,11 @@ public class BaseSession {
     this.liveUrl = liveUrl;
   }
 
-  public void setLiveUrl(URI liveUrl) {
+  public void setLiveUrl(@jakarta.annotation.Nullable URI liveUrl) {
     this.liveUrl = JsonNullable.<URI>of(liveUrl);
   }
 
-  public BaseSession recordingUrl(URI recordingUrl) {
+  public BaseSession recordingUrl(@jakarta.annotation.Nullable URI recordingUrl) {
     this.recordingUrl = JsonNullable.<URI>of(recordingUrl);
     
     return this;
@@ -396,11 +408,11 @@ public class BaseSession {
     this.recordingUrl = recordingUrl;
   }
 
-  public void setRecordingUrl(URI recordingUrl) {
+  public void setRecordingUrl(@jakarta.annotation.Nullable URI recordingUrl) {
     this.recordingUrl = JsonNullable.<URI>of(recordingUrl);
   }
 
-  public BaseSession status(Status status) {
+  public BaseSession status(@jakarta.annotation.Nonnull Status status) {
     
     this.status = status;
     return this;
@@ -421,7 +433,7 @@ public class BaseSession {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setStatus(Status status) {
+  public void setStatus(@jakarta.annotation.Nonnull Status status) {
     this.status = status;
   }
 

@@ -58,51 +58,65 @@ import java.util.StringJoiner;
 })
 public class SessionAll {
   public static final String JSON_PROPERTY_ID = "id";
+  @jakarta.annotation.Nonnull
   private String id;
 
   public static final String JSON_PROPERTY_TITLE = "title";
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @jakarta.annotation.Nullable
   private JsonNullable<String> description = JsonNullable.<String>undefined();
 
   public static final String JSON_PROPERTY_STARTS_AT = "startsAt";
+  @jakarta.annotation.Nullable
   private OffsetDateTime startsAt;
 
   public static final String JSON_PROPERTY_ENDS_AT = "endsAt";
+  @jakarta.annotation.Nullable
   private OffsetDateTime endsAt;
 
   public static final String JSON_PROPERTY_IS_SERVICE_SESSION = "isServiceSession";
+  @jakarta.annotation.Nonnull
   private Boolean isServiceSession;
 
   public static final String JSON_PROPERTY_IS_PLENUM_SESSION = "isPlenumSession";
+  @jakarta.annotation.Nonnull
   private Boolean isPlenumSession;
 
   public static final String JSON_PROPERTY_CATEGORY_ITEMS = "categoryItems";
+  @jakarta.annotation.Nonnull
   private List<Integer> categoryItems = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ROOM_ID = "roomId";
+  @jakarta.annotation.Nullable
   private Integer roomId;
 
   public static final String JSON_PROPERTY_LIVE_URL = "liveUrl";
+  @jakarta.annotation.Nullable
   private JsonNullable<URI> liveUrl = JsonNullable.<URI>undefined();
 
   public static final String JSON_PROPERTY_RECORDING_URL = "recordingUrl";
+  @jakarta.annotation.Nullable
   private JsonNullable<URI> recordingUrl = JsonNullable.<URI>undefined();
 
   public static final String JSON_PROPERTY_STATUS = "status";
+  @jakarta.annotation.Nonnull
   private Status status;
 
   public static final String JSON_PROPERTY_SPEAKERS = "speakers";
+  @jakarta.annotation.Nonnull
   private List<String> speakers = new ArrayList<>();
 
   public static final String JSON_PROPERTY_QUESTION_ANSWERS = "questionAnswers";
+  @jakarta.annotation.Nonnull
   private List<QuestionAnswer> questionAnswers = new ArrayList<>();
 
   public SessionAll() {
   }
 
-  public SessionAll id(String id) {
+  public SessionAll id(@jakarta.annotation.Nonnull String id) {
     
     this.id = id;
     return this;
@@ -123,11 +137,11 @@ public class SessionAll {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
-  public SessionAll title(String title) {
+  public SessionAll title(@jakarta.annotation.Nonnull String title) {
     
     this.title = title;
     return this;
@@ -148,11 +162,11 @@ public class SessionAll {
 
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTitle(String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
-  public SessionAll description(String description) {
+  public SessionAll description(@jakarta.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
     
     return this;
@@ -181,11 +195,11 @@ public class SessionAll {
     this.description = description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = JsonNullable.<String>of(description);
   }
 
-  public SessionAll startsAt(OffsetDateTime startsAt) {
+  public SessionAll startsAt(@jakarta.annotation.Nullable OffsetDateTime startsAt) {
     
     this.startsAt = startsAt;
     return this;
@@ -206,11 +220,11 @@ public class SessionAll {
 
   @JsonProperty(JSON_PROPERTY_STARTS_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setStartsAt(OffsetDateTime startsAt) {
+  public void setStartsAt(@jakarta.annotation.Nullable OffsetDateTime startsAt) {
     this.startsAt = startsAt;
   }
 
-  public SessionAll endsAt(OffsetDateTime endsAt) {
+  public SessionAll endsAt(@jakarta.annotation.Nullable OffsetDateTime endsAt) {
     
     this.endsAt = endsAt;
     return this;
@@ -231,11 +245,11 @@ public class SessionAll {
 
   @JsonProperty(JSON_PROPERTY_ENDS_AT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setEndsAt(OffsetDateTime endsAt) {
+  public void setEndsAt(@jakarta.annotation.Nullable OffsetDateTime endsAt) {
     this.endsAt = endsAt;
   }
 
-  public SessionAll isServiceSession(Boolean isServiceSession) {
+  public SessionAll isServiceSession(@jakarta.annotation.Nonnull Boolean isServiceSession) {
     
     this.isServiceSession = isServiceSession;
     return this;
@@ -256,11 +270,11 @@ public class SessionAll {
 
   @JsonProperty(JSON_PROPERTY_IS_SERVICE_SESSION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIsServiceSession(Boolean isServiceSession) {
+  public void setIsServiceSession(@jakarta.annotation.Nonnull Boolean isServiceSession) {
     this.isServiceSession = isServiceSession;
   }
 
-  public SessionAll isPlenumSession(Boolean isPlenumSession) {
+  public SessionAll isPlenumSession(@jakarta.annotation.Nonnull Boolean isPlenumSession) {
     
     this.isPlenumSession = isPlenumSession;
     return this;
@@ -281,11 +295,11 @@ public class SessionAll {
 
   @JsonProperty(JSON_PROPERTY_IS_PLENUM_SESSION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setIsPlenumSession(Boolean isPlenumSession) {
+  public void setIsPlenumSession(@jakarta.annotation.Nonnull Boolean isPlenumSession) {
     this.isPlenumSession = isPlenumSession;
   }
 
-  public SessionAll categoryItems(List<Integer> categoryItems) {
+  public SessionAll categoryItems(@jakarta.annotation.Nonnull List<Integer> categoryItems) {
     
     this.categoryItems = categoryItems;
     return this;
@@ -314,11 +328,11 @@ public class SessionAll {
 
   @JsonProperty(JSON_PROPERTY_CATEGORY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCategoryItems(List<Integer> categoryItems) {
+  public void setCategoryItems(@jakarta.annotation.Nonnull List<Integer> categoryItems) {
     this.categoryItems = categoryItems;
   }
 
-  public SessionAll roomId(Integer roomId) {
+  public SessionAll roomId(@jakarta.annotation.Nullable Integer roomId) {
     
     this.roomId = roomId;
     return this;
@@ -339,11 +353,11 @@ public class SessionAll {
 
   @JsonProperty(JSON_PROPERTY_ROOM_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRoomId(Integer roomId) {
+  public void setRoomId(@jakarta.annotation.Nullable Integer roomId) {
     this.roomId = roomId;
   }
 
-  public SessionAll liveUrl(URI liveUrl) {
+  public SessionAll liveUrl(@jakarta.annotation.Nullable URI liveUrl) {
     this.liveUrl = JsonNullable.<URI>of(liveUrl);
     
     return this;
@@ -372,11 +386,11 @@ public class SessionAll {
     this.liveUrl = liveUrl;
   }
 
-  public void setLiveUrl(URI liveUrl) {
+  public void setLiveUrl(@jakarta.annotation.Nullable URI liveUrl) {
     this.liveUrl = JsonNullable.<URI>of(liveUrl);
   }
 
-  public SessionAll recordingUrl(URI recordingUrl) {
+  public SessionAll recordingUrl(@jakarta.annotation.Nullable URI recordingUrl) {
     this.recordingUrl = JsonNullable.<URI>of(recordingUrl);
     
     return this;
@@ -405,11 +419,11 @@ public class SessionAll {
     this.recordingUrl = recordingUrl;
   }
 
-  public void setRecordingUrl(URI recordingUrl) {
+  public void setRecordingUrl(@jakarta.annotation.Nullable URI recordingUrl) {
     this.recordingUrl = JsonNullable.<URI>of(recordingUrl);
   }
 
-  public SessionAll status(Status status) {
+  public SessionAll status(@jakarta.annotation.Nonnull Status status) {
     
     this.status = status;
     return this;
@@ -430,11 +444,11 @@ public class SessionAll {
 
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setStatus(Status status) {
+  public void setStatus(@jakarta.annotation.Nonnull Status status) {
     this.status = status;
   }
 
-  public SessionAll speakers(List<String> speakers) {
+  public SessionAll speakers(@jakarta.annotation.Nonnull List<String> speakers) {
     
     this.speakers = speakers;
     return this;
@@ -463,11 +477,11 @@ public class SessionAll {
 
   @JsonProperty(JSON_PROPERTY_SPEAKERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSpeakers(List<String> speakers) {
+  public void setSpeakers(@jakarta.annotation.Nonnull List<String> speakers) {
     this.speakers = speakers;
   }
 
-  public SessionAll questionAnswers(List<QuestionAnswer> questionAnswers) {
+  public SessionAll questionAnswers(@jakarta.annotation.Nonnull List<QuestionAnswer> questionAnswers) {
     
     this.questionAnswers = questionAnswers;
     return this;
@@ -496,7 +510,7 @@ public class SessionAll {
 
   @JsonProperty(JSON_PROPERTY_QUESTION_ANSWERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setQuestionAnswers(List<QuestionAnswer> questionAnswers) {
+  public void setQuestionAnswers(@jakarta.annotation.Nonnull List<QuestionAnswer> questionAnswers) {
     this.questionAnswers = questionAnswers;
   }
 

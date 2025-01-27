@@ -42,24 +42,29 @@ import java.util.StringJoiner;
 })
 public class CategoryAll {
   public static final String JSON_PROPERTY_ID = "id";
+  @jakarta.annotation.Nonnull
   private Integer id;
 
   public static final String JSON_PROPERTY_SORT = "sort";
+  @jakarta.annotation.Nonnull
   private Integer sort;
 
   public static final String JSON_PROPERTY_TITLE = "title";
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String JSON_PROPERTY_ITEMS = "items";
+  @jakarta.annotation.Nonnull
   private List<CategoryItemAll> items = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @jakarta.annotation.Nonnull
   private String type;
 
   public CategoryAll() {
   }
 
-  public CategoryAll id(Integer id) {
+  public CategoryAll id(@jakarta.annotation.Nonnull Integer id) {
     
     this.id = id;
     return this;
@@ -80,11 +85,11 @@ public class CategoryAll {
 
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setId(Integer id) {
+  public void setId(@jakarta.annotation.Nonnull Integer id) {
     this.id = id;
   }
 
-  public CategoryAll sort(Integer sort) {
+  public CategoryAll sort(@jakarta.annotation.Nonnull Integer sort) {
     
     this.sort = sort;
     return this;
@@ -105,11 +110,11 @@ public class CategoryAll {
 
   @JsonProperty(JSON_PROPERTY_SORT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSort(Integer sort) {
+  public void setSort(@jakarta.annotation.Nonnull Integer sort) {
     this.sort = sort;
   }
 
-  public CategoryAll title(String title) {
+  public CategoryAll title(@jakarta.annotation.Nonnull String title) {
     
     this.title = title;
     return this;
@@ -130,11 +135,11 @@ public class CategoryAll {
 
   @JsonProperty(JSON_PROPERTY_TITLE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTitle(String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
-  public CategoryAll items(List<CategoryItemAll> items) {
+  public CategoryAll items(@jakarta.annotation.Nonnull List<CategoryItemAll> items) {
     
     this.items = items;
     return this;
@@ -163,11 +168,11 @@ public class CategoryAll {
 
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setItems(List<CategoryItemAll> items) {
+  public void setItems(@jakarta.annotation.Nonnull List<CategoryItemAll> items) {
     this.items = items;
   }
 
-  public CategoryAll type(String type) {
+  public CategoryAll type(@jakarta.annotation.Nonnull String type) {
     
     this.type = type;
     return this;
@@ -188,7 +193,7 @@ public class CategoryAll {
 
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
+  public void setType(@jakarta.annotation.Nonnull String type) {
     this.type = type;
   }
 

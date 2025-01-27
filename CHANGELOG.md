@@ -1,3 +1,9 @@
+# 1.2.5
+* Updated dependencies
+
+# 1.2.4
+* Updated dependencies
+
 # 1.2.3
 * ``Session#id`` is now a String #100
 * Updated dependencies

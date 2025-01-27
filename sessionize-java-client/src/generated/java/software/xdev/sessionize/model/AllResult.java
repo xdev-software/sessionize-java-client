@@ -46,24 +46,29 @@ import java.util.StringJoiner;
 })
 public class AllResult {
   public static final String JSON_PROPERTY_SESSIONS = "sessions";
+  @jakarta.annotation.Nonnull
   private List<SessionAll> sessions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_SPEAKERS = "speakers";
+  @jakarta.annotation.Nonnull
   private List<SpeakerAll> speakers = new ArrayList<>();
 
   public static final String JSON_PROPERTY_QUESTIONS = "questions";
+  @jakarta.annotation.Nonnull
   private List<Question> questions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_CATEGORIES = "categories";
+  @jakarta.annotation.Nonnull
   private List<CategoryAll> categories = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ROOMS = "rooms";
+  @jakarta.annotation.Nonnull
   private List<Room> rooms = new ArrayList<>();
 
   public AllResult() {
   }
 
-  public AllResult sessions(List<SessionAll> sessions) {
+  public AllResult sessions(@jakarta.annotation.Nonnull List<SessionAll> sessions) {
     
     this.sessions = sessions;
     return this;
@@ -92,11 +97,11 @@ public class AllResult {
 
   @JsonProperty(JSON_PROPERTY_SESSIONS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSessions(List<SessionAll> sessions) {
+  public void setSessions(@jakarta.annotation.Nonnull List<SessionAll> sessions) {
     this.sessions = sessions;
   }
 
-  public AllResult speakers(List<SpeakerAll> speakers) {
+  public AllResult speakers(@jakarta.annotation.Nonnull List<SpeakerAll> speakers) {
     
     this.speakers = speakers;
     return this;
@@ -125,11 +130,11 @@ public class AllResult {
 
   @JsonProperty(JSON_PROPERTY_SPEAKERS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSpeakers(List<SpeakerAll> speakers) {
+  public void setSpeakers(@jakarta.annotation.Nonnull List<SpeakerAll> speakers) {
     this.speakers = speakers;
   }
 
-  public AllResult questions(List<Question> questions) {
+  public AllResult questions(@jakarta.annotation.Nonnull List<Question> questions) {
     
     this.questions = questions;
     return this;
@@ -158,11 +163,11 @@ public class AllResult {
 
   @JsonProperty(JSON_PROPERTY_QUESTIONS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setQuestions(List<Question> questions) {
+  public void setQuestions(@jakarta.annotation.Nonnull List<Question> questions) {
     this.questions = questions;
   }
 
-  public AllResult categories(List<CategoryAll> categories) {
+  public AllResult categories(@jakarta.annotation.Nonnull List<CategoryAll> categories) {
     
     this.categories = categories;
     return this;
@@ -191,11 +196,11 @@ public class AllResult {
 
   @JsonProperty(JSON_PROPERTY_CATEGORIES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCategories(List<CategoryAll> categories) {
+  public void setCategories(@jakarta.annotation.Nonnull List<CategoryAll> categories) {
     this.categories = categories;
   }
 
-  public AllResult rooms(List<Room> rooms) {
+  public AllResult rooms(@jakarta.annotation.Nonnull List<Room> rooms) {
     
     this.rooms = rooms;
     return this;
@@ -224,7 +229,7 @@ public class AllResult {
 
   @JsonProperty(JSON_PROPERTY_ROOMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRooms(List<Room> rooms) {
+  public void setRooms(@jakarta.annotation.Nonnull List<Room> rooms) {
     this.rooms = rooms;
   }
 

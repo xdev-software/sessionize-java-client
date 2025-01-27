@@ -35,15 +35,17 @@ import java.util.StringJoiner;
 })
 public class QuestionAnswer {
   public static final String JSON_PROPERTY_QUESTION_ID = "questionId";
+  @jakarta.annotation.Nonnull
   private Integer questionId;
 
   public static final String JSON_PROPERTY_ANSWER_VALUE = "answerValue";
+  @jakarta.annotation.Nonnull
   private String answerValue;
 
   public QuestionAnswer() {
   }
 
-  public QuestionAnswer questionId(Integer questionId) {
+  public QuestionAnswer questionId(@jakarta.annotation.Nonnull Integer questionId) {
     
     this.questionId = questionId;
     return this;
@@ -64,11 +66,11 @@ public class QuestionAnswer {
 
   @JsonProperty(JSON_PROPERTY_QUESTION_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setQuestionId(Integer questionId) {
+  public void setQuestionId(@jakarta.annotation.Nonnull Integer questionId) {
     this.questionId = questionId;
   }
 
-  public QuestionAnswer answerValue(String answerValue) {
+  public QuestionAnswer answerValue(@jakarta.annotation.Nonnull String answerValue) {
     
     this.answerValue = answerValue;
     return this;
@@ -89,7 +91,7 @@ public class QuestionAnswer {
 
   @JsonProperty(JSON_PROPERTY_ANSWER_VALUE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAnswerValue(String answerValue) {
+  public void setAnswerValue(@jakarta.annotation.Nonnull String answerValue) {
     this.answerValue = answerValue;
   }
 
