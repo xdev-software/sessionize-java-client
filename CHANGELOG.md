@@ -1,3 +1,6 @@
+# 1.2.6
+* Updated dependencies
+
 # 1.2.5
 * Updated dependencies
 
