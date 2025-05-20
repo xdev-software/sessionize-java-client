@@ -1,3 +1,7 @@
+# 1.2.7
+* Migrated deployment to _Sonatype Maven Central Portal_ [#155](https://github.com/xdev-software/standard-maven-template/issues/155)
+* Updated dependencies
+
 # 1.2.6
 * Updated dependencies
 
