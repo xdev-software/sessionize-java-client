@@ -49,11 +49,6 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<generatedDirRelative>src/generated/java</generatedDirRelative>
-
-		<!-- Ignore generated code -->
-		<sonar.exclusions>
-			src/generated/**
-		</sonar.exclusions>
 	</properties>
 
 	<dependencyManagement>
