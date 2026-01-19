@@ -62,7 +62,7 @@ public class Link {
    * @return title
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TITLE)
+  @JsonProperty(value = JSON_PROPERTY_TITLE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getTitle() {
@@ -70,7 +70,7 @@ public class Link {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TITLE)
+  @JsonProperty(value = JSON_PROPERTY_TITLE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
@@ -87,7 +87,7 @@ public class Link {
    * @return url
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonProperty(value = JSON_PROPERTY_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public URI getUrl() {
@@ -95,7 +95,7 @@ public class Link {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_URL)
+  @JsonProperty(value = JSON_PROPERTY_URL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setUrl(@jakarta.annotation.Nonnull URI url) {
     this.url = url;
@@ -112,7 +112,7 @@ public class Link {
    * @return linkType
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LINK_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_LINK_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getLinkType() {
@@ -120,7 +120,7 @@ public class Link {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LINK_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_LINK_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLinkType(@jakarta.annotation.Nonnull String linkType) {
     this.linkType = linkType;
@@ -202,7 +202,7 @@ public class Link {
     // add `title` to the URL query string
     if (getTitle() != null) {
       try {
-        joiner.add(String.format("%stitle%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTitle()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%stitle%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTitle()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -212,7 +212,7 @@ public class Link {
     // add `url` to the URL query string
     if (getUrl() != null) {
       try {
-        joiner.add(String.format("%surl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUrl()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%surl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUrl()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -222,7 +222,7 @@ public class Link {
     // add `linkType` to the URL query string
     if (getLinkType() != null) {
       try {
-        joiner.add(String.format("%slinkType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLinkType()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%slinkType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLinkType()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

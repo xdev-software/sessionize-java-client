@@ -75,7 +75,7 @@ public class CategoryAll {
    * @return id
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getId() {
@@ -83,7 +83,7 @@ public class CategoryAll {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(@jakarta.annotation.Nonnull Integer id) {
     this.id = id;
@@ -100,7 +100,7 @@ public class CategoryAll {
    * @return sort
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SORT)
+  @JsonProperty(value = JSON_PROPERTY_SORT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getSort() {
@@ -108,7 +108,7 @@ public class CategoryAll {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SORT)
+  @JsonProperty(value = JSON_PROPERTY_SORT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSort(@jakarta.annotation.Nonnull Integer sort) {
     this.sort = sort;
@@ -125,7 +125,7 @@ public class CategoryAll {
    * @return title
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TITLE)
+  @JsonProperty(value = JSON_PROPERTY_TITLE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getTitle() {
@@ -133,7 +133,7 @@ public class CategoryAll {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TITLE)
+  @JsonProperty(value = JSON_PROPERTY_TITLE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
@@ -158,7 +158,7 @@ public class CategoryAll {
    * @return items
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ITEMS)
+  @JsonProperty(value = JSON_PROPERTY_ITEMS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<CategoryItemAll> getItems() {
@@ -166,7 +166,7 @@ public class CategoryAll {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ITEMS)
+  @JsonProperty(value = JSON_PROPERTY_ITEMS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setItems(@jakarta.annotation.Nonnull List<CategoryItemAll> items) {
     this.items = items;
@@ -183,7 +183,7 @@ public class CategoryAll {
    * @return type
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getType() {
@@ -191,7 +191,7 @@ public class CategoryAll {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setType(@jakarta.annotation.Nonnull String type) {
     this.type = type;
@@ -277,7 +277,7 @@ public class CategoryAll {
     // add `id` to the URL query string
     if (getId() != null) {
       try {
-        joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -287,7 +287,7 @@ public class CategoryAll {
     // add `sort` to the URL query string
     if (getSort() != null) {
       try {
-        joiner.add(String.format("%ssort%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSort()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%ssort%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSort()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -297,7 +297,7 @@ public class CategoryAll {
     // add `title` to the URL query string
     if (getTitle() != null) {
       try {
-        joiner.add(String.format("%stitle%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTitle()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%stitle%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTitle()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -308,8 +308,8 @@ public class CategoryAll {
     if (getItems() != null) {
       for (int i = 0; i < getItems().size(); i++) {
         if (getItems().get(i) != null) {
-          joiner.add(getItems().get(i).toUrlQueryString(String.format("%sitems%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getItems().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sitems%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -317,7 +317,7 @@ public class CategoryAll {
     // add `type` to the URL query string
     if (getType() != null) {
       try {
-        joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getType()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%stype%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getType()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

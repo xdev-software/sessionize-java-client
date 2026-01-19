@@ -67,7 +67,7 @@ public class SpeakerWithEmail {
    * @return id
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public UUID getId() {
@@ -75,7 +75,7 @@ public class SpeakerWithEmail {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(@jakarta.annotation.Nonnull UUID id) {
     this.id = id;
@@ -92,7 +92,7 @@ public class SpeakerWithEmail {
    * @return firstName
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getFirstName() {
@@ -100,7 +100,7 @@ public class SpeakerWithEmail {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setFirstName(@jakarta.annotation.Nonnull String firstName) {
     this.firstName = firstName;
@@ -117,7 +117,7 @@ public class SpeakerWithEmail {
    * @return lastName
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getLastName() {
@@ -125,7 +125,7 @@ public class SpeakerWithEmail {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLastName(@jakarta.annotation.Nonnull String lastName) {
     this.lastName = lastName;
@@ -142,7 +142,7 @@ public class SpeakerWithEmail {
    * @return email
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getEmail() {
@@ -150,7 +150,7 @@ public class SpeakerWithEmail {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EMAIL)
+  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setEmail(@jakarta.annotation.Nonnull String email) {
     this.email = email;
@@ -234,7 +234,7 @@ public class SpeakerWithEmail {
     // add `id` to the URL query string
     if (getId() != null) {
       try {
-        joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -244,7 +244,7 @@ public class SpeakerWithEmail {
     // add `firstName` to the URL query string
     if (getFirstName() != null) {
       try {
-        joiner.add(String.format("%sfirstName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFirstName()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sfirstName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFirstName()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -254,7 +254,7 @@ public class SpeakerWithEmail {
     // add `lastName` to the URL query string
     if (getLastName() != null) {
       try {
-        joiner.add(String.format("%slastName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLastName()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%slastName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLastName()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -264,7 +264,7 @@ public class SpeakerWithEmail {
     // add `email` to the URL query string
     if (getEmail() != null) {
       try {
-        joiner.add(String.format("%semail%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEmail()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEmail()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

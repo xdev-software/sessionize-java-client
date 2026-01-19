@@ -70,7 +70,7 @@ public class SessionGroup {
    * @return groupId
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GROUP_ID)
+  @JsonProperty(value = JSON_PROPERTY_GROUP_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Integer getGroupId() {
@@ -78,7 +78,7 @@ public class SessionGroup {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_GROUP_ID)
+  @JsonProperty(value = JSON_PROPERTY_GROUP_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroupId(@jakarta.annotation.Nullable Integer groupId) {
     this.groupId = groupId;
@@ -95,7 +95,7 @@ public class SessionGroup {
    * @return groupName
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GROUP_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GROUP_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getGroupName() {
@@ -103,7 +103,7 @@ public class SessionGroup {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_GROUP_NAME)
+  @JsonProperty(value = JSON_PROPERTY_GROUP_NAME, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGroupName(@jakarta.annotation.Nullable String groupName) {
     this.groupName = groupName;
@@ -128,7 +128,7 @@ public class SessionGroup {
    * @return sessions
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SESSIONS)
+  @JsonProperty(value = JSON_PROPERTY_SESSIONS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public List<Session> getSessions() {
@@ -136,7 +136,7 @@ public class SessionGroup {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SESSIONS)
+  @JsonProperty(value = JSON_PROPERTY_SESSIONS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSessions(@jakarta.annotation.Nullable List<Session> sessions) {
     this.sessions = sessions;
@@ -153,7 +153,7 @@ public class SessionGroup {
    * @return isDefault
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_IS_DEFAULT)
+  @JsonProperty(value = JSON_PROPERTY_IS_DEFAULT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public Boolean getIsDefault() {
@@ -161,7 +161,7 @@ public class SessionGroup {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_IS_DEFAULT)
+  @JsonProperty(value = JSON_PROPERTY_IS_DEFAULT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIsDefault(@jakarta.annotation.Nullable Boolean isDefault) {
     this.isDefault = isDefault;
@@ -245,7 +245,7 @@ public class SessionGroup {
     // add `groupId` to the URL query string
     if (getGroupId() != null) {
       try {
-        joiner.add(String.format("%sgroupId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getGroupId()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sgroupId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getGroupId()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -255,7 +255,7 @@ public class SessionGroup {
     // add `groupName` to the URL query string
     if (getGroupName() != null) {
       try {
-        joiner.add(String.format("%sgroupName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getGroupName()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sgroupName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getGroupName()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -266,8 +266,8 @@ public class SessionGroup {
     if (getSessions() != null) {
       for (int i = 0; i < getSessions().size(); i++) {
         if (getSessions().get(i) != null) {
-          joiner.add(getSessions().get(i).toUrlQueryString(String.format("%ssessions%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getSessions().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%ssessions%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -275,7 +275,7 @@ public class SessionGroup {
     // add `isDefault` to the URL query string
     if (getIsDefault() != null) {
       try {
-        joiner.add(String.format("%sisDefault%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsDefault()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sisDefault%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsDefault()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

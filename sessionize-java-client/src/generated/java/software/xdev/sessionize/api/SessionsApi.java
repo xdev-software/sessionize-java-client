@@ -47,7 +47,7 @@ public class SessionsApi extends BaseApi {
    * @return List&lt;SessionGroup&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<SessionGroup> getAllSessions(String endpointId) throws ApiException {
+  public List<SessionGroup> getAllSessions(@jakarta.annotation.Nonnull String endpointId) throws ApiException {
     return this.getAllSessions(endpointId, Collections.emptyMap());
   }
 
@@ -60,7 +60,7 @@ public class SessionsApi extends BaseApi {
    * @return List&lt;SessionGroup&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<SessionGroup> getAllSessions(String endpointId, Map<String, String> additionalHeaders) throws ApiException {
+  public List<SessionGroup> getAllSessions(@jakarta.annotation.Nonnull String endpointId, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'endpointId' is set

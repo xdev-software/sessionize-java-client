@@ -139,7 +139,7 @@ public class Session {
    * @return id
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
@@ -147,7 +147,7 @@ public class Session {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
@@ -164,7 +164,7 @@ public class Session {
    * @return title
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TITLE)
+  @JsonProperty(value = JSON_PROPERTY_TITLE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getTitle() {
@@ -172,7 +172,7 @@ public class Session {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TITLE)
+  @JsonProperty(value = JSON_PROPERTY_TITLE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
@@ -195,14 +195,14 @@ public class Session {
         return description.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getDescription_JsonNullable() {
     return description;
   }
   
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(value = JSON_PROPERTY_DESCRIPTION, required = false)
   public void setDescription_JsonNullable(JsonNullable<String> description) {
     this.description = description;
   }
@@ -222,7 +222,7 @@ public class Session {
    * @return startsAt
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STARTS_AT)
+  @JsonProperty(value = JSON_PROPERTY_STARTS_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public OffsetDateTime getStartsAt() {
@@ -230,7 +230,7 @@ public class Session {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STARTS_AT)
+  @JsonProperty(value = JSON_PROPERTY_STARTS_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setStartsAt(@jakarta.annotation.Nullable OffsetDateTime startsAt) {
     this.startsAt = startsAt;
@@ -247,7 +247,7 @@ public class Session {
    * @return endsAt
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ENDS_AT)
+  @JsonProperty(value = JSON_PROPERTY_ENDS_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public OffsetDateTime getEndsAt() {
@@ -255,7 +255,7 @@ public class Session {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ENDS_AT)
+  @JsonProperty(value = JSON_PROPERTY_ENDS_AT, required = false)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setEndsAt(@jakarta.annotation.Nullable OffsetDateTime endsAt) {
     this.endsAt = endsAt;
@@ -272,7 +272,7 @@ public class Session {
    * @return isServiceSession
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_IS_SERVICE_SESSION)
+  @JsonProperty(value = JSON_PROPERTY_IS_SERVICE_SESSION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getIsServiceSession() {
@@ -280,7 +280,7 @@ public class Session {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_IS_SERVICE_SESSION)
+  @JsonProperty(value = JSON_PROPERTY_IS_SERVICE_SESSION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setIsServiceSession(@jakarta.annotation.Nonnull Boolean isServiceSession) {
     this.isServiceSession = isServiceSession;
@@ -297,7 +297,7 @@ public class Session {
    * @return isPlenumSession
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_IS_PLENUM_SESSION)
+  @JsonProperty(value = JSON_PROPERTY_IS_PLENUM_SESSION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getIsPlenumSession() {
@@ -305,7 +305,7 @@ public class Session {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_IS_PLENUM_SESSION)
+  @JsonProperty(value = JSON_PROPERTY_IS_PLENUM_SESSION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setIsPlenumSession(@jakarta.annotation.Nonnull Boolean isPlenumSession) {
     this.isPlenumSession = isPlenumSession;
@@ -330,7 +330,7 @@ public class Session {
    * @return categoryItems
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CATEGORY_ITEMS)
+  @JsonProperty(value = JSON_PROPERTY_CATEGORY_ITEMS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<Integer> getCategoryItems() {
@@ -338,7 +338,7 @@ public class Session {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CATEGORY_ITEMS)
+  @JsonProperty(value = JSON_PROPERTY_CATEGORY_ITEMS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCategoryItems(@jakarta.annotation.Nonnull List<Integer> categoryItems) {
     this.categoryItems = categoryItems;
@@ -355,7 +355,7 @@ public class Session {
    * @return roomId
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ROOM_ID)
+  @JsonProperty(value = JSON_PROPERTY_ROOM_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getRoomId() {
@@ -363,7 +363,7 @@ public class Session {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ROOM_ID)
+  @JsonProperty(value = JSON_PROPERTY_ROOM_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setRoomId(@jakarta.annotation.Nullable Integer roomId) {
     this.roomId = roomId;
@@ -386,14 +386,14 @@ public class Session {
         return liveUrl.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_LIVE_URL)
+  @JsonProperty(value = JSON_PROPERTY_LIVE_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<URI> getLiveUrl_JsonNullable() {
     return liveUrl;
   }
   
-  @JsonProperty(JSON_PROPERTY_LIVE_URL)
+  @JsonProperty(value = JSON_PROPERTY_LIVE_URL, required = false)
   public void setLiveUrl_JsonNullable(JsonNullable<URI> liveUrl) {
     this.liveUrl = liveUrl;
   }
@@ -419,14 +419,14 @@ public class Session {
         return recordingUrl.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_RECORDING_URL)
+  @JsonProperty(value = JSON_PROPERTY_RECORDING_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<URI> getRecordingUrl_JsonNullable() {
     return recordingUrl;
   }
   
-  @JsonProperty(JSON_PROPERTY_RECORDING_URL)
+  @JsonProperty(value = JSON_PROPERTY_RECORDING_URL, required = false)
   public void setRecordingUrl_JsonNullable(JsonNullable<URI> recordingUrl) {
     this.recordingUrl = recordingUrl;
   }
@@ -446,7 +446,7 @@ public class Session {
    * @return status
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Status getStatus() {
@@ -454,7 +454,7 @@ public class Session {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonProperty(value = JSON_PROPERTY_STATUS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setStatus(@jakarta.annotation.Nonnull Status status) {
     this.status = status;
@@ -477,14 +477,14 @@ public class Session {
         return room.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_ROOM)
+  @JsonProperty(value = JSON_PROPERTY_ROOM, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getRoom_JsonNullable() {
     return room;
   }
   
-  @JsonProperty(JSON_PROPERTY_ROOM)
+  @JsonProperty(value = JSON_PROPERTY_ROOM, required = false)
   public void setRoom_JsonNullable(JsonNullable<String> room) {
     this.room = room;
   }
@@ -512,7 +512,7 @@ public class Session {
    * @return speakers
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SPEAKERS)
+  @JsonProperty(value = JSON_PROPERTY_SPEAKERS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<SpeakerMinimal> getSpeakers() {
@@ -520,7 +520,7 @@ public class Session {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SPEAKERS)
+  @JsonProperty(value = JSON_PROPERTY_SPEAKERS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSpeakers(@jakarta.annotation.Nonnull List<SpeakerMinimal> speakers) {
     this.speakers = speakers;
@@ -545,7 +545,7 @@ public class Session {
    * @return questionAnswers
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_QUESTION_ANSWERS)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION_ANSWERS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<QuestionAnswerFull> getQuestionAnswers() {
@@ -553,7 +553,7 @@ public class Session {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_QUESTION_ANSWERS)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION_ANSWERS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setQuestionAnswers(@jakarta.annotation.Nonnull List<QuestionAnswerFull> questionAnswers) {
     this.questionAnswers = questionAnswers;
@@ -578,7 +578,7 @@ public class Session {
    * @return categories
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CATEGORIES)
+  @JsonProperty(value = JSON_PROPERTY_CATEGORIES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<CategorySession> getCategories() {
@@ -586,7 +586,7 @@ public class Session {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CATEGORIES)
+  @JsonProperty(value = JSON_PROPERTY_CATEGORIES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCategories(@jakarta.annotation.Nonnull List<CategorySession> categories) {
     this.categories = categories;
@@ -705,7 +705,7 @@ public class Session {
     // add `id` to the URL query string
     if (getId() != null) {
       try {
-        joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -715,7 +715,7 @@ public class Session {
     // add `title` to the URL query string
     if (getTitle() != null) {
       try {
-        joiner.add(String.format("%stitle%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTitle()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%stitle%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTitle()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -725,7 +725,7 @@ public class Session {
     // add `description` to the URL query string
     if (getDescription() != null) {
       try {
-        joiner.add(String.format("%sdescription%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDescription()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sdescription%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDescription()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -735,7 +735,7 @@ public class Session {
     // add `startsAt` to the URL query string
     if (getStartsAt() != null) {
       try {
-        joiner.add(String.format("%sstartsAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStartsAt()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sstartsAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStartsAt()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -745,7 +745,7 @@ public class Session {
     // add `endsAt` to the URL query string
     if (getEndsAt() != null) {
       try {
-        joiner.add(String.format("%sendsAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEndsAt()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sendsAt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEndsAt()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -755,7 +755,7 @@ public class Session {
     // add `isServiceSession` to the URL query string
     if (getIsServiceSession() != null) {
       try {
-        joiner.add(String.format("%sisServiceSession%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsServiceSession()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sisServiceSession%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsServiceSession()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -765,7 +765,7 @@ public class Session {
     // add `isPlenumSession` to the URL query string
     if (getIsPlenumSession() != null) {
       try {
-        joiner.add(String.format("%sisPlenumSession%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsPlenumSession()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sisPlenumSession%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsPlenumSession()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -776,8 +776,8 @@ public class Session {
     if (getCategoryItems() != null) {
       for (int i = 0; i < getCategoryItems().size(); i++) {
         try {
-          joiner.add(String.format("%scategoryItems%s%s=%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+          joiner.add(String.format(java.util.Locale.ROOT, "%scategoryItems%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
               URLEncoder.encode(String.valueOf(getCategoryItems().get(i)), "UTF-8").replaceAll("\\+", "%20")));
         } catch (UnsupportedEncodingException e) {
           // Should never happen, UTF-8 is always supported
@@ -789,7 +789,7 @@ public class Session {
     // add `roomId` to the URL query string
     if (getRoomId() != null) {
       try {
-        joiner.add(String.format("%sroomId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRoomId()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sroomId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRoomId()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -799,7 +799,7 @@ public class Session {
     // add `liveUrl` to the URL query string
     if (getLiveUrl() != null) {
       try {
-        joiner.add(String.format("%sliveUrl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLiveUrl()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sliveUrl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLiveUrl()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -809,7 +809,7 @@ public class Session {
     // add `recordingUrl` to the URL query string
     if (getRecordingUrl() != null) {
       try {
-        joiner.add(String.format("%srecordingUrl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRecordingUrl()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%srecordingUrl%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRecordingUrl()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -819,7 +819,7 @@ public class Session {
     // add `status` to the URL query string
     if (getStatus() != null) {
       try {
-        joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStatus()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sstatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStatus()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -829,7 +829,7 @@ public class Session {
     // add `room` to the URL query string
     if (getRoom() != null) {
       try {
-        joiner.add(String.format("%sroom%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRoom()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sroom%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRoom()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -840,8 +840,8 @@ public class Session {
     if (getSpeakers() != null) {
       for (int i = 0; i < getSpeakers().size(); i++) {
         if (getSpeakers().get(i) != null) {
-          joiner.add(getSpeakers().get(i).toUrlQueryString(String.format("%sspeakers%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getSpeakers().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sspeakers%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -850,8 +850,8 @@ public class Session {
     if (getQuestionAnswers() != null) {
       for (int i = 0; i < getQuestionAnswers().size(); i++) {
         if (getQuestionAnswers().get(i) != null) {
-          joiner.add(getQuestionAnswers().get(i).toUrlQueryString(String.format("%squestionAnswers%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getQuestionAnswers().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%squestionAnswers%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -860,8 +860,8 @@ public class Session {
     if (getCategories() != null) {
       for (int i = 0; i < getCategories().size(); i++) {
         if (getCategories().get(i) != null) {
-          joiner.add(getCategories().get(i).toUrlQueryString(String.format("%scategories%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getCategories().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%scategories%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }

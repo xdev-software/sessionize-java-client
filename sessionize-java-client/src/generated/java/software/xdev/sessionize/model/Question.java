@@ -66,7 +66,7 @@ public class Question {
    * @return id
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getId() {
@@ -74,7 +74,7 @@ public class Question {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(@jakarta.annotation.Nonnull Integer id) {
     this.id = id;
@@ -91,7 +91,7 @@ public class Question {
    * @return question
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_QUESTION)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getQuestion() {
@@ -99,7 +99,7 @@ public class Question {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_QUESTION)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setQuestion(@jakarta.annotation.Nonnull String question) {
     this.question = question;
@@ -116,7 +116,7 @@ public class Question {
    * @return questionType
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_QUESTION_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getQuestionType() {
@@ -124,7 +124,7 @@ public class Question {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_QUESTION_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setQuestionType(@jakarta.annotation.Nonnull String questionType) {
     this.questionType = questionType;
@@ -141,7 +141,7 @@ public class Question {
    * @return sort
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SORT)
+  @JsonProperty(value = JSON_PROPERTY_SORT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getSort() {
@@ -149,7 +149,7 @@ public class Question {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SORT)
+  @JsonProperty(value = JSON_PROPERTY_SORT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSort(@jakarta.annotation.Nonnull Integer sort) {
     this.sort = sort;
@@ -233,7 +233,7 @@ public class Question {
     // add `id` to the URL query string
     if (getId() != null) {
       try {
-        joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -243,7 +243,7 @@ public class Question {
     // add `question` to the URL query string
     if (getQuestion() != null) {
       try {
-        joiner.add(String.format("%squestion%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuestion()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%squestion%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuestion()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -253,7 +253,7 @@ public class Question {
     // add `questionType` to the URL query string
     if (getQuestionType() != null) {
       try {
-        joiner.add(String.format("%squestionType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuestionType()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%squestionType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuestionType()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -263,7 +263,7 @@ public class Question {
     // add `sort` to the URL query string
     if (getSort() != null) {
       try {
-        joiner.add(String.format("%ssort%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSort()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%ssort%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSort()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

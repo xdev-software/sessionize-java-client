@@ -48,7 +48,7 @@ public class SpeakersApi extends BaseApi {
    * @return List&lt;Speaker&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<Speaker> getAllSpeakers(String endpointId) throws ApiException {
+  public List<Speaker> getAllSpeakers(@jakarta.annotation.Nonnull String endpointId) throws ApiException {
     return this.getAllSpeakers(endpointId, Collections.emptyMap());
   }
 
@@ -61,7 +61,7 @@ public class SpeakersApi extends BaseApi {
    * @return List&lt;Speaker&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<Speaker> getAllSpeakers(String endpointId, Map<String, String> additionalHeaders) throws ApiException {
+  public List<Speaker> getAllSpeakers(@jakarta.annotation.Nonnull String endpointId, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'endpointId' is set
@@ -124,7 +124,7 @@ public class SpeakersApi extends BaseApi {
    * @return List&lt;SpeakerWithEmail&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<SpeakerWithEmail> getAllSpeakersEmails(String endpointId, String s) throws ApiException {
+  public List<SpeakerWithEmail> getAllSpeakersEmails(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nonnull String s) throws ApiException {
     return this.getAllSpeakersEmails(endpointId, s, Collections.emptyMap());
   }
 
@@ -138,7 +138,7 @@ public class SpeakersApi extends BaseApi {
    * @return List&lt;SpeakerWithEmail&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<SpeakerWithEmail> getAllSpeakersEmails(String endpointId, String s, Map<String, String> additionalHeaders) throws ApiException {
+  public List<SpeakerWithEmail> getAllSpeakersEmails(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nonnull String s, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'endpointId' is set

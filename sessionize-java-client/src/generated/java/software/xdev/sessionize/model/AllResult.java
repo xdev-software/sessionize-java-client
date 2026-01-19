@@ -87,7 +87,7 @@ public class AllResult {
    * @return sessions
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SESSIONS)
+  @JsonProperty(value = JSON_PROPERTY_SESSIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<SessionAll> getSessions() {
@@ -95,7 +95,7 @@ public class AllResult {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SESSIONS)
+  @JsonProperty(value = JSON_PROPERTY_SESSIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSessions(@jakarta.annotation.Nonnull List<SessionAll> sessions) {
     this.sessions = sessions;
@@ -120,7 +120,7 @@ public class AllResult {
    * @return speakers
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SPEAKERS)
+  @JsonProperty(value = JSON_PROPERTY_SPEAKERS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<SpeakerAll> getSpeakers() {
@@ -128,7 +128,7 @@ public class AllResult {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SPEAKERS)
+  @JsonProperty(value = JSON_PROPERTY_SPEAKERS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSpeakers(@jakarta.annotation.Nonnull List<SpeakerAll> speakers) {
     this.speakers = speakers;
@@ -153,7 +153,7 @@ public class AllResult {
    * @return questions
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_QUESTIONS)
+  @JsonProperty(value = JSON_PROPERTY_QUESTIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<Question> getQuestions() {
@@ -161,7 +161,7 @@ public class AllResult {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_QUESTIONS)
+  @JsonProperty(value = JSON_PROPERTY_QUESTIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setQuestions(@jakarta.annotation.Nonnull List<Question> questions) {
     this.questions = questions;
@@ -186,7 +186,7 @@ public class AllResult {
    * @return categories
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CATEGORIES)
+  @JsonProperty(value = JSON_PROPERTY_CATEGORIES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<CategoryAll> getCategories() {
@@ -194,7 +194,7 @@ public class AllResult {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CATEGORIES)
+  @JsonProperty(value = JSON_PROPERTY_CATEGORIES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCategories(@jakarta.annotation.Nonnull List<CategoryAll> categories) {
     this.categories = categories;
@@ -219,7 +219,7 @@ public class AllResult {
    * @return rooms
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ROOMS)
+  @JsonProperty(value = JSON_PROPERTY_ROOMS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<Room> getRooms() {
@@ -227,7 +227,7 @@ public class AllResult {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ROOMS)
+  @JsonProperty(value = JSON_PROPERTY_ROOMS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setRooms(@jakarta.annotation.Nonnull List<Room> rooms) {
     this.rooms = rooms;
@@ -314,8 +314,8 @@ public class AllResult {
     if (getSessions() != null) {
       for (int i = 0; i < getSessions().size(); i++) {
         if (getSessions().get(i) != null) {
-          joiner.add(getSessions().get(i).toUrlQueryString(String.format("%ssessions%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getSessions().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%ssessions%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -324,8 +324,8 @@ public class AllResult {
     if (getSpeakers() != null) {
       for (int i = 0; i < getSpeakers().size(); i++) {
         if (getSpeakers().get(i) != null) {
-          joiner.add(getSpeakers().get(i).toUrlQueryString(String.format("%sspeakers%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getSpeakers().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sspeakers%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -334,8 +334,8 @@ public class AllResult {
     if (getQuestions() != null) {
       for (int i = 0; i < getQuestions().size(); i++) {
         if (getQuestions().get(i) != null) {
-          joiner.add(getQuestions().get(i).toUrlQueryString(String.format("%squestions%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getQuestions().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%squestions%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -344,8 +344,8 @@ public class AllResult {
     if (getCategories() != null) {
       for (int i = 0; i < getCategories().size(); i++) {
         if (getCategories().get(i) != null) {
-          joiner.add(getCategories().get(i).toUrlQueryString(String.format("%scategories%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getCategories().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%scategories%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -354,8 +354,8 @@ public class AllResult {
     if (getRooms() != null) {
       for (int i = 0; i < getRooms().size(); i++) {
         if (getRooms().get(i) != null) {
-          joiner.add(getRooms().get(i).toUrlQueryString(String.format("%srooms%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getRooms().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%srooms%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
