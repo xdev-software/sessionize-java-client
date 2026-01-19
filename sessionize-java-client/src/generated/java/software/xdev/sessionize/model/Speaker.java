@@ -113,7 +113,7 @@ public class Speaker {
    * @return id
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public UUID getId() {
@@ -121,7 +121,7 @@ public class Speaker {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(@jakarta.annotation.Nonnull UUID id) {
     this.id = id;
@@ -138,7 +138,7 @@ public class Speaker {
    * @return firstName
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getFirstName() {
@@ -146,7 +146,7 @@ public class Speaker {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FIRST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FIRST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setFirstName(@jakarta.annotation.Nonnull String firstName) {
     this.firstName = firstName;
@@ -163,7 +163,7 @@ public class Speaker {
    * @return lastName
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getLastName() {
@@ -171,7 +171,7 @@ public class Speaker {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LAST_NAME)
+  @JsonProperty(value = JSON_PROPERTY_LAST_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLastName(@jakarta.annotation.Nonnull String lastName) {
     this.lastName = lastName;
@@ -194,14 +194,14 @@ public class Speaker {
         return bio.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_BIO)
+  @JsonProperty(value = JSON_PROPERTY_BIO, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<String> getBio_JsonNullable() {
     return bio;
   }
   
-  @JsonProperty(JSON_PROPERTY_BIO)
+  @JsonProperty(value = JSON_PROPERTY_BIO, required = false)
   public void setBio_JsonNullable(JsonNullable<String> bio) {
     this.bio = bio;
   }
@@ -221,7 +221,7 @@ public class Speaker {
    * @return tagLine
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TAG_LINE)
+  @JsonProperty(value = JSON_PROPERTY_TAG_LINE, required = false)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getTagLine() {
@@ -229,7 +229,7 @@ public class Speaker {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TAG_LINE)
+  @JsonProperty(value = JSON_PROPERTY_TAG_LINE, required = false)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTagLine(@jakarta.annotation.Nullable String tagLine) {
     this.tagLine = tagLine;
@@ -252,14 +252,14 @@ public class Speaker {
         return profilePicture.orElse(null);
   }
 
-  @JsonProperty(JSON_PROPERTY_PROFILE_PICTURE)
+  @JsonProperty(value = JSON_PROPERTY_PROFILE_PICTURE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public JsonNullable<URI> getProfilePicture_JsonNullable() {
     return profilePicture;
   }
   
-  @JsonProperty(JSON_PROPERTY_PROFILE_PICTURE)
+  @JsonProperty(value = JSON_PROPERTY_PROFILE_PICTURE, required = false)
   public void setProfilePicture_JsonNullable(JsonNullable<URI> profilePicture) {
     this.profilePicture = profilePicture;
   }
@@ -279,7 +279,7 @@ public class Speaker {
    * @return isTopSpeaker
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_IS_TOP_SPEAKER)
+  @JsonProperty(value = JSON_PROPERTY_IS_TOP_SPEAKER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getIsTopSpeaker() {
@@ -287,7 +287,7 @@ public class Speaker {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_IS_TOP_SPEAKER)
+  @JsonProperty(value = JSON_PROPERTY_IS_TOP_SPEAKER, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setIsTopSpeaker(@jakarta.annotation.Nonnull Boolean isTopSpeaker) {
     this.isTopSpeaker = isTopSpeaker;
@@ -312,7 +312,7 @@ public class Speaker {
    * @return links
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LINKS)
+  @JsonProperty(value = JSON_PROPERTY_LINKS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<Link> getLinks() {
@@ -320,7 +320,7 @@ public class Speaker {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LINKS)
+  @JsonProperty(value = JSON_PROPERTY_LINKS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLinks(@jakarta.annotation.Nonnull List<Link> links) {
     this.links = links;
@@ -337,7 +337,7 @@ public class Speaker {
    * @return fullName
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getFullName() {
@@ -345,7 +345,7 @@ public class Speaker {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FULL_NAME)
+  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setFullName(@jakarta.annotation.Nonnull String fullName) {
     this.fullName = fullName;
@@ -370,7 +370,7 @@ public class Speaker {
    * @return sessions
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SESSIONS)
+  @JsonProperty(value = JSON_PROPERTY_SESSIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<SessionMinimal> getSessions() {
@@ -378,7 +378,7 @@ public class Speaker {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SESSIONS)
+  @JsonProperty(value = JSON_PROPERTY_SESSIONS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSessions(@jakarta.annotation.Nonnull List<SessionMinimal> sessions) {
     this.sessions = sessions;
@@ -403,7 +403,7 @@ public class Speaker {
    * @return questionAnswers
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_QUESTION_ANSWERS)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION_ANSWERS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<QuestionAnswerFull> getQuestionAnswers() {
@@ -411,7 +411,7 @@ public class Speaker {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_QUESTION_ANSWERS)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION_ANSWERS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setQuestionAnswers(@jakarta.annotation.Nonnull List<QuestionAnswerFull> questionAnswers) {
     this.questionAnswers = questionAnswers;
@@ -520,7 +520,7 @@ public class Speaker {
     // add `id` to the URL query string
     if (getId() != null) {
       try {
-        joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -530,7 +530,7 @@ public class Speaker {
     // add `firstName` to the URL query string
     if (getFirstName() != null) {
       try {
-        joiner.add(String.format("%sfirstName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFirstName()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sfirstName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFirstName()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -540,7 +540,7 @@ public class Speaker {
     // add `lastName` to the URL query string
     if (getLastName() != null) {
       try {
-        joiner.add(String.format("%slastName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLastName()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%slastName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLastName()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -550,7 +550,7 @@ public class Speaker {
     // add `bio` to the URL query string
     if (getBio() != null) {
       try {
-        joiner.add(String.format("%sbio%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBio()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sbio%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBio()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -560,7 +560,7 @@ public class Speaker {
     // add `tagLine` to the URL query string
     if (getTagLine() != null) {
       try {
-        joiner.add(String.format("%stagLine%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTagLine()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%stagLine%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTagLine()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -570,7 +570,7 @@ public class Speaker {
     // add `profilePicture` to the URL query string
     if (getProfilePicture() != null) {
       try {
-        joiner.add(String.format("%sprofilePicture%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getProfilePicture()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sprofilePicture%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getProfilePicture()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -580,7 +580,7 @@ public class Speaker {
     // add `isTopSpeaker` to the URL query string
     if (getIsTopSpeaker() != null) {
       try {
-        joiner.add(String.format("%sisTopSpeaker%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsTopSpeaker()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sisTopSpeaker%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsTopSpeaker()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -591,8 +591,8 @@ public class Speaker {
     if (getLinks() != null) {
       for (int i = 0; i < getLinks().size(); i++) {
         if (getLinks().get(i) != null) {
-          joiner.add(getLinks().get(i).toUrlQueryString(String.format("%slinks%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getLinks().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%slinks%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -600,7 +600,7 @@ public class Speaker {
     // add `fullName` to the URL query string
     if (getFullName() != null) {
       try {
-        joiner.add(String.format("%sfullName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFullName()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sfullName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFullName()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -611,8 +611,8 @@ public class Speaker {
     if (getSessions() != null) {
       for (int i = 0; i < getSessions().size(); i++) {
         if (getSessions().get(i) != null) {
-          joiner.add(getSessions().get(i).toUrlQueryString(String.format("%ssessions%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getSessions().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%ssessions%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -621,8 +621,8 @@ public class Speaker {
     if (getQuestionAnswers() != null) {
       for (int i = 0; i < getQuestionAnswers().size(); i++) {
         if (getQuestionAnswers().get(i) != null) {
-          joiner.add(getQuestionAnswers().get(i).toUrlQueryString(String.format("%squestionAnswers%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getQuestionAnswers().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%squestionAnswers%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }

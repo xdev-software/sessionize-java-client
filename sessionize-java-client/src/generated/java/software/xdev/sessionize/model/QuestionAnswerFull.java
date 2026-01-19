@@ -71,7 +71,7 @@ public class QuestionAnswerFull {
    * @return id
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getId() {
@@ -79,7 +79,7 @@ public class QuestionAnswerFull {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(@jakarta.annotation.Nonnull Integer id) {
     this.id = id;
@@ -96,7 +96,7 @@ public class QuestionAnswerFull {
    * @return question
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_QUESTION)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getQuestion() {
@@ -104,7 +104,7 @@ public class QuestionAnswerFull {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_QUESTION)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setQuestion(@jakarta.annotation.Nonnull String question) {
     this.question = question;
@@ -121,7 +121,7 @@ public class QuestionAnswerFull {
    * @return questionType
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_QUESTION_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getQuestionType() {
@@ -129,7 +129,7 @@ public class QuestionAnswerFull {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_QUESTION_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setQuestionType(@jakarta.annotation.Nonnull String questionType) {
     this.questionType = questionType;
@@ -146,7 +146,7 @@ public class QuestionAnswerFull {
    * @return answer
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ANSWER)
+  @JsonProperty(value = JSON_PROPERTY_ANSWER, required = false)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getAnswer() {
@@ -154,7 +154,7 @@ public class QuestionAnswerFull {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ANSWER)
+  @JsonProperty(value = JSON_PROPERTY_ANSWER, required = false)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAnswer(@jakarta.annotation.Nullable String answer) {
     this.answer = answer;
@@ -171,7 +171,7 @@ public class QuestionAnswerFull {
    * @return sort
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SORT)
+  @JsonProperty(value = JSON_PROPERTY_SORT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getSort() {
@@ -179,7 +179,7 @@ public class QuestionAnswerFull {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SORT)
+  @JsonProperty(value = JSON_PROPERTY_SORT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSort(@jakarta.annotation.Nonnull Integer sort) {
     this.sort = sort;
@@ -265,7 +265,7 @@ public class QuestionAnswerFull {
     // add `id` to the URL query string
     if (getId() != null) {
       try {
-        joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -275,7 +275,7 @@ public class QuestionAnswerFull {
     // add `question` to the URL query string
     if (getQuestion() != null) {
       try {
-        joiner.add(String.format("%squestion%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuestion()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%squestion%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuestion()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -285,7 +285,7 @@ public class QuestionAnswerFull {
     // add `questionType` to the URL query string
     if (getQuestionType() != null) {
       try {
-        joiner.add(String.format("%squestionType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuestionType()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%squestionType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuestionType()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -295,7 +295,7 @@ public class QuestionAnswerFull {
     // add `answer` to the URL query string
     if (getAnswer() != null) {
       try {
-        joiner.add(String.format("%sanswer%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAnswer()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sanswer%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAnswer()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -305,7 +305,7 @@ public class QuestionAnswerFull {
     // add `sort` to the URL query string
     if (getSort() != null) {
       try {
-        joiner.add(String.format("%ssort%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSort()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%ssort%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSort()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

@@ -70,7 +70,7 @@ public class CategorySession {
    * @return id
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getId() {
@@ -78,7 +78,7 @@ public class CategorySession {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
+  @JsonProperty(value = JSON_PROPERTY_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(@jakarta.annotation.Nonnull Integer id) {
     this.id = id;
@@ -95,7 +95,7 @@ public class CategorySession {
    * @return sort
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SORT)
+  @JsonProperty(value = JSON_PROPERTY_SORT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getSort() {
@@ -103,7 +103,7 @@ public class CategorySession {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SORT)
+  @JsonProperty(value = JSON_PROPERTY_SORT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSort(@jakarta.annotation.Nonnull Integer sort) {
     this.sort = sort;
@@ -120,7 +120,7 @@ public class CategorySession {
    * @return name
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getName() {
@@ -128,7 +128,7 @@ public class CategorySession {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(value = JSON_PROPERTY_NAME, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
@@ -153,7 +153,7 @@ public class CategorySession {
    * @return categoryItems
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CATEGORY_ITEMS)
+  @JsonProperty(value = JSON_PROPERTY_CATEGORY_ITEMS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<CategoryItem> getCategoryItems() {
@@ -161,7 +161,7 @@ public class CategorySession {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CATEGORY_ITEMS)
+  @JsonProperty(value = JSON_PROPERTY_CATEGORY_ITEMS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCategoryItems(@jakarta.annotation.Nonnull List<CategoryItem> categoryItems) {
     this.categoryItems = categoryItems;
@@ -245,7 +245,7 @@ public class CategorySession {
     // add `id` to the URL query string
     if (getId() != null) {
       try {
-        joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -255,7 +255,7 @@ public class CategorySession {
     // add `sort` to the URL query string
     if (getSort() != null) {
       try {
-        joiner.add(String.format("%ssort%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSort()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%ssort%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSort()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -265,7 +265,7 @@ public class CategorySession {
     // add `name` to the URL query string
     if (getName() != null) {
       try {
-        joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -276,8 +276,8 @@ public class CategorySession {
     if (getCategoryItems() != null) {
       for (int i = 0; i < getCategoryItems().size(); i++) {
         if (getCategoryItems().get(i) != null) {
-          joiner.add(getCategoryItems().get(i).toUrlQueryString(String.format("%scategoryItems%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getCategoryItems().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%scategoryItems%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }

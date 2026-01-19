@@ -47,7 +47,7 @@ public class AllApi extends BaseApi {
    * @return AllResult
    * @throws ApiException if fails to make API call
    */
-  public AllResult getAll(String endpointId) throws ApiException {
+  public AllResult getAll(@jakarta.annotation.Nonnull String endpointId) throws ApiException {
     return this.getAll(endpointId, Collections.emptyMap());
   }
 
@@ -60,7 +60,7 @@ public class AllApi extends BaseApi {
    * @return AllResult
    * @throws ApiException if fails to make API call
    */
-  public AllResult getAll(String endpointId, Map<String, String> additionalHeaders) throws ApiException {
+  public AllResult getAll(@jakarta.annotation.Nonnull String endpointId, Map<String, String> additionalHeaders) throws ApiException {
     Object localVarPostBody = null;
     
     // verify the required parameter 'endpointId' is set

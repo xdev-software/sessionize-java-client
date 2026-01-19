@@ -56,7 +56,7 @@ public class QuestionAnswer {
    * @return questionId
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_QUESTION_ID)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getQuestionId() {
@@ -64,7 +64,7 @@ public class QuestionAnswer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_QUESTION_ID)
+  @JsonProperty(value = JSON_PROPERTY_QUESTION_ID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setQuestionId(@jakarta.annotation.Nonnull Integer questionId) {
     this.questionId = questionId;
@@ -81,7 +81,7 @@ public class QuestionAnswer {
    * @return answerValue
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ANSWER_VALUE)
+  @JsonProperty(value = JSON_PROPERTY_ANSWER_VALUE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getAnswerValue() {
@@ -89,7 +89,7 @@ public class QuestionAnswer {
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ANSWER_VALUE)
+  @JsonProperty(value = JSON_PROPERTY_ANSWER_VALUE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAnswerValue(@jakarta.annotation.Nonnull String answerValue) {
     this.answerValue = answerValue;
@@ -169,7 +169,7 @@ public class QuestionAnswer {
     // add `questionId` to the URL query string
     if (getQuestionId() != null) {
       try {
-        joiner.add(String.format("%squestionId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuestionId()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%squestionId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuestionId()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -179,7 +179,7 @@ public class QuestionAnswer {
     // add `answerValue` to the URL query string
     if (getAnswerValue() != null) {
       try {
-        joiner.add(String.format("%sanswerValue%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAnswerValue()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sanswerValue%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAnswerValue()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
