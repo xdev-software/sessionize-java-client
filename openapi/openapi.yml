@@ -1,1 +1,516 @@
-
+openapi: 3.0.1
+info:
+  title: Sessionize JSON-REST API
+  description: Sessionize JSON-REST API documentation by XDEV Software
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: '2.0'
+externalDocs:
+  description: Sessionize's API documentation
+  url: https://sessionize.com/playbook/api
+servers:
+  - url: https://sessionize.com
+tags:
+  - name: all
+  - name: speakers
+  - name: sessions
+paths:
+  /api/v2/{endpointId}/view/All:
+    get:
+      tags:
+        - "all"
+      operationId: getAll
+      parameters:
+        - name: endpointId
+          in: path
+          required: true
+          schema:
+            type: string
+          example: jl4ktls0
+      responses:
+        '200':
+          description: Returned if the request is successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AllResult'
+      deprecated: false
+  /api/v2/{endpointId}/view/Speakers:
+    get:
+      tags:
+        - "speakers"
+      operationId: getAllSpeakers
+      parameters:
+        - name: endpointId
+          in: path
+          required: true
+          schema:
+            type: string
+          example: jl4ktls0
+      responses:
+        '200':
+          description: Returned if the request is successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Speaker'
+      deprecated: false
+  /api/v2/{endpointId}/view/SpeakersEmails:
+    get:
+      tags:
+        - "speakers"
+      operationId: getAllSpeakersEmails
+      description: 'Undocumented endpoint for retrieving the speakers with emails'
+      parameters:
+        - name: endpointId
+          in: path
+          required: true
+          schema:
+            type: string
+          example: jl4ktls0
+        - name: s
+          in: query
+          required: true
+          schema:
+            type: string
+          description: 'Special key that is only available/retrievable for unlocked admins (Contacting Sessionize-Support is required)'
+      responses:
+        '200':
+          description: Returned if the request is successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SpeakerWithEmail'
+      deprecated: false
+  /api/v2/{endpointId}/view/Sessions:
+    get:
+      tags:
+        - "sessions"
+      operationId: getAllSessions
+      parameters:
+        - name: endpointId
+          in: path
+          required: true
+          schema:
+            type: string
+          example: jl4ktls0
+      responses:
+        '200':
+          description: Returned if the request is successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SessionGroup'
+      deprecated: false
+components:
+  schemas:
+    AllResult:
+      type: object
+      readOnly: true
+      properties:
+        sessions:
+          type: array
+          items:
+            $ref: '#/components/schemas/SessionAll'
+        speakers:
+          type: array
+          items:
+            $ref: '#/components/schemas/SpeakerAll'
+        questions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Question'
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/CategoryAll'
+        rooms:
+          type: array
+          items:
+            $ref: '#/components/schemas/Room'
+      required:
+        - categories
+        - questions
+        - rooms
+        - sessions
+        - speakers
+    BaseCategory:
+      type: object
+      readOnly: true
+      properties:
+        id:
+          type: integer
+        sort:
+          type: integer
+      required:
+        - id
+        - sort
+    CategorySession:
+      allOf:
+        - $ref: '#/components/schemas/BaseCategory'
+        - type: object
+          readOnly: true
+          properties:
+            name:
+              type: string
+            categoryItems:
+              type: array
+              items:
+                $ref: '#/components/schemas/CategoryItem'
+          required:
+            - name
+            - categoryItems
+    CategoryAll:
+      allOf:
+        - $ref: '#/components/schemas/BaseCategory'
+        - type: object
+          readOnly: true
+          properties:
+            title:
+              type: string
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/CategoryItemAll'
+            type:
+              type: string
+          required:
+            - items
+            - title
+            - type
+    CategoryItem:
+      type: object
+      readOnly: true
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+        - id
+        - name
+    CategoryItemAll:
+      allOf:
+        - $ref: '#/components/schemas/CategoryItem'
+        - type: object
+          readOnly: true
+          properties:
+            sort:
+              type: integer
+          required:
+            - sort
+    Link:
+      type: object
+      readOnly: true
+      properties:
+        title:
+          type: string
+        url:
+          type: string
+          format: uri
+        linkType:
+          type: string
+      required:
+        - linkType
+        - title
+        - url
+    Question:
+      type: object
+      readOnly: true
+      properties:
+        id:
+          type: integer
+        question:
+          type: string
+        questionType:
+          type: string
+        sort:
+          type: integer
+      required:
+        - id
+        - question
+        - questionType
+        - sort
+    QuestionAnswer:
+      type: object
+      readOnly: true
+      properties:
+        questionId:
+          type: integer
+        answerValue:
+          type: string
+      required:
+        - answerValue
+        - questionId
+    QuestionAnswerFull:
+      type: object
+      readOnly: true
+      properties:
+        id:
+          type: integer
+        question:
+          type: string
+        questionType:
+          type: string
+        answer:
+          type: string
+          nullable: true
+        sort:
+          type: integer
+        # answerExtra is always null; ignored
+      required:
+        - id
+        - question
+        - questionType
+        - answer
+        - sort
+    Room:
+      type: object
+      readOnly: true
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        sort:
+          type: integer
+      required:
+        - id
+        - name
+        - sort
+    BaseSession:
+      type: object
+      readOnly: true
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+          nullable: true
+        startsAt:
+          type: string
+          format: date-time
+          nullable: true
+        endsAt:
+          type: string
+          format: date-time
+          nullable: true
+        isServiceSession:
+          type: boolean
+        isPlenumSession:
+          type: boolean
+        categoryItems:
+          type: array
+          items:
+            type: integer
+        roomId:
+          type: integer
+          nullable: true
+        liveUrl:
+          type: string
+          format: uri
+          nullable: true
+        recordingUrl:
+          type: string
+          format: uri
+          nullable: true
+        status:
+          $ref: '#/components/schemas/Status'
+          nullable: true
+      required:
+        - id
+        - categoryItems
+        - endsAt
+        - isPlenumSession
+        - isServiceSession
+        - roomId
+        - startsAt
+        - status
+        - title
+    Session:
+      allOf:
+        - $ref: '#/components/schemas/BaseSession'
+        - type: object
+          readOnly: true
+          properties:
+            room:
+              type: string
+              nullable: true
+            speakers:
+              type: array
+              items:
+                $ref: '#/components/schemas/SpeakerMinimal'
+            questionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionAnswerFull'
+            categories:
+              type: array
+              items:
+                $ref: '#/components/schemas/CategorySession'
+          required:
+            - questionAnswers
+            - speakers
+            - categories
+    SessionAll:
+      allOf:
+        - $ref: '#/components/schemas/BaseSession'
+        - type: object
+          readOnly: true
+          properties:
+            speakers:
+              type: array
+              items:
+                type: string # All Endpoint
+            questionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionAnswer' # All Endpoint
+          required:
+            - questionAnswers
+            - speakers
+    SessionMinimal:
+      type: object
+      readOnly: true
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+        - id
+        - name
+    SessionGroup:
+      type: object
+      readOnly: true
+      properties:
+        groupId:
+          type: integer
+        groupName:
+          type: string
+        sessions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Session'
+        isDefault:
+          type: boolean
+    BaseSpeakerEssential:
+      type: object
+      readOnly: true
+      properties:
+        id:
+          type: string
+          format: uuid
+        firstName:
+          type: string
+        lastName:
+          type: string
+      required:
+        - firstName
+        - id
+        - lastName
+    BaseSpeaker:
+      allOf:
+        - $ref: '#/components/schemas/BaseSpeakerEssential'
+        - type: object
+          readOnly: true
+          properties:
+            bio:
+              type: string
+              nullable: true
+            tagLine:
+              type: string
+              nullable: true
+            profilePicture:
+              type: string
+              format: uri
+              nullable: true
+            isTopSpeaker:
+              type: boolean
+            links:
+              type: array
+              items:
+                $ref: '#/components/schemas/Link'
+            fullName:
+              type: string
+            # categoryItems - Always empty; ignored
+          required:
+            - fullName
+            - isTopSpeaker
+            - links
+            - tagLine
+    Speaker:
+      allOf:
+        - $ref: '#/components/schemas/BaseSpeaker'
+        - type: object
+          readOnly: true
+          properties:
+            sessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/SessionMinimal'
+            questionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionAnswerFull'
+          required:
+            - sessions
+            - questionAnswers
+    SpeakerAll:
+      allOf:
+        - $ref: '#/components/schemas/BaseSpeaker'
+        - type: object
+          readOnly: true
+          properties:
+            sessions:
+              type: array
+              items:
+                type: integer # All Endpoint
+            questionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/QuestionAnswer'
+          required:
+            - sessions
+            - questionAnswers
+    SpeakerWithEmail:
+      allOf:
+        - $ref: '#/components/schemas/BaseSpeakerEssential'
+        - type: object
+          readOnly: true
+          properties:
+            email:
+              type: string
+              format: email
+          required:
+            - email
+    SpeakerMinimal:
+      type: object
+      readOnly: true
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+      required:
+        - id
+        - name
+    Status:
+      type: string
+      readOnly: true
+      enum:
+        - Accepted
+        - Accepted_Queue
+        - Nominated
+        - Decline_Queue
+        - Declined
