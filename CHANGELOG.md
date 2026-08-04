@@ -1,3 +1,8 @@
+# 1.3.0
+* Updated to Jackson v3
+* Regenerated code with latest OpenApi Generator version
+* Updated dependencies
+
 # 1.2.8
 * Regenerated code with latest OpenApi Generator version
 * Updated dependencies
