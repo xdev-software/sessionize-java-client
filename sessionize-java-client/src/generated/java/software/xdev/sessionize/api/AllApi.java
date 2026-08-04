@@ -12,7 +12,7 @@
 
 package software.xdev.sessionize.api;
 
-import com.fasterxml.jackson.core.type.TypeReference;
+import tools.jackson.core.type.TypeReference;
 
 import software.xdev.sessionize.client.ApiException;
 import software.xdev.sessionize.client.ApiClient;
