@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
-import software.xdev.sessionize.model.CategorySession;
+import software.xdev.sessionize.model.CategoryDetail;
 import software.xdev.sessionize.model.QuestionAnswerFull;
 import software.xdev.sessionize.model.SpeakerMinimal;
 import software.xdev.sessionize.model.Status;
@@ -122,7 +122,7 @@ public class Session {
 
   public static final String JSON_PROPERTY_CATEGORIES = "categories";
   @jakarta.annotation.Nonnull
-  private List<CategorySession> categories = new ArrayList<>();
+  private List<CategoryDetail> categories = new ArrayList<>();
 
   public Session() {
   }
@@ -558,13 +558,13 @@ public class Session {
     this.questionAnswers = questionAnswers;
   }
 
-  public Session categories(@jakarta.annotation.Nonnull List<CategorySession> categories) {
+  public Session categories(@jakarta.annotation.Nonnull List<CategoryDetail> categories) {
     
     this.categories = categories;
     return this;
   }
 
-  public Session addCategoriesItem(CategorySession categoriesItem) {
+  public Session addCategoriesItem(CategoryDetail categoriesItem) {
     if (this.categories == null) {
       this.categories = new ArrayList<>();
     }
@@ -580,14 +580,14 @@ public class Session {
   @JsonProperty(value = JSON_PROPERTY_CATEGORIES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<CategorySession> getCategories() {
+  public List<CategoryDetail> getCategories() {
     return categories;
   }
 
 
   @JsonProperty(value = JSON_PROPERTY_CATEGORIES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCategories(@jakarta.annotation.Nonnull List<CategorySession> categories) {
+  public void setCategories(@jakarta.annotation.Nonnull List<CategoryDetail> categories) {
     this.categories = categories;
   }
 

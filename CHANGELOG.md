@@ -1,3 +1,10 @@
+# 2.0.0
+* Removed `SpeakersWithEmails` endpoint as it's existence can no longer be validated
+* Add `categories`/`categoryItems` to model
+  * Renamed `CategorySession` to `CategoryDetail`
+* Regenerated code with latest OpenApi Generator version
+* Updated dependencies
+
 # 1.3.0
 * Updated to Jackson v3
 * Regenerated code with latest OpenApi Generator version

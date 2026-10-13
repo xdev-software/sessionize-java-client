@@ -58,35 +58,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/Speaker'
       deprecated: false
-  /api/v2/{endpointId}/view/SpeakersEmails:
-    get:
-      tags:
-        - "speakers"
-      operationId: getAllSpeakersEmails
-      description: 'Undocumented endpoint for retrieving the speakers with emails'
-      parameters:
-        - name: endpointId
-          in: path
-          required: true
-          schema:
-            type: string
-          example: jl4ktls0
-        - name: s
-          in: query
-          required: true
-          schema:
-            type: string
-          description: 'Special key that is only available/retrievable for unlocked admins (Contacting Sessionize-Support is required)'
-      responses:
-        '200':
-          description: Returned if the request is successful
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/SpeakerWithEmail'
-      deprecated: false
   /api/v2/{endpointId}/view/Sessions:
     get:
       tags:
@@ -152,7 +123,7 @@ components:
       required:
         - id
         - sort
-    CategorySession:
+    CategoryDetail:
       allOf:
         - $ref: '#/components/schemas/BaseCategory'
         - type: object
@@ -356,7 +327,7 @@ components:
             categories:
               type: array
               items:
-                $ref: '#/components/schemas/CategorySession'
+                $ref: '#/components/schemas/CategoryDetail'
           required:
             - questionAnswers
             - speakers
@@ -375,9 +346,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/QuestionAnswer' # All Endpoint
+            categoryItems:
+              type: array
+              items:
+                type: integer
           required:
             - questionAnswers
             - speakers
+            - categoryItems
     SessionMinimal:
       type: object
       readOnly: true
@@ -462,9 +438,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/QuestionAnswerFull'
+            categories:
+              type: array
+              items:
+                $ref: '#/components/schemas/CategoryDetail'
           required:
             - sessions
             - questionAnswers
+            - categories
     SpeakerAll:
       allOf:
         - $ref: '#/components/schemas/BaseSpeaker'
@@ -479,9 +460,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/QuestionAnswer'
+            categoryItems:
+              type: array
+              items:
+                type: integer
           required:
             - sessions
             - questionAnswers
+            - categoryItems
     SpeakerWithEmail:
       allOf:
         - $ref: '#/components/schemas/BaseSpeakerEssential'

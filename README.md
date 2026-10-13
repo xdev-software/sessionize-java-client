@@ -5,7 +5,7 @@
 # <img src="https://sessionize.com/landing/images/brand/logo/sessionize-avatar.svg" height="22" /> [sessionize](https://sessionize.com/)-java-client
 Java client for the [Sessionize API](https://sessionize.com/playbook/api)
 
-This client [is generated](./sessionize-java-client/pom.xml) from an [``openapi.yml``](./openapi/openapi.yml) using [OpenAPI Generator](https://openapi-generator.tech/).
+This client [is generated](./src/sessionize-java-client/pom.xml) from an [`openapi.yml`](./src/sessionize-java-client/openapi/openapi.yml) using [OpenAPI Generator](https://openapi-generator.tech/).
 
 #### API Support Status
 
@@ -27,7 +27,7 @@ Sessionize API ``v2``:
 [Installation guide for the latest release](https://github.com/xdev-software/sessionize-java-client/releases/latest#Installation)
 
 ## Demo
-A minimal demo is also available [here](./sessionize-java-client-demo/src/main/java/software/xdev/Application.java).
+A minimal demo is also available [here](./demos/sessionize-java-client-demo/src/main/java/software/xdev/Application.java).
 
 ## Support
 If you need support as soon as possible and you can't wait for any pull request, feel free to use [our support](https://xdev.software/en/services-products/support).

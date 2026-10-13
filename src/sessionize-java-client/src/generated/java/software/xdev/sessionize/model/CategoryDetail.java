@@ -30,15 +30,15 @@ import java.net.URLEncoder;
 import java.util.StringJoiner;
 
 /**
- * CategorySession
+ * CategoryDetail
  */
 @JsonPropertyOrder({
-  CategorySession.JSON_PROPERTY_ID,
-  CategorySession.JSON_PROPERTY_SORT,
-  CategorySession.JSON_PROPERTY_NAME,
-  CategorySession.JSON_PROPERTY_CATEGORY_ITEMS
+  CategoryDetail.JSON_PROPERTY_ID,
+  CategoryDetail.JSON_PROPERTY_SORT,
+  CategoryDetail.JSON_PROPERTY_NAME,
+  CategoryDetail.JSON_PROPERTY_CATEGORY_ITEMS
 })
-public class CategorySession {
+public class CategoryDetail {
   public static final String JSON_PROPERTY_ID = "id";
   @jakarta.annotation.Nonnull
   private Integer id;
@@ -55,10 +55,10 @@ public class CategorySession {
   @jakarta.annotation.Nonnull
   private List<CategoryItem> categoryItems = new ArrayList<>();
 
-  public CategorySession() {
+  public CategoryDetail() {
   }
 
-  public CategorySession id(@jakarta.annotation.Nonnull Integer id) {
+  public CategoryDetail id(@jakarta.annotation.Nonnull Integer id) {
     
     this.id = id;
     return this;
@@ -83,7 +83,7 @@ public class CategorySession {
     this.id = id;
   }
 
-  public CategorySession sort(@jakarta.annotation.Nonnull Integer sort) {
+  public CategoryDetail sort(@jakarta.annotation.Nonnull Integer sort) {
     
     this.sort = sort;
     return this;
@@ -108,7 +108,7 @@ public class CategorySession {
     this.sort = sort;
   }
 
-  public CategorySession name(@jakarta.annotation.Nonnull String name) {
+  public CategoryDetail name(@jakarta.annotation.Nonnull String name) {
     
     this.name = name;
     return this;
@@ -133,13 +133,13 @@ public class CategorySession {
     this.name = name;
   }
 
-  public CategorySession categoryItems(@jakarta.annotation.Nonnull List<CategoryItem> categoryItems) {
+  public CategoryDetail categoryItems(@jakarta.annotation.Nonnull List<CategoryItem> categoryItems) {
     
     this.categoryItems = categoryItems;
     return this;
   }
 
-  public CategorySession addCategoryItemsItem(CategoryItem categoryItemsItem) {
+  public CategoryDetail addCategoryItemsItem(CategoryItem categoryItemsItem) {
     if (this.categoryItems == null) {
       this.categoryItems = new ArrayList<>();
     }
@@ -175,11 +175,11 @@ public class CategorySession {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CategorySession categorySession = (CategorySession) o;
-    return Objects.equals(this.id, categorySession.id) &&
-        Objects.equals(this.sort, categorySession.sort) &&
-        Objects.equals(this.name, categorySession.name) &&
-        Objects.equals(this.categoryItems, categorySession.categoryItems);
+    CategoryDetail categoryDetail = (CategoryDetail) o;
+    return Objects.equals(this.id, categoryDetail.id) &&
+        Objects.equals(this.sort, categoryDetail.sort) &&
+        Objects.equals(this.name, categoryDetail.name) &&
+        Objects.equals(this.categoryItems, categoryDetail.categoryItems);
   }
 
   @Override
@@ -190,7 +190,7 @@ public class CategorySession {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CategorySession {\n");
+    sb.append("class CategoryDetail {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

@@ -50,7 +50,8 @@ import java.util.StringJoiner;
   SpeakerAll.JSON_PROPERTY_LINKS,
   SpeakerAll.JSON_PROPERTY_FULL_NAME,
   SpeakerAll.JSON_PROPERTY_SESSIONS,
-  SpeakerAll.JSON_PROPERTY_QUESTION_ANSWERS
+  SpeakerAll.JSON_PROPERTY_QUESTION_ANSWERS,
+  SpeakerAll.JSON_PROPERTY_CATEGORY_ITEMS
 })
 public class SpeakerAll {
   public static final String JSON_PROPERTY_ID = "id";
@@ -96,6 +97,10 @@ public class SpeakerAll {
   public static final String JSON_PROPERTY_QUESTION_ANSWERS = "questionAnswers";
   @jakarta.annotation.Nonnull
   private List<QuestionAnswer> questionAnswers = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_CATEGORY_ITEMS = "categoryItems";
+  @jakarta.annotation.Nonnull
+  private List<Integer> categoryItems = new ArrayList<>();
 
   public SpeakerAll() {
   }
@@ -415,6 +420,39 @@ public class SpeakerAll {
     this.questionAnswers = questionAnswers;
   }
 
+  public SpeakerAll categoryItems(@jakarta.annotation.Nonnull List<Integer> categoryItems) {
+    
+    this.categoryItems = categoryItems;
+    return this;
+  }
+
+  public SpeakerAll addCategoryItemsItem(Integer categoryItemsItem) {
+    if (this.categoryItems == null) {
+      this.categoryItems = new ArrayList<>();
+    }
+    this.categoryItems.add(categoryItemsItem);
+    return this;
+  }
+
+  /**
+   * Get categoryItems
+   * @return categoryItems
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_CATEGORY_ITEMS, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public List<Integer> getCategoryItems() {
+    return categoryItems;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_CATEGORY_ITEMS, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCategoryItems(@jakarta.annotation.Nonnull List<Integer> categoryItems) {
+    this.categoryItems = categoryItems;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -435,7 +473,8 @@ public class SpeakerAll {
         Objects.equals(this.links, speakerAll.links) &&
         Objects.equals(this.fullName, speakerAll.fullName) &&
         Objects.equals(this.sessions, speakerAll.sessions) &&
-        Objects.equals(this.questionAnswers, speakerAll.questionAnswers);
+        Objects.equals(this.questionAnswers, speakerAll.questionAnswers) &&
+        Objects.equals(this.categoryItems, speakerAll.categoryItems);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -444,7 +483,7 @@ public class SpeakerAll {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, lastName, hashCodeNullable(bio), tagLine, hashCodeNullable(profilePicture), isTopSpeaker, links, fullName, sessions, questionAnswers);
+    return Objects.hash(id, firstName, lastName, hashCodeNullable(bio), tagLine, hashCodeNullable(profilePicture), isTopSpeaker, links, fullName, sessions, questionAnswers, categoryItems);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -469,6 +508,7 @@ public class SpeakerAll {
     sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
     sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
     sb.append("    questionAnswers: ").append(toIndentedString(questionAnswers)).append("\n");
+    sb.append("    categoryItems: ").append(toIndentedString(categoryItems)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -623,6 +663,20 @@ public class SpeakerAll {
         if (getQuestionAnswers().get(i) != null) {
           joiner.add(getQuestionAnswers().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%squestionAnswers%s%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `categoryItems` to the URL query string
+    if (getCategoryItems() != null) {
+      for (int i = 0; i < getCategoryItems().size(); i++) {
+        try {
+          joiner.add(String.format(java.util.Locale.ROOT, "%scategoryItems%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
+              URLEncoder.encode(String.valueOf(getCategoryItems().get(i)), "UTF-8").replaceAll("\\+", "%20")));
+        } catch (UnsupportedEncodingException e) {
+          // Should never happen, UTF-8 is always supported
+          throw new RuntimeException(e);
         }
       }
     }
