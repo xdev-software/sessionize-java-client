@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
+import software.xdev.sessionize.model.CategoryDetail;
 import software.xdev.sessionize.model.Link;
 import software.xdev.sessionize.model.QuestionAnswerFull;
 import software.xdev.sessionize.model.SessionMinimal;
@@ -51,7 +52,8 @@ import java.util.StringJoiner;
   Speaker.JSON_PROPERTY_LINKS,
   Speaker.JSON_PROPERTY_FULL_NAME,
   Speaker.JSON_PROPERTY_SESSIONS,
-  Speaker.JSON_PROPERTY_QUESTION_ANSWERS
+  Speaker.JSON_PROPERTY_QUESTION_ANSWERS,
+  Speaker.JSON_PROPERTY_CATEGORIES
 })
 public class Speaker {
   public static final String JSON_PROPERTY_ID = "id";
@@ -97,6 +99,10 @@ public class Speaker {
   public static final String JSON_PROPERTY_QUESTION_ANSWERS = "questionAnswers";
   @jakarta.annotation.Nonnull
   private List<QuestionAnswerFull> questionAnswers = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_CATEGORIES = "categories";
+  @jakarta.annotation.Nonnull
+  private List<CategoryDetail> categories = new ArrayList<>();
 
   public Speaker() {
   }
@@ -416,6 +422,39 @@ public class Speaker {
     this.questionAnswers = questionAnswers;
   }
 
+  public Speaker categories(@jakarta.annotation.Nonnull List<CategoryDetail> categories) {
+    
+    this.categories = categories;
+    return this;
+  }
+
+  public Speaker addCategoriesItem(CategoryDetail categoriesItem) {
+    if (this.categories == null) {
+      this.categories = new ArrayList<>();
+    }
+    this.categories.add(categoriesItem);
+    return this;
+  }
+
+  /**
+   * Get categories
+   * @return categories
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_CATEGORIES, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public List<CategoryDetail> getCategories() {
+    return categories;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_CATEGORIES, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCategories(@jakarta.annotation.Nonnull List<CategoryDetail> categories) {
+    this.categories = categories;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -436,7 +475,8 @@ public class Speaker {
         Objects.equals(this.links, speaker.links) &&
         Objects.equals(this.fullName, speaker.fullName) &&
         Objects.equals(this.sessions, speaker.sessions) &&
-        Objects.equals(this.questionAnswers, speaker.questionAnswers);
+        Objects.equals(this.questionAnswers, speaker.questionAnswers) &&
+        Objects.equals(this.categories, speaker.categories);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -445,7 +485,7 @@ public class Speaker {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, lastName, hashCodeNullable(bio), tagLine, hashCodeNullable(profilePicture), isTopSpeaker, links, fullName, sessions, questionAnswers);
+    return Objects.hash(id, firstName, lastName, hashCodeNullable(bio), tagLine, hashCodeNullable(profilePicture), isTopSpeaker, links, fullName, sessions, questionAnswers, categories);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -470,6 +510,7 @@ public class Speaker {
     sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
     sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
     sb.append("    questionAnswers: ").append(toIndentedString(questionAnswers)).append("\n");
+    sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -619,6 +660,16 @@ public class Speaker {
       for (int i = 0; i < getQuestionAnswers().size(); i++) {
         if (getQuestionAnswers().get(i) != null) {
           joiner.add(getQuestionAnswers().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%squestionAnswers%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `categories` to the URL query string
+    if (getCategories() != null) {
+      for (int i = 0; i < getCategories().size(); i++) {
+        if (getCategories().get(i) != null) {
+          joiner.add(getCategories().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%scategories%s%s", prefix, suffix,
               "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
