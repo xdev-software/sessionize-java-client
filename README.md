@@ -15,7 +15,6 @@ Sessionize API ``v2``:
 * ``view``
   * All ✔️
   * Speakers ✔️
-  * SpeakerEmails ✔️ (undocumented endpoint)
   * Sessions ✔️
 
 </details>
