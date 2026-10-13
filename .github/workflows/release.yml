@@ -151,6 +151,11 @@ jobs:
         server-password-env-var: MAVEN_CENTRAL_TOKEN
         gpg-passphrase-env-var: MAVEN_GPG_PASSPHRASE
 
+    # Required or Sonatype plugin will fail
+    - name: Downgrade Maven version to 3.9
+      run: |
+        sed -i -E '/^distributionUrl=/s/[0-9]+\.[0-9]+\.[0-9]+/3.9.11/g' .mvn/wrapper/maven-wrapper.properties
+
     - name: Publish to Central Portal
       run: ../mvnw -B deploy -P publish,publish-sonatype-central-portal
       working-directory: src
