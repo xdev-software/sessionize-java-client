@@ -14,7 +14,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>template-placeholder</module>
+		<module>sessionize-java-client</module>
 	</modules>
 
 	<build>
